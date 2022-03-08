@@ -1,7 +1,7 @@
 export const theme = {
     color: {
         white: "#FFFFFF",
-        lightgrey: "#F5F5FA", // Background of the entire webside
+        lightgrey: "#F5F5FA",
         grey: "#E4E6F0",
         darkergrey: "#7E839A",
         black: "#18181B",
