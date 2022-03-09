@@ -5,8 +5,8 @@ import { ReactComponent as SearchSVG } from "../Header/Icons/search.svg";
 export const Wrapper = styled.header`
   max-width: 1920px;
   margin: 0 auto;
-  background-color: #18181b;
-  color: white;
+  background-color: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.white};
   margin-bottom: 58px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
