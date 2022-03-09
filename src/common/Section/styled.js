@@ -1,19 +1,21 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const SectionTag = styled.div`
     max-width: 1368px;
-    margin: 32px auto;
-    padding: 24px;
+    margin: 0 auto;
+    padding: 0 24px;
 `;
 
 export const Title = styled.h2`
     color: ${({ theme }) => theme.colors.black};
     font-size: 36px;
     margin: 0;
+    margin-bottom: 24px;
 `;
 
 export const Body = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    padding: 24px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 208px);
+    grid-gap: 24px;
+    margin-bottom: 64px;
 `;
