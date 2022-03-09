@@ -1,10 +1,10 @@
-import { Body, Title, SectionTag } from "./styled";
+import { Body, Title, Wrapper } from "./styled";
 
 export const Section = ({ title, body }) => {
   return (
-    <SectionTag>
+    <Wrapper>
       <Title>{title}</Title>
       <Body>{body}</Body>
-    </SectionTag>
+    </Wrapper>
   );
 }
