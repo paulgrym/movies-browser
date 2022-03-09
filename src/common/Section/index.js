@@ -1,6 +1,6 @@
 import { Body, Title, SectionTag } from "./styled";
 
-const Section = ({ title, body }) => {
+export const Section = ({ title, body }) => {
   return (
     <SectionTag>
       <Title>{title}</Title>
@@ -8,5 +8,3 @@ const Section = ({ title, body }) => {
     </SectionTag>
   );
 }
-
-export default Section;
