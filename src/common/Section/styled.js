@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
     max-width: 1368px;
-    margin: 56px 0;
+    margin: 32px auto;
+    padding: 24px;
 `;
 
 export const Title = styled.h2`
