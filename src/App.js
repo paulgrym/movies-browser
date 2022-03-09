@@ -1,8 +1,11 @@
+import { MovieTile } from "./features/movies/MovieTile";
+
 function App() {
   return (
-    <>Hello Hello:)</>
+    <>
+      <MovieTile />
+    </>
   );
 }
 
 export default App;
- 
