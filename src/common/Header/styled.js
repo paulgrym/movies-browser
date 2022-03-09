@@ -8,6 +8,10 @@ export const Wrapper = styled.header`
   background-color: #18181b;
   color: white;
   margin-bottom: 58px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
+    margin-bottom: 24px;
+  }
 `;
 
 export const Content = styled.div`
@@ -57,6 +61,7 @@ export const Link = styled.a`
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     font-size: 13px;
     margin-right: 19px;
+    letter-spacing: 0.5px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
@@ -99,12 +104,11 @@ export const Item = styled.li`
 
 export const Name = styled.a`
   font-size: 14px;
-  padding: 8px 24px;
+  padding: 14px 24px;
   text-transform: uppercase;
 
   &:hover {
-    border: 1px solid white;
-    margin: -1px;
+    outline: 1px solid white;
     border-radius: 24px;
   }
 
