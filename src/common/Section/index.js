@@ -7,4 +7,4 @@ export const Section = ({ title, children }) => {
       {children}
     </Wrapper>
   );
-}
+};

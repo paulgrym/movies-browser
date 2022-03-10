@@ -10,6 +10,6 @@ function App() {
       {/* <NoResultsPage /> */}
     </>
   );
-}
+};
 
 export default App;

@@ -7,7 +7,6 @@ export const MovieList = () => {
   const popularMovies = usePopularMovies();
 
   return (
-
     <Section title={"Popular movies"}>
       <Wrapper>
         {
@@ -24,5 +23,5 @@ export const MovieList = () => {
         }
       </Wrapper>
     </Section>
-  )
-}
+  );
+};

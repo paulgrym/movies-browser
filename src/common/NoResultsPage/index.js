@@ -1,7 +1,5 @@
-import { Section } from "../Section"
+import { Section } from "../Section";
 import { NoResultsImage, Wrapper } from "./styled";
-
-
 
 export const NoResultsPage = () => {
   return (
@@ -11,4 +9,4 @@ export const NoResultsPage = () => {
       </Wrapper>
     </Section>
   );
-}
+};
