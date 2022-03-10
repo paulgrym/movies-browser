@@ -10,7 +10,6 @@ export const StyledMovieTile = styled.article`
   grid-gap: 16px;
   box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
   border-radius: 5px;
-  margin: auto;
   transition: transform 0.5s;
 
   &:hover{
@@ -32,7 +31,7 @@ export const StyledMovieTile = styled.article`
   }
 `
 export const MovieTileImage = styled.img`
-  height: 434px;
+  height: 418px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
     height:unset;
