@@ -1,8 +1,10 @@
 export const theme = {
     colors: {
         white: "#FFFFFF",
+        transparentWhite: "#ffffff99",
         lightgrey: "#F5F5FA",
         grey: "#E4E6F0",
+        darkgrey: "#C4C4C4",
         darkergrey: "#7E839A",
         black: "#18181B",
         lightblue: "#D6E4FF",
@@ -11,8 +13,8 @@ export const theme = {
     },
 
     breakpoints: {
-      small: "480px",
-      medium: "767px",
-      large: "1024px",
+        small: "480px",
+        medium: "767px",
+        large: "1024px",
     },
 };

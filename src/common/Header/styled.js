@@ -15,7 +15,7 @@ export const Wrapper = styled.header`
 `;
 
 export const Content = styled.div`
-  max-width: 1260px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 23px;
   display: flex;

@@ -4,7 +4,7 @@ export const Section = ({ title, body }) => {
   return (
     <Wrapper>
       <Title>{title}</Title>
-      <Body>{body}</Body>
+      {body}
     </Wrapper>
   );
 }
