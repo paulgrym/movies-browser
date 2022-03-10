@@ -1,11 +1,15 @@
-import { MovieTile } from "./features/movies/MovieTile";
 import { Header } from "./common/Header";
+import { Section } from "./common/Section";
+import { MovieList } from "./features/movies/MovieList";
 
 function App() {
   return (
     <>
       <Header />
-      <MovieTile />
+      <Section
+        title={"Popular movies"}
+        body={<MovieList />}
+      />
     </>
   );
 }
