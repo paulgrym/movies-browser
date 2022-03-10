@@ -10,13 +10,16 @@ import {
   MovieTileTitle,
   MovieTileVotes,
   StyledMovieTile,
+  NoMovieImage,
+  NoMovieImageIcon,
 } from "./styled"
 
 export const MovieTile = ({ poster, title, date, voteAverage, voteCount }) => {
 
   return (
     <StyledMovieTile>
-      <MovieTileImage src={poster} alt="" />
+      {/* <MovieTileImage src={poster} alt="" /> */}
+      <NoMovieImage><NoMovieImageIcon /></NoMovieImage>
 
       <MovieTileContent>
         <MovieTileTitle> {title} </MovieTileTitle>

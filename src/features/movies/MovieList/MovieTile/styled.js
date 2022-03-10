@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ReactComponent as StarIcon } from "../../../../images/star.svg"
+import { ReactComponent as NoImageIcon } from "../../../../images/no-movie-poster.svg"
 
 export const StyledMovieTile = styled.article`
   min-height: 650px;
@@ -27,15 +28,50 @@ export const StyledMovieTile = styled.article`
     grid-template-rows: auto;
     grid-template-columns: auto 1fr;
     min-height: 200px;
-    min-width:288px;
+    min-width: 288px;
   }
 `
-export const MovieTileImage = styled.img`
-  height: 418px;
+
+export const NoMovieImageIcon = styled(NoImageIcon)`
+  height: 50px;
+  width: auto;
+  color: ${({ theme }) => theme.colors.transparentWhite};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
-    height:unset;
-    width: 170px;
+    height: 40px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}){
+    height: 28px;
+  }
+`
+
+export const NoMovieImage = styled.div`
+  height: 418px;
+  background: ${({ theme }) => theme.colors.darkgrey};;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
+    width: 180px;
+    height: 270px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}){
+    width: 114px;
+    height: 169px;
+  }
+`
+
+export const MovieTileImage = styled.img`
+  height: 418px;
+  border-radius: 5px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
+    width: 180px;
+    height: unset;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}){
