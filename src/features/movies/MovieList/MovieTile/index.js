@@ -18,8 +18,8 @@ export const MovieTile = ({ poster, title, date, voteAverage, voteCount }) => {
 
   return (
     <StyledMovieTile>
-      {/* <MovieTileImage src={poster} alt="" /> */}
-      <NoMovieImage><NoMovieImageIcon /></NoMovieImage>
+      <MovieTileImage src={poster} alt="" />
+      {/* <NoMovieImage><NoMovieImageIcon /></NoMovieImage> */}
 
       <MovieTileContent>
         <MovieTileTitle> {title} </MovieTileTitle>
