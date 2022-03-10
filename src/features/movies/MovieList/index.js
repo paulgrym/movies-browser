@@ -5,8 +5,6 @@ import { usePopularMovies } from "./usePopularMovies";
 export const MovieList = () => {
   const popularMovies = usePopularMovies();
 
-  // console.log(popularMovies);
-
   return (
     <Wrapper>
       {
