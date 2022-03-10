@@ -32,9 +32,10 @@ export const StyledMovieTile = styled.article`
   }
 `
 export const MovieTileImage = styled.img`
-  width: 292px;
+  height: 434px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
+    height:unset;
     width: 170px;
   }
 
@@ -63,7 +64,7 @@ export const MovieTileSubtitle = styled.h3`
   color: ${({ theme }) => theme.colors.darkergrey};
   font-size: 16px;
   font-weight: 400;
-  margin: 4px 0 8px;
+  margin: 0;
   line-height: 1.5 8px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}){
@@ -83,7 +84,7 @@ export const MovieTileTag = styled.li`
   background: ${({ theme }) => theme.colors.grey};
   border-radius: 5px;
   padding: 8px 16px;
-  margin: 4px;
+  margin: 4px 4px;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.4;

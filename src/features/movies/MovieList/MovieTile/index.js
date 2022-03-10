@@ -10,19 +10,17 @@ import {
   MovieTileTitle,
   MovieTileVotes,
   StyledMovieTile,
-  Wrapper
 } from "./styled"
-import poster from "../../../../images/poster.png"
 
-export const MovieTile = () => {
+export const MovieTile = ({ poster, title, date, voteAverage, voteCount }) => {
 
   return (
     <StyledMovieTile>
       <MovieTileImage src={poster} alt="" />
 
       <MovieTileContent>
-        <MovieTileTitle> Mulan </MovieTileTitle>
-        <MovieTileSubtitle>2020</MovieTileSubtitle>
+        <MovieTileTitle> {title} </MovieTileTitle>
+        <MovieTileSubtitle>{date}</MovieTileSubtitle>
 
         <MovieTileTags>
           <MovieTileTag> Action </MovieTileTag>
@@ -32,8 +30,8 @@ export const MovieTile = () => {
 
         <MovieTileRating>
           <MovieTileIcon />
-          <MovieTileRate>7,8 </MovieTileRate>
-          <MovieTileVotes>137 votes</MovieTileVotes>
+          <MovieTileRate>{voteAverage} </MovieTileRate>
+          <MovieTileVotes>{voteCount}</MovieTileVotes>
         </MovieTileRating>
       </MovieTileContent>
 
