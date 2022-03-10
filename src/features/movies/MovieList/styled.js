@@ -11,4 +11,8 @@ export const Wrapper = styled.div`
     grid-template-columns: 1fr;
     margin-bottom: 32px;
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}){
+    grid-gap: 16px;
+  }
 `;
