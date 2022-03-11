@@ -1,17 +1,15 @@
 import { Header } from "./common/Header";
-import { Section } from "./common/Section";
+import { NoResultsPage } from "./common/NoResultsPage";
 import { MovieList } from "./features/movies/MovieList";
 
 function App() {
   return (
     <>
       <Header />
-      <Section
-        title={"Popular movies"}
-        body={<MovieList />}
-      />
+      <MovieList />
+      {/* <NoResultsPage /> */}
     </>
   );
-}
+};
 
 export default App;

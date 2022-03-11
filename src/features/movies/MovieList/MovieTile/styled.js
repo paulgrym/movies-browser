@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { ReactComponent as StarIcon } from "../../../../images/star.svg"
-import { ReactComponent as NoImageIcon } from "../../../../images/no-movie-poster.svg"
+import { ReactComponent as StarIcon } from "../../../../images/star.svg";
+import { ReactComponent as NoImageIcon } from "../../../../images/no-movie-poster.svg";
 
 export const StyledMovieTile = styled.article`
   min-height: 650px;
@@ -30,7 +30,7 @@ export const StyledMovieTile = styled.article`
     min-height: 200px;
     min-width: 288px;
   }
-`
+`;
 
 export const NoMovieImageIcon = styled(NoImageIcon)`
   height: 50px;
@@ -44,7 +44,7 @@ export const NoMovieImageIcon = styled(NoImageIcon)`
   @media (max-width: ${({ theme }) => theme.breakpoints.small}){
     height: 28px;
   }
-`
+`;
 
 export const NoMovieImage = styled.div`
   height: 418px;
@@ -63,7 +63,7 @@ export const NoMovieImage = styled.div`
     width: 114px;
     height: 169px;
   }
-`
+`;
 
 export const MovieTileImage = styled.img`
   height: 418px;
@@ -77,11 +77,12 @@ export const MovieTileImage = styled.img`
   @media (max-width: ${({ theme }) => theme.breakpoints.small}){
     width: 114px;
   }
-`
+`;
+
 export const MovieTileContent = styled.div`
   display: flex;
   flex-direction: column;
-`
+`;
 
 export const MovieTileTitle = styled.h2`
   font-size: 22px;
@@ -93,7 +94,7 @@ export const MovieTileTitle = styled.h2`
     font-size: 16px;
     margin-bottom: 4px;
   }
-`
+`;
 
 export const MovieTileSubtitle = styled.h3`
   color: ${({ theme }) => theme.colors.darkergrey};
@@ -106,14 +107,14 @@ export const MovieTileSubtitle = styled.h3`
     font-size: 13px;
     line-height: 1.3;
   }
-`
+`;
 export const MovieTileTags = styled.ul`
   list-style: none;
   padding-left: 0;
   display: flex;
   flex-wrap: wrap;
   margin: 8px 0 8px -4px;
-`
+`;
 
 export const MovieTileTag = styled.li`
   background: ${({ theme }) => theme.colors.grey};
@@ -133,7 +134,7 @@ export const MovieTileTag = styled.li`
     font-size: 10px;
     line-height: 1.1;
   }
-`
+`;
 
 export const MovieTileRating = styled.div`
   flex-grow: 1;
@@ -147,7 +148,8 @@ export const MovieTileRating = styled.div`
 
 
   }
-`
+`;
+
 export const MovieTileIcon = styled(StarIcon)`
   color: ${({ theme }) => theme.colors.yellow};
   height: auto;
@@ -156,7 +158,7 @@ export const MovieTileIcon = styled(StarIcon)`
     width: 16px;
     line-height: 1.3;
   }
-`
+`;
 
 export const MovieTileRate = styled.span`
   font-weight: 600;
@@ -167,7 +169,7 @@ export const MovieTileRate = styled.span`
     font-size: 13px;
     margin-left: 8px;
   }
-`
+`;
 
 export const MovieTileVotes = styled.span`
   color: ${({ theme }) => theme.colors.darkergrey};
@@ -179,4 +181,4 @@ export const MovieTileVotes = styled.span`
     font-size: 13px;
     margin-left: 8px;
   }
-`
+`;

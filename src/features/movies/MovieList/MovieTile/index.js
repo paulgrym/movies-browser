@@ -12,7 +12,7 @@ import {
   StyledMovieTile,
   NoMovieImage,
   NoMovieImageIcon,
-} from "./styled"
+} from "./styled";
 
 export const MovieTile = ({ poster, title, date, voteAverage, voteCount }) => {
 
@@ -39,5 +39,5 @@ export const MovieTile = ({ poster, title, date, voteAverage, voteCount }) => {
       </MovieTileContent>
 
     </StyledMovieTile>
-  )
-}
+  );
+};
