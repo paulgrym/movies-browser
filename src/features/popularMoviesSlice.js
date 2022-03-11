@@ -25,7 +25,7 @@ const moviesSlice = createSlice ({
       state.totalResults = movies.total_results;
     },
 
-    fetchMovieError: (state) => {
+    fetchMoviesError: (state) => {
       state.error = true;
     },
   },
@@ -34,7 +34,7 @@ const moviesSlice = createSlice ({
 export const { 
   fetchMovies,
   fetchMoviesSuccess,
-  fetchMovieError } = moviesSlice.actions;
+  fetchMoviesError } = moviesSlice.actions;
 
 const selectPopularMovies = (state) => state.popularMovies;
 

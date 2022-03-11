@@ -1,6 +1,6 @@
 import { delay, call, put, takeLatest } from "redux-saga/effects";
 import { getPopularMovies } from "./popularMoviesAPI";
-import { fetchMovieError, fetchMovies, fetchMoviesSuccess } from "./popularMoviesSlice";
+import { fetchMoviesError, fetchMovies, fetchMoviesSuccess } from "./popularMoviesSlice";
 
 function* fetchPopularMoviesWorker() {
   try {
@@ -8,7 +8,7 @@ function* fetchPopularMoviesWorker() {
     const popularMovies = yield call(getPopularMovies);
     yield put(fetchMoviesSuccess(popularMovies));
   } catch (error) {
-    yield put(fetchMovieError());
+    yield put(fetchMoviesError());
   };
 };
 
