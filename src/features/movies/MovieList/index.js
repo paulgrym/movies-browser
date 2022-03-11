@@ -1,16 +1,26 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchMovies, selectMovies } from "../../popularMoviesSlice";
 import { Section } from "../../../common/Section";
 import { MovieTile } from "./MovieTile";
 import { Wrapper } from "./styled";
-import { usePopularMovies } from "./usePopularMovies";
 
 export const MovieList = () => {
-  const popularMovies = usePopularMovies();
+const dispatch = useDispatch();
+
+useEffect(() => {
+  dispatch(fetchMovies());
+},[dispatch])
+
+const popularMovies = useSelector(selectMovies);
+// const loading = useSelector(selectLoading);
+// const error = useSelector(selectError);
 
   return (
     <Section title={"Popular movies"}>
       <Wrapper>
         {
-          popularMovies?.data?.map((movie, index) => (
+          popularMovies.map((movie, index) => (
             <MovieTile
               key={index}
               poster={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
