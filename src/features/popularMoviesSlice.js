@@ -25,7 +25,7 @@ const moviesSlice = createSlice ({
       state.totalResults = movies.total_results;
     },
 
-    fetchMovieError: (state) => {
+    fetchMoviesError: (state) => {
       state.error = true;
     },
   },
