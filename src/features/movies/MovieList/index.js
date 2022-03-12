@@ -6,7 +6,7 @@ import { Wrapper } from "./styled";
 import { Title } from "../../../common/Title";
 import { Loader } from "../../../common/Loader";
 import { MovieTile } from "../../../common/MovieTile";
-import { APIPosterImageUrl } from "../../APIdata";
+import { APIImageUrl } from "../../APIdata";
 
 export const MovieList = () => {
   const dispatch = useDispatch();
@@ -32,7 +32,7 @@ export const MovieList = () => {
                 popularMovies.map((movie, index) => (
                   <MovieTile
                     key={index}
-                    poster={`${APIPosterImageUrl}/w342${movie.poster_path}`}
+                    poster={`${APIImageUrl}/w342${movie.poster_path}`}
                     posterPath={movie.poster_path}
                     title={movie.title}
                     date={movie.release_date.slice(0, 4)}
