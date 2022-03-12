@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const moviesSlice = createSlice ({
+const moviesSlice = createSlice({
   name: "popularMovies",
   initialState: {
     page: null,
@@ -26,12 +26,13 @@ const moviesSlice = createSlice ({
     },
 
     fetchMoviesError: (state) => {
+      state.loading = false;
       state.error = true;
     },
   },
 });
 
-export const { 
+export const {
   fetchMovies,
   fetchMoviesSuccess,
   fetchMoviesError } = moviesSlice.actions;
