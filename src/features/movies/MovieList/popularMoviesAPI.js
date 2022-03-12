@@ -1,5 +1,7 @@
+import { APIPopularMoviesUrl } from "../../APIdata"
+
 export const getPopularMovies = async () => {
-    const APIUrl = `https://api.themoviedb.org/3/movie/popular?api_key=951446c9e47a99cb6ccfb776c60023c7&language=en-US&page=1`;
+    const APIUrl = `${APIPopularMoviesUrl}&page=499`;
 
     const response = await fetch(APIUrl);
 
