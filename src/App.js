@@ -1,5 +1,5 @@
 import { Header } from "./common/Header";
-import { LoadingPage } from "./common/LoadingPage";
+import { Loader } from "./common/Loader";
 import { NoResultsPage } from "./common/NoResultsPage";
 import { MovieList } from "./features/movies/MovieList";
 
@@ -9,7 +9,6 @@ function App() {
       <Header />
       <MovieList />
       {/* <NoResultsPage /> */}
-      {/* <LoadingPage /> */}
     </>
   );
 };
