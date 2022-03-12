@@ -7,9 +7,9 @@ function App() {
   return (
     <>
       <Header />
-      {/* <MovieList /> */}
+      <MovieList />
       {/* <NoResultsPage /> */}
-      <LoadingPage />
+      {/* <LoadingPage /> */}
     </>
   );
 };
