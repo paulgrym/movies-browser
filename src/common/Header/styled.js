@@ -115,6 +115,7 @@ export const Name = styled.a`
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     font-size: 12px;
     padding: 8px 12px;
+    border-radius: 29px;
   }
 `;
 
