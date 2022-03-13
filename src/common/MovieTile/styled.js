@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { ReactComponent as StarIcon } from "../../../../images/star.svg";
-import { ReactComponent as NoImageIcon } from "../../../../images/no-movie-poster.svg";
+import { ReactComponent as StarIcon } from "../../images/star.svg";
+import { ReactComponent as NoImageIcon } from "../../images/no-movie-poster.svg";
 
 export const StyledMovieTile = styled.article`
   min-height: 650px;
