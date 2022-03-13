@@ -26,7 +26,6 @@ const moviesSlice = createSlice({
     },
 
     fetchMoviesError: (state) => {
-      state.loading = false;
       state.error = true;
     },
   },

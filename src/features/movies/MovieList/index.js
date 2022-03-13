@@ -5,6 +5,7 @@ import { Section } from "../../../common/Section";
 import { Wrapper } from "./styled";
 import { Title } from "../../../common/Title";
 import { Loader } from "../../../common/Loader";
+import { ErrorPage } from "../../../common/ErrorPage";
 import { MovieTile } from "../../../common/MovieTile";
 import { APIImageUrl } from "../../APIdata";
 
@@ -22,7 +23,7 @@ export const MovieList = () => {
   return (
     <Section>
       {error
-        ? "Error"
+        ? <ErrorPage />
         : <>
           <Title>Popular movies</Title>
           {loading
@@ -45,7 +46,6 @@ export const MovieList = () => {
           }
         </>
       }
-
     </Section>
   );
 };
