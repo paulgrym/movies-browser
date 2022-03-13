@@ -75,7 +75,7 @@ export const Button = styled.button`
   }
 
   :active {
-    filter: brightness(140%);
+    filter: brightness(120%);
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
