@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { ReactComponent as VideoSVG } from "../Header/Icons/video.svg";
 import { ReactComponent as SearchSVG } from "../Header/Icons/search.svg";
+import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Wrapper = styled.header`
   max-width: 1920px;
@@ -45,18 +47,19 @@ export const Container = styled.div`
   }
 `;
 
-export const Title = styled.div`
+export const Logo = styled.div`
   display: flex;
   align-items: center;
 `;
 
-export const Link = styled.a`
+export const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
   font-size: 24px;
   font-weight: 500;
-  cursor: pointer;
   letter-spacing: -1.5px;
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.white};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     font-size: 13px;
@@ -97,15 +100,22 @@ export const Item = styled.li`
   margin-right: 16px;
   cursor: pointer;
 
+&:hover {
+  transform: scale(1.1);
+    transition: 0.5s;
+}
+
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     margin-right: 12px;
   }
 `;
 
-export const Name = styled.a`
+export const StyledNavLink = styled(NavLink)`
   font-size: 14px;
   padding: 14px 24px;
   text-transform: uppercase;
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.white};
 
   &:hover {
     outline: 1px solid white;
