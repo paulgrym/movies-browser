@@ -1,14 +1,15 @@
 import { Header } from "./common/Header";
-import { Loader } from "./common/Loader";
 import { NoResultsPage } from "./common/NoResultsPage";
 import { MovieList } from "./features/movies/MovieList";
+import { MovieDetails } from "./features/movies/MovieDetails";
 import { PersonList } from "./features/people/PersonList";
 
 function App() {
   return (
     <>
       <Header />
-      <MovieList />
+      {/* <MovieList /> */}
+      <MovieDetails />
       {/* <PersonList /> */}
       {/* <NoResultsPage /> */}
     </>

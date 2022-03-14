@@ -4,6 +4,7 @@ import { Section } from "../../../common/Section";
 import { Loader } from "../../../common/Loader";
 import { ErrorPage } from "../../../common/ErrorPage";
 import { fetchMovieDetails, selectError, selectLoading, selectMovies } from "./movieDetailsSlice";
+import { MovieInfo } from "./MovieInfo";
 
 export const MovieDetails = () => {
   const dispatch = useDispatch();
@@ -12,8 +13,6 @@ export const MovieDetails = () => {
     dispatch(fetchMovieDetails());
   }, [dispatch])
 
-  const moviesDetails = useSelector(selectMovies);
-  console.log(moviesDetails[0]?.title)
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
 
@@ -24,7 +23,7 @@ export const MovieDetails = () => {
         : <>
           {loading
             ? <Loader />
-            : <div>{moviesDetails[0]?.title}</div>
+            : <MovieInfo />
           }
         </>
       }
