@@ -1,4 +1,5 @@
 import { Section } from "../../../common/Section"
+import { Title } from "../../../common/Title";
 import { PersonTile } from "./PersonTile";
 import { Wrapper } from "./styled";
 import { usePopularPeople } from "./usePopularPeople"
@@ -7,7 +8,8 @@ export const PersonList = () => {
   const popularPeople = usePopularPeople();
 
   return (
-    <Section title="Popular people">
+    <Section>
+      <Title>Popular people</Title>
       <Wrapper>
         {
           popularPeople?.data?.map((person, index) => (
