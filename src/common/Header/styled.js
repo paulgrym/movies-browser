@@ -100,10 +100,10 @@ export const Item = styled.li`
   margin-right: 16px;
   cursor: pointer;
 
-&:hover {
-  transform: scale(1.1);
+  &:hover {
+    transform: scale(1.1);
     transition: 0.5s;
-}
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     margin-right: 12px;
@@ -120,6 +120,10 @@ export const StyledNavLink = styled(NavLink)`
   &:hover {
     outline: 1px solid white;
     border-radius: 24px;
+  }
+
+  &.active {
+    color: ${({ theme }) => theme.colors.yellow};
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
