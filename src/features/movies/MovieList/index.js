@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchMovies, selectError, selectLoading, selectMovies } from "./popularMoviesSlice";
+import { fetchMovies, selectError, selectGenres, selectLoading, selectMovies } from "./popularMoviesSlice";
 import { Section } from "../../../common/Section";
 import { Wrapper } from "./styled";
 import { Title } from "../../../common/Title";
@@ -17,6 +17,7 @@ export const MovieList = () => {
   }, [dispatch])
 
   const popularMovies = useSelector(selectMovies);
+  const genresTable = useSelector(selectGenres);
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
 
@@ -39,6 +40,7 @@ export const MovieList = () => {
                     date={movie.release_date.slice(0, 4)}
                     voteAverage={movie.vote_average}
                     voteCount={`${movie.vote_count} votes`}
+                    genres={genresTable.filter((genre) => movie.genre_ids.includes(genre.id))}
                   />
                 ))
               }
