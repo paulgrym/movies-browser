@@ -1,3 +1,4 @@
+import { nanoid } from "@reduxjs/toolkit";
 import {
   MovieTileContent,
   MovieTileIcon,
@@ -29,8 +30,8 @@ export const MovieTile = ({ posterPath, poster, title, date, voteAverage, voteCo
 
         <MovieTileTags>
           {
-            genres.map((genre, index) => (
-              <MovieTileTag key={index}> {genre.name} </MovieTileTag>
+            genres.map((genre) => (
+              <MovieTileTag key={nanoid()}> {genre.name} </MovieTileTag>
             ))
           }
         </MovieTileTags>

@@ -8,6 +8,7 @@ import { Loader } from "../../../common/Loader";
 import { ErrorPage } from "../../../common/ErrorPage";
 import { MovieTile } from "../../../common/MovieTile";
 import { APIImageUrl } from "../../APIdata";
+import { nanoid } from "@reduxjs/toolkit";
 
 export const MovieList = () => {
   const dispatch = useDispatch();
@@ -31,9 +32,9 @@ export const MovieList = () => {
             ? <Loader />
             : <Wrapper>
               {
-                popularMovies.map((movie, index) => (
+                popularMovies.map((movie) => (
                   <MovieTile
-                    key={index}
+                    key={nanoid()}
                     poster={`${APIImageUrl}/w342${movie.poster_path}`}
                     posterPath={movie.poster_path}
                     title={movie.title}
