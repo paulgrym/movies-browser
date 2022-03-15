@@ -1,6 +1,7 @@
+
 export const getAPI = async (APIUrl) => {
 
-  const response = await fetch(APIUrl);
+    const response = await fetch(APIUrl);
 
-  return await response.json();
+    return await response.json();
 }
