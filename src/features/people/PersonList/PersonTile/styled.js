@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.article`
   background: ${({ theme }) => theme.colors.white};
-  padding: 10px 16px;
+  padding: 16px;
   height: 100%;
   display: grid;
   grid-template-rows: auto 1fr;
