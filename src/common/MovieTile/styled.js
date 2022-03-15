@@ -95,7 +95,7 @@ export const MovieTileTitle = styled.h3`
   }
 `;
 
-export const MovieTileSubtitle = styled.h4`
+export const MovieTileSubtitle = styled.p`
   color: ${({ theme }) => theme.colors.darkergrey};
   font-size: 16px;
   font-weight: 400;
