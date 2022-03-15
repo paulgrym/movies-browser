@@ -13,6 +13,7 @@ import {
   selectLoading,
   selectPeople,
 } from "./popularPeopleSlice";
+import { APIImageUrl } from "../../APIdata";
 
 export const PersonList = () => {
   const dispatch = useDispatch();
@@ -38,7 +39,7 @@ export const PersonList = () => {
                 popularPeople.map(person => (
                   <PersonTile
                     key={nanoid()}
-                    profileImage={`https://image.tmdb.org/t/p/original${person.profile_path}`}
+                    profileImage={`${APIImageUrl}/original${person.profile_path}`}
                     fullName={person.name}
                   />
                 ))
