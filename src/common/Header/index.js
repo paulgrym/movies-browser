@@ -1,4 +1,3 @@
-import { Search } from "../Search";
 import {
   Content,
   List,
@@ -6,6 +5,7 @@ import {
   Logo,
   Item,
   SearchBox,
+  Search,
   Wrapper,
   StyledLink,
   VideoIcon,
@@ -49,7 +49,7 @@ export const Header = () => {
         </Container>
         <SearchBox>
           <SearchIcon />
-          <Search />
+          <Search placeholder="Search for movies..." />
         </SearchBox>
       </Content>
     </Wrapper>
