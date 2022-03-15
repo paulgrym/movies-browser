@@ -83,7 +83,7 @@ export const MovieTileContent = styled.div`
   height: 100%;
 `;
 
-export const MovieTileTitle = styled.h2`
+export const MovieTileTitle = styled.h3`
   font-size: 22px;
   font-weight: 500;
   line-height: 1.3;
@@ -95,7 +95,7 @@ export const MovieTileTitle = styled.h2`
   }
 `;
 
-export const MovieTileSubtitle = styled.h3`
+export const MovieTileSubtitle = styled.h4`
   color: ${({ theme }) => theme.colors.darkergrey};
   font-size: 16px;
   font-weight: 400;
