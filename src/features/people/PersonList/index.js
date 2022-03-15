@@ -12,7 +12,6 @@ import {
 import { Wrapper } from "./styled";
 import { ErrorPage } from "../../../common/ErrorPage";
 import { Loader } from "../../../common/Loader";
-import { usePopularPeople } from "./usePopularPeople";
 
 export const PersonList = () => {
   const dispatch = useDispatch();
@@ -20,8 +19,6 @@ export const PersonList = () => {
   useEffect(() => {
     dispatch(fetchPeople());
   }, [dispatch])
-
-  // const popularPeople = usePopularPeople();
 
   const popularPeople = useSelector(selectPeople);
   const loading = useSelector(selectLoading);
@@ -37,7 +34,7 @@ export const PersonList = () => {
             ? <Loader />
             : <Wrapper>
               {
-                popularPeople?.data?.map((person, index) => (
+                popularPeople.map((person, index) => (
                   <PersonTile
                     key={index}
                     profileImage={`https://image.tmdb.org/t/p/original${person.profile_path}`}
