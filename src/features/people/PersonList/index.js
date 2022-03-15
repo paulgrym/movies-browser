@@ -1,17 +1,18 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { nanoid } from "@reduxjs/toolkit";
 import { Section } from "../../../common/Section"
 import { Title } from "../../../common/Title";
 import { PersonTile } from "../../../common/PersonTile";
+import { ErrorPage } from "../../../common/ErrorPage";
+import { Loader } from "../../../common/Loader";
+import { Wrapper } from "./styled";
 import {
   fetchPeople,
   selectError,
   selectLoading,
   selectPeople,
 } from "./popularPeopleSlice";
-import { Wrapper } from "./styled";
-import { ErrorPage } from "../../../common/ErrorPage";
-import { Loader } from "../../../common/Loader";
 
 export const PersonList = () => {
   const dispatch = useDispatch();
@@ -34,9 +35,9 @@ export const PersonList = () => {
             ? <Loader />
             : <Wrapper>
               {
-                popularPeople.map((person, index) => (
+                popularPeople.map(person => (
                   <PersonTile
-                    key={index}
+                    key={nanoid()}
                     profileImage={`https://image.tmdb.org/t/p/original${person.profile_path}`}
                     fullName={person.name}
                   />
