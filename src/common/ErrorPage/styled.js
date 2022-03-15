@@ -67,14 +67,14 @@ export const Button = styled.button`
   background-color: ${({ theme }) => theme.colors.blue};
   border: none;
   border-radius: 5px;
-
-  :hover {
+  transition: 0.5s;
+  
+  &:hover {
     transform: scale(1.1);
-    transition: 0.5s;
     cursor: pointer;
   }
 
-  :active {
+  &:active {
     filter: brightness(120%);
   }
 

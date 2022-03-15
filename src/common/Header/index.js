@@ -2,43 +2,56 @@ import {
   Content,
   List,
   Navigation,
-  Title,
+  Logo,
   Item,
-  Name,
   SearchBox,
   Search,
   Wrapper,
-  Link,
+  StyledLink,
   VideoIcon,
   Container,
   SearchIcon,
+  StyledNavLink,
 } from "./styled";
 
-export const Header = () => (
-  <Wrapper>
-    <Content>
-      <Container>
-        <Title>
-          <Link>
-            <VideoIcon />
-            Movies Browser
-          </Link>
-        </Title>
-        <Navigation>
-          <List>
-            <Item>
-              <Name>Movies</Name>
-            </Item>
-            <Item>
-              <Name>People</Name>
-            </Item>
-          </List>
-        </Navigation>
-      </Container>
-      <SearchBox>
-        <SearchIcon />
-        <Search placeholder="Search for movies..."/>
-      </SearchBox>
-    </Content>
-  </Wrapper>
-);
+export const Header = () => {
+
+  return (
+    <Wrapper>
+      <Content>
+        <Container>
+          <Logo>
+            <StyledLink 
+              to="/"
+            >
+              <VideoIcon />
+              Movies Browser
+            </StyledLink>
+          </Logo>
+            <Navigation>
+              <List>
+                <Item>
+                  <StyledNavLink 
+                    to="/movies" 
+                  >
+                  Movies
+                  </StyledNavLink>
+                </Item>
+                <Item>
+                  <StyledNavLink
+                    to="/people"
+                  >
+                  People
+                  </StyledNavLink>
+                </Item>
+              </List>
+            </Navigation>
+        </Container>
+        <SearchBox>
+          <SearchIcon />
+          <Search placeholder="Search for movies..." />
+        </SearchBox>
+      </Content>
+    </Wrapper>
+  );
+};
