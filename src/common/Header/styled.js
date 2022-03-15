@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { ReactComponent as VideoSVG } from "../Header/Icons/video.svg";
 import { ReactComponent as SearchSVG } from "../Header/Icons/search.svg";
+import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Wrapper = styled.header`
-  max-width: 1920px;
-  margin: 0 auto;
   background-color: ${({ theme }) => theme.colors.black};
   color: ${({ theme }) => theme.colors.white};
   margin-bottom: 58px;
@@ -45,18 +45,19 @@ export const Container = styled.div`
   }
 `;
 
-export const Title = styled.div`
+export const Logo = styled.div`
   display: flex;
   align-items: center;
 `;
 
-export const Link = styled.a`
+export const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
   font-size: 24px;
   font-weight: 500;
-  cursor: pointer;
   letter-spacing: -1.5px;
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.white};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     font-size: 13px;
@@ -87,10 +88,10 @@ export const Navigation = styled.nav`
 `;
 
 export const List = styled.ul`
+  display: flex;
   list-style: none;
   padding-left: 0px;
   margin: 0;
-  display: flex;
 `;
 
 export const Item = styled.li`
@@ -102,14 +103,28 @@ export const Item = styled.li`
   }
 `;
 
-export const Name = styled.a`
+export const StyledNavLink = styled(NavLink)`
   font-size: 14px;
+  font-weight: 600;
   padding: 14px 24px;
   text-transform: uppercase;
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.white};
+  transition: 0.5s;
+  transition-property: color, border;
 
   &:hover {
-    outline: 1px solid white;
+    color: ${({ theme }) => theme.colors.yellow};
+  }
+
+  &.active {
+    border: 1px solid ${({ theme }) => theme.colors.white};
     border-radius: 24px;
+  }
+
+  &.active:hover {
+    border: 1px solid ${({ theme }) => theme.colors.yellow};
+    color: ${({ theme }) => theme.colors.yellow};
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
