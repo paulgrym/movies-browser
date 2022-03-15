@@ -12,7 +12,8 @@ function App() {
       {/* <NoResultsPage /> */}
       <Switch>
         <Route path="/movies">
-          <MovieList />
+          <MovieDetails />
+          {/* <MovieList /> */}
         </Route>
         <Route path="/people">
           <PersonList />

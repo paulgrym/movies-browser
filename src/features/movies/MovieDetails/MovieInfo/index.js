@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { selectMovies } from "../movieDetailsSlice";
-import { MovieDetailsTile, MovieDetailsTileImage, NoMovieImage, NoMovieImageIcon, Wrapper } from "./styled"
+import { Content, MovieTile, MovieImage, Title, NoMovieImage, NoMovieImageIcon, Wrapper, Description, Year, Tag, Tags } from "./styled"
 import { APIImageUrl } from "../../../APIdata.js"
 
 export const MovieInfo = () => {
@@ -11,15 +11,21 @@ export const MovieInfo = () => {
   // const posterPath = null;
 
   return (
-    <MovieDetailsTile>
+    <MovieTile>
       <Wrapper>
         {posterPath
-          ? <MovieDetailsTileImage src={`${APIImageUrl}/w342${moviesDetails[0]?.poster_path}`} alt="" />
+          ? <MovieImage src={`${APIImageUrl}/w342${moviesDetails[0]?.poster_path}`} alt="" />
           : <NoMovieImage><NoMovieImageIcon /></NoMovieImage>
         }
-
+        <Content>
+          <Title>{moviesDetails[0]?.title}</Title>
+          <Year>{moviesDetails[0]?.release_date.slice(0, 4)}</Year>
+          <Tags>
+            <Tag>example</Tag>
+          </Tags>
+        </Content>
       </Wrapper>
-      <p>{moviesDetails[0]?.overview}</p>
-    </MovieDetailsTile>
+      <Description>{moviesDetails[0]?.overview}</Description>
+    </MovieTile>
   );
 };
