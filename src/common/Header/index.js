@@ -1,6 +1,4 @@
-import { useDispatch } from "react-redux";
-import { fetchMovies } from "../../features/movies/MovieList/popularMoviesSlice";
-
+import { Search } from "../Search";
 import {
   Content,
   List,
@@ -8,7 +6,6 @@ import {
   Logo,
   Item,
   SearchBox,
-  Search,
   Wrapper,
   StyledLink,
   VideoIcon,
@@ -18,7 +15,6 @@ import {
 } from "./styled";
 
 export const Header = () => {
-  const dispatch = useDispatch();
 
   return (
     <Wrapper>
@@ -26,8 +22,7 @@ export const Header = () => {
         <Container>
           <Logo>
             <StyledLink 
-              to="/movies"
-              onClick={() => dispatch(fetchMovies())}
+              to="/"
             >
               <VideoIcon />
               Movies Browser
@@ -38,7 +33,6 @@ export const Header = () => {
                 <Item>
                   <StyledNavLink 
                     to="/movies" 
-                    onClick={() => dispatch(fetchMovies())}
                   >
                   Movies
                   </StyledNavLink>
@@ -46,7 +40,6 @@ export const Header = () => {
                 <Item>
                   <StyledNavLink
                     to="/people"
-                    // onClick={() => dispatch()}
                   >
                   People
                   </StyledNavLink>
