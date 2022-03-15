@@ -1,6 +1,6 @@
 import { Section } from "../../../common/Section"
 import { Title } from "../../../common/Title";
-import { PersonTile } from "./PersonTile";
+import { PersonTile } from "../../../common/PersonTile";
 import { Wrapper } from "./styled";
 import { usePopularPeople } from "./usePopularPeople"
 
