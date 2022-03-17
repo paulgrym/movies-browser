@@ -1,6 +1,5 @@
 export const getAPI = async (APIUrl) => {
 
-  try {
     const response = await fetch(APIUrl);
 
     if (!response.ok) {
@@ -10,7 +9,4 @@ export const getAPI = async (APIUrl) => {
     const products = await response.json();
     return products;
 
-  } catch (error) {
-    console.error("Something went wrong!", error);
-  }
 }
