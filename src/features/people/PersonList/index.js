@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
-import { Section } from "../../../common/Section"
+import { Section } from "../../../common/Section";
 import { Title } from "../../../common/Title";
 import { PersonTile } from "../../../common/PersonTile";
 import { ErrorPage } from "../../../common/ErrorPage";
@@ -11,44 +11,57 @@ import {
   fetchPeople,
   selectError,
   selectLoading,
-  selectPeople,
+  selectPersonByQuery,
 } from "./popularPeopleSlice";
 import { APIImageUrl } from "../../APIdata";
+import { useQueryParameter } from "../../../common/Search/queryParameterHooks";
+import searchQueryParamName from "../../../common/Search/searchQueryParamName";
+import { NoResultsPage } from "../../../common/NoResultsPage";
 
 export const PersonList = () => {
   const dispatch = useDispatch();
+  const query = useQueryParameter(searchQueryParamName);
 
   useEffect(() => {
     dispatch(fetchPeople());
-  }, [dispatch])
+  }, [dispatch, query]);
 
-  const popularPeople = useSelector(selectPeople);
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
+  const people = useSelector((state) => selectPersonByQuery(state, query));
 
   return (
     <Section>
-      {error
-        ? <ErrorPage />
-        : <>
-          <Title>Popular people</Title>
-          {loading
-            ? <Loader />
-            : <Wrapper>
-              {
-                popularPeople.map(person => (
-                  <PersonTile
-                    key={nanoid()}
-                    profileImage={`${APIImageUrl}/w185${person.profile_path}`}
-                    fullName={person.name}
-                  />
-                ))
-              }
-            </Wrapper>
-          }
-        </>
+      {query && people.length === 0 
+        ? <NoResultsPage query={query} />
+        : loading 
+            ? <>
+                <Title>
+                  {query
+                    ? `Search results for "${query[0].toUpperCase() + query.slice(1)}"`
+                    : "Popular people"}
+                </Title>
+                <Loader />
+              </>
+            : error 
+                ? <ErrorPage />
+                : <>
+                    <Title>
+                      {query
+                        ? `Search results for "${query[0].toUpperCase() + query.slice(1)}" (${people.length})`
+                        : "Popular people"}
+                    </Title>
+                    <Wrapper>
+                      {people.map((person) => (
+                        <PersonTile
+                          key={nanoid()}
+                          profileImage={`${APIImageUrl}/w185${person.profile_path}`}
+                          fullName={person.name}
+                        />
+                      ))}
+                    </Wrapper>
+                  </>
       }
     </Section>
   );
-}
-
+};
