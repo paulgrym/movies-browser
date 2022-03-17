@@ -1,9 +1,11 @@
 import { delay, call, put, takeLatest } from "redux-saga/effects";
-import { APIMovieDetailsUrl } from "../../APIdata";
+import { APIKey, APIUrl } from "../../APIdata";
 import { getAPI } from "../../getAPI";
 import { fetchMovieDetails, fetchMovieDetailsError, fetchMovieDetailsSuccess } from "./movieDetailsSlice";
 
-function* fetchMovieDetailsWorker() {
+function* fetchMovieDetailsWorker({ payload: movieId }) {
+  const APIMovieDetailsUrl = `${APIUrl}/movie/${movieId}?api_key=${APIKey}`
+
   try {
     yield delay(1000);
     const movieDetails = yield call(getAPI, APIMovieDetailsUrl);

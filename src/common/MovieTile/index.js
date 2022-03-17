@@ -15,10 +15,10 @@ import {
   NoMovieImageIcon,
 } from "./styled";
 
-export const MovieTile = ({ posterPath, poster, title, date, voteAverage, voteCount, genres }) => {
+export const MovieTile = ({ posterPath, poster, title, date, voteAverage, voteCount, genres, id }) => {
 
   return (
-    <StyledMovieTile>
+    <StyledMovieTile to={`/movies/${id}`}>
       {posterPath
         ? <MovieTileImage src={poster} alt="" />
         : <NoMovieImage><NoMovieImageIcon /></NoMovieImage>

@@ -3,15 +3,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { Section } from "../../../common/Section";
 import { Loader } from "../../../common/Loader";
 import { ErrorPage } from "../../../common/ErrorPage";
-import { fetchMovieDetails, selectError, selectLoading, selectMovies } from "./movieDetailsSlice";
+import { fetchMovieDetails, selectError, selectLoading } from "./movieDetailsSlice";
 import { MovieInfo } from "./MovieInfo";
+import { useParams } from "react-router-dom";
 
 export const MovieDetails = () => {
   const dispatch = useDispatch();
+  const { id } = useParams();
 
   useEffect(() => {
-    dispatch(fetchMovieDetails());
-  }, [dispatch])
+    dispatch(fetchMovieDetails(id));
+  }, [id, dispatch])
 
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);

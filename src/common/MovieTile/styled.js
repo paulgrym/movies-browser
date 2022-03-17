@@ -1,8 +1,11 @@
 import styled from "styled-components";
 import { ReactComponent as StarIcon } from "../../images/star.svg";
 import { ReactComponent as NoImageIcon } from "../../images/no-movie-poster.svg";
+import { Link } from "react-router-dom";
 
-export const StyledMovieTile = styled.article`
+export const StyledMovieTile = styled(Link)`
+  text-decoration:none;
+  color: ${({ theme }) => theme.colors.black};
   min-height: 650px;
   background: ${({ theme }) => theme.colors.white};
   padding:16px;

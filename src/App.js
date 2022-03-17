@@ -11,9 +11,12 @@ function App() {
       <Header />
       {/* <NoResultsPage /> */}
       <Switch>
-        <Route path="/movies">
+        <Route path="/movies/:id">
           <MovieDetails />
-          {/* <MovieList /> */}
+        </Route>
+        <Route path="/movies">
+          {/* <MovieDetails /> */}
+          <MovieList />
         </Route>
         <Route path="/people">
           <PersonList />
