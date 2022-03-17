@@ -7,6 +7,7 @@ function* fetchPopularMoviesWorker() {
     yield delay(2000);
     const popularMovies = yield call(getPopularMovies);
     yield put(fetchMoviesSuccess(popularMovies));
+    console.log(popularMovies);
   } catch (error) {
     yield put(fetchMoviesError());
   };
