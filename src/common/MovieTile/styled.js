@@ -44,8 +44,9 @@ export const NoMovieImageIcon = styled(NoImageIcon)`
 `;
 
 export const NoMovieImage = styled.div`
+  flex-shrink:0;
   height: 418px;
-  background: ${({ theme }) => theme.colors.darkgrey};;
+  background: ${({ theme }) => theme.colors.darkgrey};
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -58,7 +59,7 @@ export const NoMovieImage = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}){
     width: 114px;
-    height: 169px;
+    height: 171px;
   }
 `;
 
