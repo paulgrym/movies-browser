@@ -39,7 +39,7 @@ export const PersonList = () => {
                 popularPeople.map(person => (
                   <PersonTile
                     key={nanoid()}
-                    profileImage={`${APIImageUrl}/original${person.profile_path}`}
+                    profileImage={`${APIImageUrl}/w185${person.profile_path}`}
                     fullName={person.name}
                   />
                 ))
