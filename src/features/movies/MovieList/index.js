@@ -4,6 +4,7 @@ import {
   fetchMovies,
   selectError,
   selectLoading,
+  selectGenres,
   selectMovieByQuery,
 } from "./popularMoviesSlice";
 import { Section } from "../../../common/Section";
@@ -16,6 +17,7 @@ import { APIImageUrl } from "../../APIdata";
 import searchQueryParamName from "../../../common/Search/searchQueryParamName";
 import { NoResultsPage } from "../../../common/NoResultsPage";
 import { useQueryParameter } from "../../../common/Search/queryParameterHooks";
+import { nanoid } from "@reduxjs/toolkit";
 
 export const MovieList = () => {
   const dispatch = useDispatch();
@@ -25,6 +27,7 @@ export const MovieList = () => {
     dispatch(fetchMovies());
   }, [dispatch, query]);
 
+  const genresTable = useSelector(selectGenres);
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
   const movies = useSelector((state) => selectMovieByQuery(state, query));
@@ -56,15 +59,16 @@ export const MovieList = () => {
                   }
                 </Title>
                 <Wrapper>
-                {movies.map((movie, index) => (
+                {movies.map((movie) => (
                   <MovieTile
-                    key={index}
+                    key={nanoid()}
                     poster={`${APIImageUrl}/w342${movie.poster_path}`}
                     posterPath={movie.poster_path}
                     title={movie.title}
                     date={movie.release_date.slice(0, 4)}
                     voteAverage={movie.vote_average}
                     voteCount={`${movie.vote_count} votes`}
+                    genres={genresTable.filter((genre) => movie.genre_ids.includes(genre.id))}
                   />
                 ))}
               </Wrapper>

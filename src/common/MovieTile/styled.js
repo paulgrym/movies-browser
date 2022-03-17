@@ -6,9 +6,9 @@ export const StyledMovieTile = styled.article`
   min-height: 650px;
   background: ${({ theme }) => theme.colors.white};
   padding:16px;
-  display: grid;
-  grid-template-rows: auto 1fr;
-  grid-gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
   border-radius: 5px;
   transition: transform 0.5s;
@@ -18,15 +18,12 @@ export const StyledMovieTile = styled.article`
   }
  
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
-    grid-template-rows: auto;
-    grid-template-columns: auto 1fr;
+    flex-direction: row;
     min-height: 200px ;
     width: 100%;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}){
-    grid-template-rows: auto;
-    grid-template-columns: auto 1fr;
     min-height: 200px;
     min-width: 288px;
   }
@@ -68,20 +65,22 @@ export const NoMovieImage = styled.div`
 export const MovieTileImage = styled.img`
   height: 418px;
   border-radius: 5px;
+  object-fit: cover;
+  object-position: center top;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
-    width: 180px;
-    height: unset;
+    height: 270px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}){
-    width: 114px;
+    height: 171px;
   }
 `;
 
 export const MovieTileContent = styled.div`
   display: flex;
   flex-direction: column;
+  height: 100%;
 `;
 
 export const MovieTileTitle = styled.h2`
@@ -137,16 +136,14 @@ export const MovieTileTag = styled.li`
 `;
 
 export const MovieTileRating = styled.div`
-  flex-grow: 1;
   display: flex;
-  align-items: flex-end;
   line-height: 1.5;
-
+  flex-grow: 1;
+  align-items: flex-end;
+  
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
     flex-grow: 0;
     align-items: flex-start;
-
-
   }
 `;
 
