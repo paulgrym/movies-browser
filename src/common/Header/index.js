@@ -1,3 +1,4 @@
+import { Search } from "../Search";
 import {
   Content,
   List,
@@ -5,7 +6,7 @@ import {
   Logo,
   Item,
   SearchBox,
-  Search,
+  // Search,
   Wrapper,
   StyledLink,
   VideoIcon,
@@ -22,7 +23,7 @@ export const Header = () => {
         <Container>
           <Logo>
             <StyledLink 
-              to="/"
+              to="/movies"
             >
               <VideoIcon />
               Movies Browser
