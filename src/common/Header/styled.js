@@ -5,8 +5,8 @@ import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 export const Wrapper = styled.header`
-  max-width: 1920px;
-  margin: 0 auto;
+  /* max-width: 1920px;
+  margin: 0 auto; */
   background-color: ${({ theme }) => theme.colors.black};
   color: ${({ theme }) => theme.colors.white};
   margin-bottom: 58px;
