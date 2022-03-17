@@ -1,15 +1,14 @@
 import { delay, call, put, takeLatest } from "redux-saga/effects";
-import { APIPopularMoviesUrl } from "../../APIdata";
+import { APIMovieDetailsUrl } from "../../APIdata";
 import { getAPI } from "../../getAPI";
 import { fetchMovieDetails, fetchMovieDetailsError, fetchMovieDetailsSuccess } from "./movieDetailsSlice";
 
 function* fetchMovieDetailsWorker() {
-  const movies2 = `${APIPopularMoviesUrl}&page=1`;
-
   try {
     yield delay(1000);
-    const movieDetails = yield call(getAPI, movies2);
+    const movieDetails = yield call(getAPI, APIMovieDetailsUrl);
     yield put(fetchMovieDetailsSuccess(movieDetails));
+    console.log(movieDetails);
   } catch (error) {
     yield put(fetchMovieDetailsError());
   };

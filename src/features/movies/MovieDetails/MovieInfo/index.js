@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectMovies } from "../movieDetailsSlice";
+import { selectMovie } from "../movieDetailsSlice";
 import {
   Content,
   MovieTile,
@@ -22,55 +22,63 @@ import {
   Value
 } from "./styled"
 import { APIImageUrl } from "../../../APIdata.js"
+import { nanoid } from "@reduxjs/toolkit";
 
 export const MovieInfo = () => {
-  const moviesDetails = useSelector(selectMovies);
-  console.log(moviesDetails)
+  const movieDetails = useSelector(selectMovie);
 
-  const posterPath = moviesDetails[0]?.poster_path;
-  // const posterPath = null;
-  const date = new Date(moviesDetails[0]?.release_date)
+  const posterPath = movieDetails.poster_path;
 
-  return (
-    <MovieTile>
-      <Wrapper>
-        {posterPath
-          ? <MovieImage src={`${APIImageUrl}/w342${moviesDetails[0]?.poster_path}`} alt="" />
-          : <NoMovieImage><NoMovieImageIcon /></NoMovieImage>
-        }
-        <Content>
-          <Title>{moviesDetails[0]?.title}</Title>
-          <Year>{moviesDetails[0]?.release_date.slice(0, 4)}</Year>
+  if (movieDetails && movieDetails.length !== 0) {
+    return (
+      <MovieTile>
 
-          <DetailedInfo>
-            <Key>Production: </Key>
-            <Value>Country</Value>
-          </DetailedInfo>
+        <Wrapper>
+          {posterPath
+            ? <MovieImage src={`${APIImageUrl}/w342${movieDetails.poster_path}`} alt="" />
+            : <NoMovieImage><NoMovieImageIcon /></NoMovieImage>
+          }
+          <Content>
+            <Title>{movieDetails.title}</Title>
+            <Year>{movieDetails.release_date?.slice(0, 4)}</Year>
 
-          <DetailedInfo>
-            <Key>Release date: </Key>
-            <Value>{date.toLocaleDateString()}</Value>
-          </DetailedInfo>
+            <DetailedInfo>
+              <Key>Production: </Key>
+              <Value>
+                {
+                  movieDetails.production_countries.length !== 0
+                    ? movieDetails.production_countries.map(({ name }) => name).join(", ")
+                    : "Unknown"
+                }
+              </Value>
+            </DetailedInfo>
 
-          <Tags>
-            <Tag>example</Tag>
-            <Tag>example</Tag>
-            <Tag>example</Tag>
-            <Tag>example</Tag>
-            <Tag>example</Tag>
-            <Tag>example</Tag>
-          </Tags>
+            <DetailedInfo>
+              <Key>Release date: </Key>
+              <Value>
+                {
+                  movieDetails.release_date
+                    ? (new Date(movieDetails.release_date)).toLocaleDateString()
+                    : "Unknown"
+                }
+              </Value>
+            </DetailedInfo>
 
-          <Rating>
-            <RateIcon />
-            <Rate>{moviesDetails[0]?.vote_average} </Rate>
-            <MaxRate>/10 </MaxRate>
-            <Votes>{moviesDetails[0]?.vote_count} votes</Votes>
-          </Rating>
+            <Tags>
+              {movieDetails.genres.map(genre => <Tag key={nanoid()}>{genre.name}</Tag>)}
+            </Tags>
 
-        </Content>
-      </Wrapper>
-      <Description>{moviesDetails[0]?.overview}</Description>
-    </MovieTile>
-  );
+            <Rating>
+              <RateIcon />
+              <Rate>{movieDetails.vote_average} </Rate>
+              <MaxRate>/10 </MaxRate>
+              <Votes>{movieDetails.vote_count} votes</Votes>
+            </Rating>
+          </Content>
+        </Wrapper>
+
+        <Description>{movieDetails.overview}</Description>
+      </MovieTile>
+    );
+  } else return null;
 };

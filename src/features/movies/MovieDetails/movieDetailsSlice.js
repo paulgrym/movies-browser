@@ -13,10 +13,10 @@ const movieDetailsSlice = createSlice({
       state.loading = true;
     },
 
-    fetchMovieDetailsSuccess: (state, { payload: movies }) => {
+    fetchMovieDetailsSuccess: (state, { payload: movieDetails }) => {
       state.loading = false;
       state.error = false;
-      state.movieDetails = movies.results;
+      state.movieDetails = movieDetails;
     },
 
     fetchMovieDetailsError: (state) => {
@@ -32,7 +32,7 @@ export const {
 
 const selectMovieDetails = (state) => state.movieDetails;
 
-export const selectMovies = state => selectMovieDetails(state).movieDetails;
+export const selectMovie = state => selectMovieDetails(state).movieDetails;
 export const selectLoading = state => selectMovieDetails(state).loading;
 export const selectError = state => selectMovieDetails(state).error;
 
