@@ -6,7 +6,5 @@ export const getAPI = async (APIUrl) => {
       throw new Error(response.statusText);
     }
 
-    const products = await response.json();
-    return products;
-
+    return await response.json();
 }
