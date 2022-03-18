@@ -6,7 +6,7 @@ import { Section } from "../../../../common/Section";
 import { Title } from "../../../../common/Title";
 import { APIImageUrl } from "../../../APIdata";
 import { selectMovieCast } from "../movieDetailsSlice"
-import { Container, Expander, PeopleWrapperExpandable } from "../../../../common/ExpandingSection/styled";
+import { Container, Expander, PeopleWrapperExpandable } from "../../../../common/ExpandingSection";
 
 export const Cast = () => {
   const cast = useSelector(selectMovieCast);
@@ -16,7 +16,7 @@ export const Cast = () => {
   const toggleIsCastExpanded = () => setIsCastExpanded(isCastExpanded => !isCastExpanded);
 
   return (
-    <Section>
+    <Section as="article">
       <Title>Cast</Title>
 
       <PeopleWrapperExpandable isExpanded={isCastExpanded}>

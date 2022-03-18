@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMovies, selectError, selectGenres, selectLoading, selectMovies } from "./popularMoviesSlice";
 import { Section } from "../../../common/Section";
-import { Wrapper } from "./styled";
+import { MovieWrapper } from "../../../common/MovieWrapper";
 import { Title } from "../../../common/Title";
 import { Loader } from "../../../common/Loader";
 import { ErrorPage } from "../../../common/ErrorPage";
@@ -30,7 +30,7 @@ export const MovieList = () => {
           <Title>Popular movies</Title>
           {loading
             ? <Loader />
-            : <Wrapper>
+            : <MovieWrapper>
               {
                 popularMovies.map((movie) => (
                   <MovieTile
@@ -46,7 +46,7 @@ export const MovieList = () => {
                   />
                 ))
               }
-            </Wrapper>
+            </MovieWrapper>
           }
         </>
       }

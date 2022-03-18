@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { css } from "styled-components";
-import { PeopleWrapper } from "../PeopleWrapper/styled";
+import { PeopleWrapper } from "./PeopleWrapper";
 
 export const PeopleWrapperExpandable = styled(PeopleWrapper)`
   max-height:1000px;

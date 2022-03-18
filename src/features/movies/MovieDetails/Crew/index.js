@@ -6,7 +6,7 @@ import { Section } from "../../../../common/Section";
 import { Title } from "../../../../common/Title";
 import { APIImageUrl } from "../../../APIdata";
 import { selectMovieCrew } from "../movieDetailsSlice"
-import { Container, Expander, PeopleWrapperExpandable } from "../../../../common/ExpandingSection/styled";
+import { Container, Expander, PeopleWrapperExpandable } from "../../../../common/ExpandingSection";
 
 export const Crew = () => {
   const crew = useSelector(selectMovieCrew);
@@ -16,7 +16,7 @@ export const Crew = () => {
   const toggleIsCrewExpanded = () => setIsCrewExpanded(isCrewExpanded => !isCrewExpanded);
 
   return (
-    <Section>
+    <Section as="article">
       <Title>Crew</Title>
 
       <PeopleWrapperExpandable isExpanded={isCrewExpanded}>

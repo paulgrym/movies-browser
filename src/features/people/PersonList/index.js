@@ -6,7 +6,7 @@ import { Title } from "../../../common/Title";
 import { PersonTile } from "../../../common/PersonTile";
 import { ErrorPage } from "../../../common/ErrorPage";
 import { Loader } from "../../../common/Loader";
-import { PeopleWrapper } from "../../../common/PeopleWrapper/styled"
+import { PeopleWrapper } from "../../../common/PeopleWrapper"
 import {
   fetchPeople,
   selectError,
