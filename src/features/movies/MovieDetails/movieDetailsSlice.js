@@ -4,6 +4,8 @@ const movieDetailsSlice = createSlice({
   name: "movieDetails",
   initialState: {
     movieDetails: [],
+    cast: [],
+    crew: [],
     loading: false,
     error: false,
   },
@@ -13,14 +15,19 @@ const movieDetailsSlice = createSlice({
       state.loading = true;
     },
 
-    fetchMovieDetailsSuccess: (state, { payload: movieDetails }) => {
+    fetchMovieDetailsSuccess: (state, { payload }) => {
       state.loading = false;
       state.error = false;
-      state.movieDetails = movieDetails;
+      state.movieDetails = payload;
     },
 
     fetchMovieDetailsError: (state) => {
       state.error = true;
+    },
+
+    setMoviePeople: (state, { payload }) => {
+      state.cast = payload.cast;
+      state.crew = payload.crew;
     },
   },
 });
@@ -28,11 +35,15 @@ const movieDetailsSlice = createSlice({
 export const {
   fetchMovieDetails,
   fetchMovieDetailsSuccess,
-  fetchMovieDetailsError } = movieDetailsSlice.actions;
+  fetchMovieDetailsError,
+  setMoviePeople,
+} = movieDetailsSlice.actions;
 
 const selectMovieDetails = (state) => state.movieDetails;
 
 export const selectMovie = state => selectMovieDetails(state).movieDetails;
+export const selectMovieCast = state => selectMovieDetails(state).cast;
+export const selectMovieCrew = state => selectMovieDetails(state).crew;
 export const selectLoading = state => selectMovieDetails(state).loading;
 export const selectError = state => selectMovieDetails(state).error;
 
