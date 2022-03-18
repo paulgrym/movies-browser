@@ -1,21 +1,26 @@
 import { nanoid } from "@reduxjs/toolkit";
+import { useState } from "react";
 import { useSelector } from "react-redux"
-import { PeopleWrapper } from "../../../../common/PeopleWrapper/styled"
+// import { PeopleWrapper } from "../../../../common/PeopleWrapper/styled"
 import { PersonTile } from "../../../../common/PersonTile";
 import { Section } from "../../../../common/Section";
 import { Title } from "../../../../common/Title";
 import { APIImageUrl } from "../../../APIdata";
 import { selectMovieCast } from "../movieDetailsSlice"
-import noProfileImage from "../../../../images/no-profile-image.svg"
+import { Container, Expander, PeopleWrapperExpandable } from "./styled";
 
 export const Cast = () => {
   const cast = useSelector(selectMovieCast);
-  console.log(cast);
+
+  const [isCastExpanded, setIsCastExpanded] = useState(false);
+
+  const toggleIsCastExpanded = () => setIsCastExpanded(isCastExpanded => !isCastExpanded);
 
   return (
     <Section>
       <Title>Cast</Title>
-      <PeopleWrapper>
+
+      <PeopleWrapperExpandable isCastExpanded={isCastExpanded}>
         {cast.map(person => (
           <PersonTile
             key={nanoid()}
@@ -26,8 +31,12 @@ export const Cast = () => {
           />
         ))
         }
-
-      </PeopleWrapper>
+      </PeopleWrapperExpandable>
+      <Container isCastExpanded={isCastExpanded}>
+        <Expander onClick={toggleIsCastExpanded}>
+          {isCastExpanded ? "Hide" : "Show all"}
+        </Expander>
+      </Container>
     </Section>
   )
 
