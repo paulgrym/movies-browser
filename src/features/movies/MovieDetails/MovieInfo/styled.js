@@ -2,20 +2,23 @@ import styled from "styled-components";
 import { ReactComponent as StarIcon } from "../../../../images/star.svg";
 import { ReactComponent as NoImageIcon } from "../../../../images/no-movie-poster.svg";
 
-export const MovieTile = styled.article`
+export const MovieTile = styled.section`
   background: ${({ theme }) => theme.colors.white};
   padding: 40px;
   box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
   overflow: hidden;
+  margin-bottom: 64px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
     padding: 28px;
+    margin-bottom: 32px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}){
     padding: 16px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 21px;
   }
 `;
 
