@@ -8,6 +8,7 @@ import { MovieInfo } from "./MovieInfo";
 import { useParams } from "react-router-dom";
 import { Cast } from "./Cast";
 import { Crew } from "./Crew";
+import { MovieTitle } from "./MovieTitle";
 
 export const MovieDetails = () => {
   const dispatch = useDispatch();
@@ -29,6 +30,7 @@ export const MovieDetails = () => {
             ? <Loader />
             :
             <>
+              <MovieTitle />
               <MovieInfo />
               <Cast />
               <Crew />
