@@ -19,7 +19,7 @@ export const Crew = () => {
     <Section>
       <Title>Crew</Title>
 
-      <PeopleWrapperExpandable isCrewExpanded={isCrewExpanded}>
+      <PeopleWrapperExpandable isExpanded={isCrewExpanded}>
         {crew.map(person => (
           <PersonTile
             key={nanoid()}
@@ -31,7 +31,7 @@ export const Crew = () => {
         ))
         }
       </PeopleWrapperExpandable>
-      <Container isCrewExpanded={isCrewExpanded}>
+      <Container isExpanded={isCrewExpanded}>
         <Expander onClick={toggleIsCrewExpanded}>
           {isCrewExpanded ? "Hide" : "Show all"}
         </Expander>

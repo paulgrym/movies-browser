@@ -19,7 +19,7 @@ export const Cast = () => {
     <Section>
       <Title>Cast</Title>
 
-      <PeopleWrapperExpandable isCastExpanded={isCastExpanded}>
+      <PeopleWrapperExpandable isExpanded={isCastExpanded}>
         {cast.map(person => (
           <PersonTile
             key={nanoid()}
@@ -31,7 +31,7 @@ export const Cast = () => {
         ))
         }
       </PeopleWrapperExpandable>
-      <Container isCastExpanded={isCastExpanded}>
+      <Container isExpanded={isCastExpanded}>
         <Expander onClick={toggleIsCastExpanded}>
           {isCastExpanded ? "Hide" : "Show all"}
         </Expander>

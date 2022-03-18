@@ -7,7 +7,7 @@ export const PeopleWrapperExpandable = styled(PeopleWrapper)`
   overflow: hidden;
   margin-bottom:0;
 
-  ${({ isCastExpanded }) => isCastExpanded && css`
+  ${({ isExpanded }) => isExpanded && css`
     max-height:none;
   `}
 `
@@ -25,7 +25,7 @@ export const Container = styled.div`
     top: -80%;
     background: linear-gradient(180deg, rgba(245,245,250,0) 0%, rgba(245,245,250,1) 100%);
 
-    ${({ isCastExpanded }) => isCastExpanded && css`
+    ${({ isExpanded }) => isExpanded && css`
       height: 0%;
     `}
   }
