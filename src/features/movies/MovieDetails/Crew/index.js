@@ -31,11 +31,13 @@ export const Crew = () => {
         ))
         }
       </PeopleWrapperExpandable>
+
       <Container isExpanded={isCrewExpanded}>
         <Expander onClick={toggleIsCrewExpanded}>
           {isCrewExpanded ? "Hide" : "Show all"}
         </Expander>
       </Container>
+
     </Section>
   );
 };

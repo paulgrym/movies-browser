@@ -31,12 +31,13 @@ export const Cast = () => {
         ))
         }
       </PeopleWrapperExpandable>
+
       <Container isExpanded={isCastExpanded}>
         <Expander onClick={toggleIsCastExpanded}>
           {isCastExpanded ? "Hide" : "Show all"}
         </Expander>
       </Container>
-    </Section>
-  )
 
-}
+    </Section>
+  );
+};

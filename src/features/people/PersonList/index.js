@@ -52,5 +52,5 @@ export const PersonList = () => {
       }
     </Section>
   );
-}
+};
 
