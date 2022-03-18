@@ -7,6 +7,7 @@ import { fetchMovieDetails, selectError, selectLoading } from "./movieDetailsSli
 import { MovieInfo } from "./MovieInfo";
 import { useParams } from "react-router-dom";
 import { Cast } from "./Cast";
+import { Crew } from "./Crew";
 
 export const MovieDetails = () => {
   const dispatch = useDispatch();
@@ -30,6 +31,7 @@ export const MovieDetails = () => {
             <>
               <MovieInfo />
               <Cast />
+              <Crew />
             </>
           }
         </>
