@@ -6,6 +6,7 @@ import { ErrorPage } from "../../../common/ErrorPage";
 import { fetchMovieDetails, selectError, selectLoading } from "./movieDetailsSlice";
 import { MovieInfo } from "./MovieInfo";
 import { useParams } from "react-router-dom";
+import { Cast } from "./Cast";
 
 export const MovieDetails = () => {
   const dispatch = useDispatch();
@@ -25,7 +26,11 @@ export const MovieDetails = () => {
         : <>
           {loading
             ? <Loader />
-            : <MovieInfo />
+            :
+            <>
+              <MovieInfo />
+              <Cast />
+            </>
           }
         </>
       }
