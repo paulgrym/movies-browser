@@ -90,7 +90,7 @@ export const PersonFullName = styled.p`
   }
 `;
 
-export const PersonCharacter = styled.p`
+export const PersonFunction = styled.p`
   color: ${({ theme }) => theme.colors.darkergrey};
   margin: 8px 0 0;
   font-size: 18px;
