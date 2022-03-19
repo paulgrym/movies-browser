@@ -23,7 +23,7 @@ export const PersonList = () => {
   const query = useQueryParameter(searchQueryParamName);
 
   useEffect(() => {
-    dispatch(fetchPeople());
+    dispatch(fetchPeople(query));
   }, [dispatch, query]);
 
   const loading = useSelector(selectLoading);

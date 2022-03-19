@@ -24,7 +24,7 @@ export const MovieList = () => {
   const query = useQueryParameter(searchQueryParamName);
 
   useEffect(() => {
-    dispatch(fetchMovies());
+    dispatch(fetchMovies(query));
   }, [dispatch, query]);
 
   const genresTable = useSelector(selectGenres);
