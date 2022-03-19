@@ -22,7 +22,7 @@ export const MovieTile = styled.article`
   }
 `;
 
-export const Wrapper = styled.span``;
+export const Wrapper = styled.div``;
 
 export const NoMovieImageIcon = styled(NoImageIcon)`
   height: 70px;
@@ -113,7 +113,7 @@ export const Year = styled.p`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}){
     font-size: 13px;
-    margin: 8px 0;
+    margin: 4px 0;
     color: ${({ theme }) => theme.colors.darkergrey};
   }
 `
