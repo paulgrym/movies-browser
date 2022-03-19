@@ -44,7 +44,6 @@ export const Crew = () => {
           {isAllCrewShown ? "Hide" : "Show all"}
           {!isAllCrewShown && <Arrow> ⇓</Arrow>}
         </ShowAllButton>
-
       </Container>
 
     </Section>
