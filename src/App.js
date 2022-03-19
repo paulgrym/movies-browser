@@ -15,7 +15,6 @@ function App() {
           <MovieDetails />
         </Route>
         <Route path="/movies">
-          {/* <MovieDetails /> */}
           <MovieList />
         </Route>
         <Route path="/people">
