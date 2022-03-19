@@ -1,6 +1,7 @@
 import { Header } from "./common/Header";
 // import { NoResultsPage } from "./common/NoResultsPage";
 import { MovieList } from "./features/movies/MovieList";
+import { MovieDetails } from "./features/movies/MovieDetails";
 import { PersonList } from "./features/people/PersonList";
 import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 
@@ -10,6 +11,9 @@ function App() {
       <Header />
       {/* <NoResultsPage /> */}
       <Switch>
+        <Route path="/movies/:id">
+          <MovieDetails />
+        </Route>
         <Route path="/movies">
           <MovieList />
         </Route>

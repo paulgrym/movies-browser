@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const MovieWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, 312px);
   grid-gap: 24px;

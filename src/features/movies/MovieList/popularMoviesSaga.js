@@ -7,7 +7,7 @@ function* fetchPopularMoviesWorker() {
   const popularMoviesPage1 = `${APIPopularMoviesUrl}&page=1`;
 
   try {
-    yield delay(2000);
+    yield delay(1000);
     const popularMovies = yield call(getAPI, popularMoviesPage1);
     const genres = yield call(getAPI, APIgenresUrl);
     yield put(fetchMoviesSuccess(popularMovies));
