@@ -6,21 +6,24 @@ import { Section } from "../../../../common/Section";
 import { Title } from "../../../../common/Title";
 import { APIImageUrl } from "../../../APIdata";
 import { selectMovieCrew } from "../movieDetailsSlice"
-import { Container, Expander, PeopleWrapperExpandable } from "../../../../common/ExpandingSection";
+import { Arrow, Container, ShowAllButton } from "../../../../common/ShowAllButton";
+import { PeopleWrapper } from "../../../../common/PeopleWrapper";
 
 export const Crew = () => {
   const crew = useSelector(selectMovieCrew);
 
-  const [isCrewExpanded, setIsCrewExpanded] = useState(false);
+  const [isAllCrewShown, setIsAllCrewShown] = useState(false);
 
-  const toggleIsCrewExpanded = () => setIsCrewExpanded(isCrewExpanded => !isCrewExpanded);
+  const toggleIsAllCrewShown = () => setIsAllCrewShown(isAllCrewShown => !isAllCrewShown);
+
+  const crewShown = isAllCrewShown ? crew.length : 10;
 
   return (
     <Section as="article">
       <Title>Crew</Title>
 
-      <PeopleWrapperExpandable isExpanded={isCrewExpanded}>
-        {crew.map(person => (
+      <PeopleWrapper>
+        {crew.slice(0, crewShown).map(person => (
           <PersonTile
             key={nanoid()}
             profileImage={`${APIImageUrl}/w185${person.profile_path}`}
@@ -30,12 +33,18 @@ export const Crew = () => {
           />
         ))
         }
-      </PeopleWrapperExpandable>
+      </PeopleWrapper>
 
-      <Container isExpanded={isCrewExpanded}>
-        <Expander onClick={toggleIsCrewExpanded}>
-          {isCrewExpanded ? "Hide" : "Show all"}
-        </Expander>
+      <Container>
+        <ShowAllButton
+          onClick={toggleIsAllCrewShown}
+          isAllPeopleShown={isAllCrewShown}
+        >
+          {isAllCrewShown && <Arrow> ⇑ </Arrow>}
+          {isAllCrewShown ? "Hide" : "Show all"}
+          {!isAllCrewShown && <Arrow> ⇓</Arrow>}
+        </ShowAllButton>
+
       </Container>
 
     </Section>
