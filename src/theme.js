@@ -12,7 +12,6 @@ export const theme = {
         lightblue: "#D6E4FF",
         blue: "#0044CC",
         yellow: "#FCD420",
-        black: "#000000",
     },
 
     breakpoints: {
