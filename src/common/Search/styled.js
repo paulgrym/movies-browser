@@ -5,9 +5,19 @@ export const StyledSearch = styled.input`
   height: 48px;
   padding: 12px 0 12px 60px;
   border-radius: 33px;
-  background-color: white;
+  color: ${({theme}) => theme.colors.waterloo};
+  background-color: ${({ theme }) => theme.colors.white};
   font-size: 16px;
   border-style: none;
+
+  &:disabled {
+    background-color: ${({ theme }) => theme.colors.gallery};
+    opacity: 0.6;
+  }
+
+  &:disabled::placeholder {
+    color: ${({ theme }) => theme.colors.silver};
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     height: 44px;
