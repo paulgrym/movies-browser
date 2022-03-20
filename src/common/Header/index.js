@@ -6,7 +6,6 @@ import {
   Logo,
   Item,
   SearchBox,
-  // Search,
   Wrapper,
   StyledLink,
   VideoIcon,
@@ -50,7 +49,7 @@ export const Header = () => {
         </Container>
         <SearchBox>
           <SearchIcon />
-          <Search placeholder="Search for movies..." />
+          <Search />
         </SearchBox>
       </Content>
     </Wrapper>
