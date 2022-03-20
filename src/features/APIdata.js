@@ -9,3 +9,7 @@ export const APIPopularPeopleUrl = `${APIUrl}/person/popular?api_key=${APIKey}`
 export const APIImageUrl = `https://image.tmdb.org/t/p`
 
 export const APIgenresUrl = `${APIUrl}/genre/movie/list?api_key=${APIKey}`
+
+export const APImovieDetailsUrl = (movieId) => `${APIUrl}/movie/${movieId}?api_key=${APIKey}`;
+
+export const APImovieCreditsUrl = (movieId) => `${APIUrl}/movie/${movieId}/credits?api_key=${APIKey}`;

@@ -6,7 +6,7 @@ import { Title } from "../../../common/Title";
 import { PersonTile } from "../../../common/PersonTile";
 import { ErrorPage } from "../../../common/ErrorPage";
 import { Loader } from "../../../common/Loader";
-import { Wrapper } from "./styled";
+import { PeopleWrapper } from "../../../common/PeopleWrapper"
 import {
   fetchPeople,
   selectError,
@@ -17,6 +17,7 @@ import { APIImageUrl } from "../../APIdata";
 import { useQueryParameter } from "../../../common/Search/queryParameterHooks";
 import searchQueryParamName from "../../../common/Search/searchQueryParamName";
 import { NoResultsPage } from "../../../common/NoResultsPage";
+
 
 export const PersonList = () => {
   const dispatch = useDispatch();
@@ -51,15 +52,16 @@ export const PersonList = () => {
                         ? `Search results for "${query[0].toUpperCase() + query.slice(1)}" (${people.length})`
                         : "Popular people"}
                     </Title>
-                    <Wrapper>
+                    <PeopleWrapper>
                       {people.map((person) => (
                         <PersonTile
                           key={nanoid()}
                           profileImage={`${APIImageUrl}/w185${person.profile_path}`}
+                          profilePath={person.profile_path}
                           fullName={person.name}
                         />
                       ))}
-                    </Wrapper>
+                    </PeopleWrapper>
                   </>
       }
     </Section>

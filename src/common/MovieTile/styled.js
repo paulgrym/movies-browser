@@ -1,8 +1,11 @@
 import styled from "styled-components";
 import { ReactComponent as StarIcon } from "../../images/star.svg";
 import { ReactComponent as NoImageIcon } from "../../images/no-movie-poster.svg";
+import { Link } from "react-router-dom";
 
-export const StyledMovieTile = styled.article`
+export const StyledMovieTile = styled(Link)`
+  text-decoration:none;
+  color: ${({ theme }) => theme.colors.black};
   min-height: 650px;
   background: ${({ theme }) => theme.colors.white};
   padding:16px;
@@ -44,8 +47,9 @@ export const NoMovieImageIcon = styled(NoImageIcon)`
 `;
 
 export const NoMovieImage = styled.div`
+  flex-shrink:0;
   height: 418px;
-  background: ${({ theme }) => theme.colors.darkgrey};;
+  background: ${({ theme }) => theme.colors.darkgrey};
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -58,7 +62,7 @@ export const NoMovieImage = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}){
     width: 114px;
-    height: 169px;
+    height: 171px;
   }
 `;
 
@@ -83,7 +87,7 @@ export const MovieTileContent = styled.div`
   height: 100%;
 `;
 
-export const MovieTileTitle = styled.h2`
+export const MovieTileTitle = styled.h3`
   font-size: 22px;
   font-weight: 500;
   line-height: 1.3;
@@ -95,7 +99,7 @@ export const MovieTileTitle = styled.h2`
   }
 `;
 
-export const MovieTileSubtitle = styled.h3`
+export const MovieTileSubtitle = styled.p`
   color: ${({ theme }) => theme.colors.darkergrey};
   font-size: 16px;
   font-weight: 400;
