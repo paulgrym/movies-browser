@@ -56,13 +56,13 @@ export const selectLoading = (state) => selectPopularMovies(state).loading;
 export const selectError = (state) => selectPopularMovies(state).error;
 
 export const selectMovieByQuery = (state, query) => {
-  const movies = selectMovies(state);
+  const queryMovies = selectMovies(state);
 
   if (!query || query.trim() === "") {
-    return movies;
+    return queryMovies;
   }
 
-  return movies.filter(({ title }) =>
+  return queryMovies.filter(({ title }) =>
     title.toUpperCase().includes(query.trim().toUpperCase())
   );
 };
