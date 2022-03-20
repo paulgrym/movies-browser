@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 export const Wrapper = styled.header`
-  background-color: ${({ theme }) => theme.colors.black};
+  background-color: ${({ theme }) => theme.colors.woodsmoke};
   color: ${({ theme }) => theme.colors.white};
   margin-bottom: 58px;
 
@@ -114,7 +114,7 @@ export const StyledNavLink = styled(NavLink)`
   transition-property: color, border;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.yellow};
+    color: ${({ theme }) => theme.colors.candlelight};
   }
 
   &.active {
@@ -123,8 +123,8 @@ export const StyledNavLink = styled(NavLink)`
   }
 
   &.active:hover {
-    border: 1px solid ${({ theme }) => theme.colors.yellow};
-    color: ${({ theme }) => theme.colors.yellow};
+    border: 1px solid ${({ theme }) => theme.colors.candlelight};
+    color: ${({ theme }) => theme.colors.candlelight};
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
@@ -150,25 +150,5 @@ export const SearchIcon = styled(SearchSVG)`
     height: 16px;
     margin-left: 16px;
     top: 30%;
-  }
-`;
-
-export const Search = styled.input`
-  width: 432px;
-  height: 48px;
-  padding: 12px 0 12px 60px;
-  border-radius: 33px;
-  background-color: white;
-  font-size: 16px;
-  border-style: none;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
-    height: 44px;
-    font-size: 13px;
-    padding: 14px 0 14px 40px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
-    width: 100%;
   }
 `;

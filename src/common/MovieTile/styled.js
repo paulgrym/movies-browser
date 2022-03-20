@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export const StyledMovieTile = styled(Link)`
   text-decoration:none;
-  color: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.woodsmoke};
   min-height: 650px;
   background: ${({ theme }) => theme.colors.white};
   padding:16px;
@@ -49,7 +49,7 @@ export const NoMovieImageIcon = styled(NoImageIcon)`
 export const NoMovieImage = styled.div`
   flex-shrink:0;
   height: 418px;
-  background: ${({ theme }) => theme.colors.darkgrey};
+  background: ${({ theme }) => theme.colors.silver};
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -100,7 +100,7 @@ export const MovieTileTitle = styled.h3`
 `;
 
 export const MovieTileSubtitle = styled.p`
-  color: ${({ theme }) => theme.colors.darkergrey};
+  color: ${({ theme }) => theme.colors.waterloo};
   font-size: 16px;
   font-weight: 400;
   margin: 0;
@@ -120,7 +120,7 @@ export const MovieTileTags = styled.ul`
 `;
 
 export const MovieTileTag = styled.li`
-  background: ${({ theme }) => theme.colors.grey};
+  background: ${({ theme }) => theme.colors.mystic};
   border-radius: 5px;
   padding: 8px 16px;
   margin: 4px 4px;
@@ -152,7 +152,7 @@ export const MovieTileRating = styled.div`
 `;
 
 export const MovieTileIcon = styled(StarIcon)`
-  color: ${({ theme }) => theme.colors.yellow};
+  color: ${({ theme }) => theme.colors.candlelight};
   height: auto;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}){
@@ -173,7 +173,7 @@ export const MovieTileRate = styled.span`
 `;
 
 export const MovieTileVotes = styled.span`
-  color: ${({ theme }) => theme.colors.darkergrey};
+  color: ${({ theme }) => theme.colors.waterloo};
   font-weight: 400;
   font-size: 16px;
   margin-left: 12px;

@@ -10,7 +10,7 @@ export const ShowAllButton = styled.button`
   background:none;
   cursor: pointer;
   padding: 0 0 2px;
-  color: ${({ theme }) => theme.colors.darkergrey};
+  color: ${({ theme }) => theme.colors.waterloo};
   font-size: 20px;
   transition: transform 0.3s;
 
@@ -24,6 +24,6 @@ export const ShowAllButton = styled.button`
 `
 
 export const Arrow = styled.div`
-  color: ${({ theme }) => theme.colors.darkergrey};
+  color: ${({ theme }) => theme.colors.waterloo};
   font-size: 24px;
 `
