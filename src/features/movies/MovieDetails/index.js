@@ -28,7 +28,7 @@ export const MovieDetails = () => {
         : <>
           {loading
             ? <Loader />
-            :
+            : 
             <>
               <MovieTitle />
               <MovieInfo />

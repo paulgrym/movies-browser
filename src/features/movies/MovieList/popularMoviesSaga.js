@@ -12,6 +12,7 @@ function* fetchPopularMoviesWorker() {
     const genres = yield call(getAPI, APIgenresUrl);
     yield put(fetchMoviesSuccess(popularMovies));
     yield put(setGenres(genres));
+    console.log(popularMovies);
   } catch (error) {
     yield put(fetchMoviesError());
   };
