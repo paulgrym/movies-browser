@@ -35,7 +35,7 @@ export const Cast = () => {
         }
       </PeopleWrapper>
 
-      <Container>
+      {cast.length > 10 && <Container>
         <ShowAllButton
           onClick={toggleIsAllCastShown}
           isAllPeopleShown={isAllCastShown}
@@ -44,7 +44,7 @@ export const Cast = () => {
           {isAllCastShown ? "Hide" : "Show all"}
           {!isAllCastShown && <Arrow> ⇓</Arrow>}
         </ShowAllButton>
-      </Container>
+      </Container>}
 
     </Section>
   );

@@ -35,7 +35,7 @@ export const Crew = () => {
         }
       </PeopleWrapper>
 
-      <Container>
+      {crew.length > 10 && <Container>
         <ShowAllButton
           onClick={toggleIsAllCrewShown}
           isAllPeopleShown={isAllCrewShown}
@@ -44,7 +44,7 @@ export const Crew = () => {
           {isAllCrewShown ? "Hide" : "Show all"}
           {!isAllCrewShown && <Arrow> ⇓</Arrow>}
         </ShowAllButton>
-      </Container>
+      </Container>}
 
     </Section>
   );
