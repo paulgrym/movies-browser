@@ -5,7 +5,8 @@ import {
   selectError,
   selectLoading,
   selectGenres,
-  selectMovieByQuery,
+  selectMovies,
+  selectTotalResults,
 } from "./popularMoviesSlice";
 import { Section } from "../../../common/Section";
 import { MovieWrapper } from "../../../common/MovieWrapper";
@@ -22,19 +23,20 @@ import { nanoid } from "@reduxjs/toolkit";
 export const MovieList = () => {
   const dispatch = useDispatch();
   const query = useQueryParameter(searchQueryParamName);
-
+  
   useEffect(() => {
-    dispatch(fetchMovies(query));
+    dispatch(fetchMovies({ query }));
   }, [dispatch, query]);
-
+  
   const genresTable = useSelector(selectGenres);
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
-  const queryMovies = useSelector((state) => selectMovieByQuery(state, query));
+  const movies = useSelector(selectMovies);
+  const totalResults = useSelector(selectTotalResults);
 
   return (
       <Section>
-        {query && queryMovies.length === 0
+        {query && error || totalResults === 0
           ? <NoResultsPage query={query}/>
           : loading
               ? <>
@@ -50,17 +52,17 @@ export const MovieList = () => {
                   : <>
                       <Title>
                         {query
-                          ? `Search results for "${query[0].toUpperCase() + query.slice(1)}" (${queryMovies.length})`
+                          ? `Search results for "${query[0].toUpperCase() + query.slice(1)}" (${totalResults})`
                           : "Popular movies"}
                       </Title>
                       <MovieWrapper>
-                        {queryMovies.map((movie) => (
+                        {movies.map((movie) => (
                           <MovieTile
                             key={nanoid()}
                             poster={`${APIImageUrl}/w342${movie.poster_path}`}
                             posterPath={movie.poster_path}
                             title={movie.title}
-                            date={movie.release_date.slice(0, 4)}
+                            date={movie.release_date ? movie.release_date.slice(0, 4) : "Date: Unknown"}
                             voteAverage={movie.vote_average}
                             voteCount={`${movie.vote_count} votes`}
                             genres={genresTable.filter((genre) => movie.genre_ids.includes(genre.id))}
