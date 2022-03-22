@@ -2,7 +2,7 @@ import { delay, call, put, takeLatest } from "redux-saga/effects";
 import {
   APIgenresUrl,
   APIPopularMoviesUrl,
-  APISearchMovieUrl,
+  APISearchMoviesUrl,
 } from "../../APIdata";
 import { getAPI } from "../../getAPI";
 import {
@@ -14,7 +14,7 @@ import {
 
 function* fetchPopularMoviesWorker({ payload: { query } }) {
   const popularMoviesPage1 = `${APIPopularMoviesUrl}&page=1`;
-  const searchMovieByQuery = `${APISearchMovieUrl}${query}`;
+  const searchMovies = `${APISearchMoviesUrl}${query}`;
 
   try {
     yield delay(1000);
@@ -22,7 +22,7 @@ function* fetchPopularMoviesWorker({ payload: { query } }) {
       getAPI,
       !query 
         ? popularMoviesPage1 
-        : searchMovieByQuery
+        : searchMovies
     );    
     const genres = yield call(getAPI, APIgenresUrl);
     yield put(fetchMoviesSuccess(request));
