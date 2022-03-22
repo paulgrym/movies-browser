@@ -22,10 +22,12 @@ export const Title = styled.h2`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
     font-size: 44px;
+    margin: 30px 0 16px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}){
     font-size: 24px;
+    margin: 8px 0 8px;
   }
 `
 
