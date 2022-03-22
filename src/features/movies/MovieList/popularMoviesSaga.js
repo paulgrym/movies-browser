@@ -1,23 +1,37 @@
 import { delay, call, put, takeLatest } from "redux-saga/effects";
-import { APIgenresUrl, APIPopularMoviesUrl } from "../../APIdata";
+import {
+  APIgenresUrl,
+  APIPopularMoviesUrl,
+  APISearchMovieUrl,
+} from "../../APIdata";
 import { getAPI } from "../../getAPI";
-import { fetchMoviesError, fetchMovies, fetchMoviesSuccess, setGenres } from "./popularMoviesSlice";
+import {
+  fetchMovies,
+  fetchMoviesSuccess,
+  fetchMoviesError,
+  setGenres,
+} from "./popularMoviesSlice";
 
-function* fetchPopularMoviesWorker() {
+function* fetchPopularMoviesWorker({ payload: { query } }) {
   const popularMoviesPage1 = `${APIPopularMoviesUrl}&page=1`;
+  const searchMovieByQuery = `${APISearchMovieUrl}${query}`;
 
   try {
     yield delay(1000);
-    const popularMovies = yield call(getAPI, popularMoviesPage1);
+    const request = yield call(
+      getAPI,
+      !query 
+        ? popularMoviesPage1 
+        : searchMovieByQuery
+    );    
     const genres = yield call(getAPI, APIgenresUrl);
-    yield put(fetchMoviesSuccess(popularMovies));
+    yield put(fetchMoviesSuccess(request));
     yield put(setGenres(genres));
-    console.log(popularMovies);
   } catch (error) {
-    yield put(fetchMoviesError());
-  };
-};
+    yield put(fetchMoviesError);
+  }
+}
 
 export function* watchFetchPopularMovies() {
   yield takeLatest(fetchMovies.type, fetchPopularMoviesWorker);
-};
+}
