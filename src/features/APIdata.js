@@ -13,3 +13,7 @@ export const APIgenresUrl = `${APIUrl}/genre/movie/list?api_key=${APIKey}`
 export const APImovieDetailsUrl = (movieId) => `${APIUrl}/movie/${movieId}?api_key=${APIKey}`;
 
 export const APImovieCreditsUrl = (movieId) => `${APIUrl}/movie/${movieId}/credits?api_key=${APIKey}`;
+
+export const APIpersonDetailsUrl = (personId) => `${APIUrl}/person/${personId}?api_key=${APIKey}`;
+
+export const APIpersonCreditsUrl = (personId) => `${APIUrl}/person/${personId}/credits?api_key=${APIKey}`;
