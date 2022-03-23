@@ -1,0 +1,1 @@
+export const capitalize = (query) => query[0].toUpperCase() + query.slice(1);
