@@ -30,6 +30,7 @@ export const Crew = () => {
             profilePath={person.profile_path}
             fullName={person.name}
             job={person.job}
+            id={person.id}
           />
         ))
         }
