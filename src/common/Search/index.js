@@ -1,4 +1,5 @@
 import debounce from "lodash.debounce";
+// import {debounce} from "redux-saga/effects";
 import { useLocation } from "react-router-dom";
 import { StyledSearch } from "./styled";
 import searchQueryParamName from "./searchQueryParamName";
@@ -7,6 +8,7 @@ import { useReplaceQueryParameter } from "./queryParameterHooks";
 export const Search = () => {
   const location = useLocation();
   const replaceQueryParameter = useReplaceQueryParameter();
+  // const query = useQueryParameter(searchQueryParamName);
 
   const onInputChange = debounce(({ target }) => {
     replaceQueryParameter({
@@ -14,7 +16,11 @@ export const Search = () => {
       value: target.value.trim() !== "" ? target.value : undefined,
     });
 
-    target.value = "";
+    // replaceQueryParameter({
+    //   key: "page",
+    //   value: target.value.trim() !== "" ? target.value : undefined,
+    // });
+
   }, 1000);
 
   return (
