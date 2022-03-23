@@ -8,6 +8,7 @@ import { APIImageUrl } from "../../../APIdata";
 import { selectMovieCast } from "../movieDetailsSlice"
 import { Arrow, Container, ShowAllButton } from "../../../../common/ShowAllButton";
 import { PeopleWrapper } from "../../../../common/PeopleWrapper";
+import { PersonImage } from "../../../../common/PersonTile/styled";
 
 export const Cast = () => {
   const cast = useSelector(selectMovieCast);
@@ -21,7 +22,6 @@ export const Cast = () => {
   return (
     <Section as="article">
       <Title>Cast</Title>
-
       <PeopleWrapper>
         {cast.slice(0, castShown).map(person => (
           <PersonTile
@@ -30,11 +30,11 @@ export const Cast = () => {
             profilePath={person.profile_path}
             fullName={person.name}
             character={person.character}
+            id={person.id}
           />
         ))
         }
       </PeopleWrapper>
-
       <Container>
         <ShowAllButton
           onClick={toggleIsAllCastShown}
@@ -45,7 +45,6 @@ export const Cast = () => {
           {!isAllCastShown && <Arrow> ⇓</Arrow>}
         </ShowAllButton>
       </Container>
-
     </Section>
   );
 };
