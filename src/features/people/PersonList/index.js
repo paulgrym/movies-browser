@@ -11,35 +11,38 @@ import {
   fetchPeople,
   selectError,
   selectLoading,
-  selectPersonByQuery,
+  selectPeople,
+  selectTotalResults,
 } from "./popularPeopleSlice";
 import { APIImageUrl } from "../../APIdata";
 import { useQueryParameter } from "../../../common/Search/queryParameterHooks";
 import searchQueryParamName from "../../../common/Search/searchQueryParamName";
 import { NoResultsPage } from "../../../common/NoResultsPage";
+import { capitalize } from "../../capitalize";
 
-
-export const PersonList = () => {
+  export const PersonList = () => {
   const dispatch = useDispatch();
   const query = useQueryParameter(searchQueryParamName);
-
-  useEffect(() => {
-    dispatch(fetchPeople(query));
-  }, [dispatch, query]);
-
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
-  const people = useSelector((state) => selectPersonByQuery(state, query));
+  const people = useSelector(selectPeople);
+  const totalResults = useSelector(selectTotalResults);
+
+  useEffect(() => {
+    dispatch(fetchPeople({ query }));
+  }, [dispatch, query]);
 
   return (
     <Section>
-      {query && people.length === 0 
+      {query && totalResults === 0
         ? <NoResultsPage query={query} />
-        : loading 
+        : error 
+          ? <ErrorPage />
+          : loading 
             ? <>
                 <Title>
                   {query
-                    ? `Search results for "${query[0].toUpperCase() + query.slice(1)}"`
+                    ? `Search results for "${capitalize(query)}"`
                     : "Popular people"}
                 </Title>
                 <Loader />
@@ -49,7 +52,7 @@ export const PersonList = () => {
                 : <>
                     <Title>
                       {query
-                        ? `Search results for "${query[0].toUpperCase() + query.slice(1)}" (${people.length})`
+                        ? `Search results for "${capitalize(query)} (${totalResults})"`
                         : "Popular people"}
                     </Title>
                     <PeopleWrapper>
