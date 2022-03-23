@@ -4,7 +4,7 @@ import { ReactComponent as StarIcon } from "../../../../images/star.svg";
 
 export const Wrapper = styled.div`
   margin-bottom: 64px;
-  background: ${({ theme }) => theme.colors.black};
+  background:#000000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,14 +14,30 @@ export const Wrapper = styled.div`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}){
-    margin-bottom: 16px;  }
+    margin-bottom: 16px;  
+  }
 `
 
 export const BackdropContainer = styled.div`
   position: relative;
   max-width: 1368px;
   margin: 0 5%;
-  max-height: 90vh;
+
+  &&::after{
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+
+    background: 
+    linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0.689555) 4.66%, rgba(0, 0, 0, 0.439033) 9.34%, rgba(0, 0, 0, 0.20628) 15.16%, rgba(0, 0, 0, 0) 24.22%), 
+    linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.689555) 4.66%, rgba(0, 0, 0, 0.439033) 9.34%, rgba(0, 0, 0, 0.20628) 15.16%, rgba(0, 0, 0, 0) 24.22%),
+    linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.689555) 4.66%, rgba(0, 0, 0, 0.439033) 9.34%, rgba(0, 0, 0, 0.20628) 15.16%, rgba(0, 0, 0, 0) 24.22%), 
+    linear-gradient(189.44deg, rgba(0, 0, 0, 0) 58.48%, rgba(0, 0, 0, 0.106473) 63.17%, rgba(0, 0, 0, 0.235359) 68.85%, rgba(0, 0, 0, 0.492821) 78.08%, rgba(0, 0, 0, 0.740286) 85.86%, #000000 92.87%);
+  }
 `
 
 export const Backdrop = styled.img`
