@@ -10,8 +10,8 @@ export const PersonInfo = () => {
   const profilePath = personDetails.profile_path;
 
   const formatBirthday = (date) => {
-    const newDate = date.split("-");
-    return `${newDate[2]}.${newDate[1]}.${newDate[0]}`
+    const newDate = date?.split("-");
+    return newDate && `${newDate[2]}.${newDate[1]}.${newDate[0]}`
   }
 
   return (
