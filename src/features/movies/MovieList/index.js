@@ -7,6 +7,7 @@ import {
   selectGenres,
   selectMovies,
   selectTotalResults,
+  // selectPage,
 } from "./popularMoviesSlice";
 import { Section } from "../../../common/Section";
 import { MovieWrapper } from "../../../common/MovieWrapper";
@@ -19,30 +20,35 @@ import searchQueryParamName from "../../../common/Search/searchQueryParamName";
 import { NoResultsPage } from "../../../common/NoResultsPage";
 import { useQueryParameter } from "../../../common/Search/queryParameterHooks";
 import { nanoid } from "@reduxjs/toolkit";
+import { capitalize } from "../../capitalize";
 
 export const MovieList = () => {
   const dispatch = useDispatch();
   const query = useQueryParameter(searchQueryParamName);
-  
-  useEffect(() => {
-    dispatch(fetchMovies({ query }));
-  }, [dispatch, query]);
-  
+  // const page = useQueryParameter("page");
   const genresTable = useSelector(selectGenres);
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
   const movies = useSelector(selectMovies);
   const totalResults = useSelector(selectTotalResults);
-
+  
+  useEffect(() => {
+    dispatch(fetchMovies({ query }));
+  }, [dispatch, query]);
+  
   return (
-      <Section>
-        {query && error || totalResults === 0
+      <>
+      {query && totalResults === 0
           ? <NoResultsPage query={query}/>
-          : loading
+          : error 
+            ? <ErrorPage />
+            :
+          <Section>
+          {loading
               ? <>
                   <Title>
                       {query
-                        ? `Search results for "${query[0].toUpperCase() + query.slice(1)}"`
+                        ? `Search results for "${capitalize(query)}"`
                         : "Popular movies"}
                   </Title>
                   <Loader />
@@ -69,9 +75,12 @@ export const MovieList = () => {
                             id={movie.id}
                           />
                         ))}
-                      </MovieWrapper>
-                    </>
-        }
-      </Section>
-  );
+                        </MovieWrapper>
+                        </>
+}
+                        </Section>
+                      }
+                      </>
+        
+                    );
 };
