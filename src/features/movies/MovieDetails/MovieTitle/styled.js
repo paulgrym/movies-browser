@@ -4,8 +4,12 @@ import { ReactComponent as StarIcon } from "../../../../images/star.svg";
 
 export const Wrapper = styled.div`
   margin-bottom: 64px;
+  background: ${({ theme }) => theme.colors.black};
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
-  @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
+  @media (max-width: ${({ theme }) => theme.breakpoints.extraLarge}){
     margin-bottom: 28px;
   }
 
@@ -13,16 +17,42 @@ export const Wrapper = styled.div`
     margin-bottom: 16px;  }
 `
 
+export const BackdropContainer = styled.div`
+  position: relative;
+  max-width: 1368px;
+  margin: 0 5%;
+  max-height: 90vh;
+`
+
+export const Backdrop = styled.img`
+  display: block;
+  width: 100%;
+  height:100%;
+  object-fit: cover;
+  object-position: left top;
+`
+
+export const Container = styled.div`
+  color: ${({ theme }) => theme.colors.white};
+  position: absolute;
+  bottom: 8%;
+  left: 5%;
+  z-index: 3;
+`
+
 export const Title = styled.h2`
-  color: ${({ theme }) => theme.colors.black};
   font-weight: 600;
   font-size: 64px;
   line-height: 1.2;
   margin: 56px 0 24px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
-    font-size: 44px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.extraLarge}){
+    font-size: 38px;
     margin: 30px 0 16px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
+    font-size: 30px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}){
@@ -32,12 +62,12 @@ export const Title = styled.h2`
 `
 
 export const Rating = styled.div`
-  margin: 24px 0 56px;
+  margin: 24px 0 0;
   font-size: 16px;
   line-height: 1.2;
   
-  @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
-    margin: 8px 0 16px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.extraLarge}){
+    margin: 8px 0 0;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}){
@@ -45,7 +75,6 @@ export const Rating = styled.div`
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    margin-bottom: 8px;
     gap: 8px;
   }
 `;
@@ -55,9 +84,12 @@ export const RateContainer = styled.div`
   align-items: center;
   margin-bottom: 16px;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
+    margin-bottom: 8px;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.small}){
     margin-bottom: 0;
-
   }
 `
 
@@ -66,8 +98,12 @@ export const RateIcon = styled(StarIcon)`
   height: auto;
   width: 40px;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.extraLarge}){
+    width: 26px;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
-    width: 30px;
+    width: 20px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}){
@@ -82,14 +118,18 @@ export const Rate = styled.span`
   margin: 0 8px;
 
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
+  @media (max-width: ${({ theme }) => theme.breakpoints.extraLarge}){
     font-size: 18px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
+    font-size: 16px;
+    margin: 0 2px 0 4px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}){
     font-weight: 600;
     font-size: 14px;
-    margin: 0 2px 0 4px;
   }
 `;
 
@@ -97,11 +137,11 @@ export const MaxRate = styled.span`
   font-size: 16px;
   line-height: 1.2;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
+  @media (max-width: ${({ theme }) => theme.breakpoints.extraLarge}){
     font-size: 12px;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.small}){
+  @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
     font-size: 10px;
   }
 `
@@ -111,11 +151,11 @@ export const Votes = styled.p`
   line-height: 1.2;
   margin: 0;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
+  @media (max-width: ${({ theme }) => theme.breakpoints.extraLarge}){
     font-size: 12px;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.small}){
+  @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
     font-size: 10px;
   }
 `;

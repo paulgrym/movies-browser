@@ -22,22 +22,21 @@ export const MovieDetails = () => {
   const error = useSelector(selectError);
 
   return (
-    <Section>
-      {error
-        ? <ErrorPage />
-        : <>
-          {loading
-            ? <Loader />
-            :
-            <>
-              <MovieTitle />
+    error
+      ? <Section><ErrorPage /></Section>
+      : <>
+        {loading
+          ? <Section><Loader /></Section>
+          :
+          <>
+            <MovieTitle />
+            <Section>
               <MovieInfo />
               <Cast />
               <Crew />
-            </>
-          }
-        </>
-      }
-    </Section>
+            </Section>
+          </>
+        }
+      </>
   );
 };
