@@ -30,7 +30,7 @@ export const MovieCrew = () => {
               poster={`${APIImageUrl}/w342${movie.poster_path}`}
               posterPath={movie.poster_path}
               title={movie.title}
-              date={movie.release_date.slice(0, 4)}
+              date={movie.release_date?.slice(0, 4)}
               voteAverage={movie.vote_average}
               voteCount={`${movie.vote_count} votes`}
               genres={genresTable.filter((genre) => movie.genre_ids.includes(genre.id))}
