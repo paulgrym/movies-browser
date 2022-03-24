@@ -65,7 +65,7 @@ export const MovieInfo = () => {
             </Tags>
             <Rating>
               <RateIcon />
-              <Rate>{movieDetails.vote_average} </Rate>
+              <Rate>{movieDetails.vote_average?.toFixed(1).replace(".", ",")} </Rate>
               <MaxRate>/10 </MaxRate>
               <Votes>{movieDetails.vote_count} votes</Votes>
             </Rating>
