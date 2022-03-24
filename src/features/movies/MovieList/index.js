@@ -7,7 +7,6 @@ import {
   selectGenres,
   selectMovies,
   selectTotalResults,
-  // selectPage,
 } from "./popularMoviesSlice";
 import { Section } from "../../../common/Section";
 import { MovieWrapper } from "../../../common/MovieWrapper";
@@ -16,7 +15,7 @@ import { Loader } from "../../../common/Loader";
 import { ErrorPage } from "../../../common/ErrorPage";
 import { MovieTile } from "../../../common/MovieTile";
 import { APIImageUrl } from "../../APIdata";
-import searchQueryParamName from "../../../common/Search/searchQueryParamName";
+import { queryParameters } from "../../../common/Search/queryParameters";
 import { NoResultsPage } from "../../../common/NoResultsPage";
 import { useQueryParameter } from "../../../common/Search/queryParameterHooks";
 import { nanoid } from "@reduxjs/toolkit";
@@ -24,8 +23,7 @@ import { capitalize } from "../../capitalize";
 
 export const MovieList = () => {
   const dispatch = useDispatch();
-  const query = useQueryParameter(searchQueryParamName);
-  // const page = useQueryParameter("page");
+  const query = useQueryParameter(queryParameters.search);
   const genresTable = useSelector(selectGenres);
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
@@ -58,7 +56,7 @@ export const MovieList = () => {
                   : <>
                       <Title>
                         {query
-                          ? `Search results for "${query[0].toUpperCase() + query.slice(1)}" (${totalResults})`
+                          ? `Search results for "${capitalize(query)}" (${totalResults})`
                           : "Popular movies"}
                       </Title>
                       <MovieWrapper>
