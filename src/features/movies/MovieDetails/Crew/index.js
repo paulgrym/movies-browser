@@ -35,7 +35,7 @@ export const Crew = () => {
         }
       </PeopleWrapper>
 
-      {crew.length > 10 && <Container>
+      {crew.length >= 10 && <Container>
         <ShowAllButton
           onClick={toggleIsAllCrewShown}
           isAllPeopleShown={isAllCrewShown}
