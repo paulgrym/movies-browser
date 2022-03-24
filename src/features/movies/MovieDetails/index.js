@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 import { Cast } from "./Cast";
 import { Crew } from "./Crew";
 import { MovieTitle } from "./MovieTitle";
+import { MainContainer } from "../../../common/MainContainer";
 
 export const MovieDetails = () => {
   const dispatch = useDispatch();
@@ -23,18 +24,20 @@ export const MovieDetails = () => {
 
   return (
     error
-      ? <Section><ErrorPage /></Section>
+      ? <Section>< ErrorPage /></Section >
       : <>
         {loading
           ? <Section><Loader /></Section>
           :
           <>
             <MovieTitle />
-            <Section>
-              <MovieInfo />
-              <Cast />
-              <Crew />
-            </Section>
+            <MainContainer>
+              <Section>
+                <MovieInfo />
+                <Cast />
+                <Crew />
+              </Section>
+            </MainContainer>
           </>
         }
       </>

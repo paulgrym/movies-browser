@@ -7,6 +7,7 @@ import { PersonTile } from "../../../common/PersonTile";
 import { ErrorPage } from "../../../common/ErrorPage";
 import { Loader } from "../../../common/Loader";
 import { PeopleWrapper } from "../../../common/PeopleWrapper"
+import { MainContainer } from "../../../common/MainContainer";
 import {
   fetchPeople,
   selectError,
@@ -28,29 +29,31 @@ export const PersonList = () => {
   const error = useSelector(selectError);
 
   return (
-    <Section>
-      {error
-        ? <ErrorPage />
-        : <>
-          <Title>Popular people</Title>
-          {loading
-            ? <Loader />
-            : <PeopleWrapper>
-              {
-                popularPeople.map(person => (
-                  <PersonTile
-                    key={nanoid()}
-                    profileImage={`${APIImageUrl}/w185${person.profile_path}`}
-                    profilePath={person.profile_path}
-                    fullName={person.name}
-                  />
-                ))
-              }
-            </PeopleWrapper>
-          }
-        </>
-      }
-    </Section>
+    <MainContainer>
+      <Section>
+        {error
+          ? <ErrorPage />
+          : <>
+            <Title>Popular people</Title>
+            {loading
+              ? <Loader />
+              : <PeopleWrapper>
+                {
+                  popularPeople.map(person => (
+                    <PersonTile
+                      key={nanoid()}
+                      profileImage={`${APIImageUrl}/w185${person.profile_path}`}
+                      profilePath={person.profile_path}
+                      fullName={person.name}
+                    />
+                  ))
+                }
+              </PeopleWrapper>
+            }
+          </>
+        }
+      </Section>
+    </MainContainer>
   );
 };
 
