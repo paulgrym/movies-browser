@@ -36,49 +36,47 @@ export const MovieList = () => {
   
   return (
       <>
-      {query && totalResults === 0
+        {query && totalResults === 0
           ? <NoResultsPage query={query}/>
           : error 
-            ? <ErrorPage />
-            :
-          <Section>
-          {loading
-              ? <>
-                  <Title>
-                      {query
-                        ? `Search results for "${capitalize(query)}"`
-                        : "Popular movies"}
-                  </Title>
-                  <Loader />
-                </>
-              : error
-                  ? <ErrorPage />
-                  : <>
-                      <Title>
-                        {query
-                          ? `Search results for "${capitalize(query)}" (${totalResults})`
-                          : "Popular movies"}
-                      </Title>
-                      <MovieWrapper>
-                        {movies.map((movie) => (
-                          <MovieTile
-                            key={nanoid()}
-                            poster={`${APIImageUrl}/w342${movie.poster_path}`}
-                            posterPath={movie.poster_path}
-                            title={movie.title}
-                            date={movie.release_date ? movie.release_date.slice(0, 4) : "Date: Unknown"}
-                            voteAverage={movie.vote_average}
-                            voteCount={`${movie.vote_count} votes`}
-                            genres={genresTable.filter((genre) => movie.genre_ids.includes(genre.id))}
-                            id={movie.id}
-                          />
-                        ))}
-                        </MovieWrapper>
-                        </>
-}
-                        </Section>
-                      }
+              ? <ErrorPage />
+              : <Section>
+                  {loading
+                    ? <>
+                        <Title>
+                          {query
+                            ? `Search results for "${capitalize(query)}"`
+                            : "Popular movies"}
+                        </Title>
+                        <Loader />
                       </>
-        
-                    );
+                    : error
+                    ? <ErrorPage />
+                    : <>
+                        <Title>
+                          {query
+                            ? `Search results for "${capitalize(query)}" (${totalResults})`
+                            : "Popular movies"}
+                        </Title>
+                        <MovieWrapper>
+                          {movies.map((movie) => (
+                            <MovieTile
+                              key={nanoid()}
+                              poster={`${APIImageUrl}/w342${movie.poster_path}`}
+                              posterPath={movie.poster_path}
+                              title={movie.title}
+                              date={movie.release_date ? movie.release_date.slice(0, 4) : "Date: Unknown"}
+                              voteAverage={movie.vote_average}
+                              voteCount={`${movie.vote_count} votes`}
+                              genres={genresTable.filter((genre) => movie.genre_ids.includes(genre.id))}
+                              id={movie.id}
+                            />
+                          ))}
+                        </MovieWrapper>
+                      </>
+                  } 
+                </Section>
+        }
+      </>        
+  );
 };
