@@ -16,9 +16,9 @@ import {
 } from "./popularPeopleSlice";
 import { APIImageUrl } from "../../APIdata";
 import { useQueryParameter } from "../../../common/Search/queryParameterHooks";
+import { queryParameters } from "../../../common/Search/queryParameters";
 import { NoResultsPage } from "../../../common/NoResultsPage";
 import { capitalize } from "../../capitalize";
-import { queryParameters } from "../../../common/Search/queryParameters";
 
   export const PersonList = () => {
   const dispatch = useDispatch();
