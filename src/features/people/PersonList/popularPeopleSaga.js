@@ -10,11 +10,11 @@ import {
 function* fetchPopularPeopleWorker( { payload: { query } }) {
   const popularPeople = `${APIPopularPeopleUrl}&page=1`;
   const searchPerson = `${APISearchPersonUrl}&query=${query}`;
-  const request = !query ? popularPeople : searchPerson;
+  const urlPath = !query ? popularPeople : searchPerson;
 
   try {
-    yield delay(1000);
-    const requestPeople = yield call(getAPI, request);
+    yield delay(500);
+    const requestPeople = yield call(getAPI, urlPath);
     console.log(requestPeople);
     yield put(fetchPeopleSuccess(requestPeople));
   } catch (error) {
