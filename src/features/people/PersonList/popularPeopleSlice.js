@@ -11,6 +11,7 @@ const peopleSlice = createSlice({
   reducers: {
     fetchPeople: (state) => {
       state.loading = true;
+      state.error = false;
     },
 
     fetchPeopleSuccess: (state, { payload: people }) => {
@@ -20,6 +21,7 @@ const peopleSlice = createSlice({
     },
 
     fetchPeopleError: (state) => {
+      state.loading = false;
       state.error = true;
     },
   },

@@ -15,6 +15,7 @@ const moviesSlice = createSlice({
   reducers: {
     fetchMovies: (state) => {
       state.loading = true;
+      state.error = false;
     },
 
     setGenres: (state, { payload: genres }) => {
@@ -31,6 +32,7 @@ const moviesSlice = createSlice({
     },
 
     fetchMoviesError: (state) => {
+      state.loading = false;
       state.error = true;
     },
   },
