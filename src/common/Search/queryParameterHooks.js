@@ -8,18 +8,20 @@ export const useQueryParameter = (key) => {
 };
 
 export const useReplaceQueryParameter = () => {
-  const location = useLocation();
   const history = useHistory();
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
 
-  return ({ key, value }) => {
-    const searchParams = new URLSearchParams(location.search);
+  return parameters => {
+    parameters.forEach(({ key, value }) => {
+      if (value === "") {
+        searchParams.delete(key);
+      } else {
+        searchParams.set(key, value);
+      }
+    });
 
-    if(value === undefined){
-      searchParams.delete(key);
-    } else {
-      searchParams.set(key, value)
-    }
-
-    history.push(`${location.pathname}?${searchParams.toString()}`)
+    history.push(`${location.pathname}?${searchParams.toString()}`);
   };
+
 };
