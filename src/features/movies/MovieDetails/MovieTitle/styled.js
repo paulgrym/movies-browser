@@ -78,9 +78,11 @@ export const Title = styled.h2`
 `
 
 export const Rating = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   margin: 24px 0 0;
   font-size: 16px;
-  line-height: 1.2;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.extraLarge}){
     margin: 8px 0 0;
@@ -88,31 +90,20 @@ export const Rating = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}){
     font-size: 10px;
-    display: flex;
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-end;
     flex-wrap: wrap;
     gap: 8px;
   }
 `;
 
-export const RateContainer = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 16px;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
-    margin-bottom: 8px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.small}){
-    margin-bottom: 0;
-  }
-`
+export const RateContainer = styled.div``
 
 export const RateIcon = styled(StarIcon)`
   color: ${({ theme }) => theme.colors.yellow};
   height: auto;
   width: 40px;
+  vertical-align: bottom;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.extraLarge}){
     width: 26px;
@@ -130,9 +121,7 @@ export const RateIcon = styled(StarIcon)`
 export const Rate = styled.span`
   font-weight: 500;
   font-size: 30px;
-  line-height: 1.3;
-  margin: 0 8px;
-
+  margin: 0 4px 0 8px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.extraLarge}){
     font-size: 18px;
@@ -151,7 +140,6 @@ export const Rate = styled.span`
 
 export const MaxRate = styled.span`
   font-size: 16px;
-  line-height: 1.2;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.extraLarge}){
     font-size: 12px;
@@ -162,9 +150,8 @@ export const MaxRate = styled.span`
   }
 `
 
-export const Votes = styled.p`
+export const Votes = styled.span`
   font-size: 16px;
-  line-height: 1.2;
   margin: 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.extraLarge}){
