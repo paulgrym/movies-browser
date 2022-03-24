@@ -16,13 +16,13 @@ import {
 } from "./popularPeopleSlice";
 import { APIImageUrl } from "../../APIdata";
 import { useQueryParameter } from "../../../common/Search/queryParameterHooks";
-import searchQueryParamName from "../../../common/Search/searchQueryParamName";
 import { NoResultsPage } from "../../../common/NoResultsPage";
 import { capitalize } from "../../capitalize";
+import { queryParameters } from "../../../common/Search/queryParameters";
 
   export const PersonList = () => {
   const dispatch = useDispatch();
-  const query = useQueryParameter(searchQueryParamName);
+  const query = useQueryParameter(queryParameters.search);
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
   const people = useSelector(selectPeople);
