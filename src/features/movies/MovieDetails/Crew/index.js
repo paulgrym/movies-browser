@@ -33,16 +33,18 @@ export const Crew = () => {
             />
           ))}
         </PeopleWrapper>
-        {crew.length >= 10 && <Container>
-          <ShowAllButton
-            onClick={toggleIsAllCrewShown}
-            isAllPeopleShown={isAllCrewShown}
-          >
-            {isAllCrewShown && <Arrow> ⇑ </Arrow>}
-            {isAllCrewShown ? "Hide" : "Show all"}
-            {!isAllCrewShown && <Arrow> ⇓</Arrow>}
-          </ShowAllButton>
-        </Container>}
+        {crew.length >= 10 && (
+          <Container>
+            <ShowAllButton
+              onClick={toggleIsAllCrewShown}
+              isAllPeopleShown={isAllCrewShown}
+            >
+              {isAllCrewShown && <Arrow> ⇑ </Arrow>}
+              {isAllCrewShown ? "Hide" : "Show all"}
+              {!isAllCrewShown && <Arrow> ⇓</Arrow>}
+            </ShowAllButton>
+          </Container>
+        )}
       </Section>
     );
   } else return null;

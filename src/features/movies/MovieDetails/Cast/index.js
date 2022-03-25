@@ -33,16 +33,18 @@ export const Cast = () => {
             />
           ))}
         </PeopleWrapper>
-        {cast.length >= 10 && <Container>
-          <ShowAllButton
-            onClick={toggleIsAllCastShown}
-            isAllPeopleShown={isAllCastShown}
-          >
-            {isAllCastShown && <Arrow> ⇑ </Arrow>}
-            {isAllCastShown ? "Hide" : "Show all"}
-            {!isAllCastShown && <Arrow> ⇓</Arrow>}
-          </ShowAllButton>
-        </Container>}
+        {cast.length >= 10 && (
+          <Container>
+            <ShowAllButton
+              onClick={toggleIsAllCastShown}
+              isAllPeopleShown={isAllCastShown}
+            >
+              {isAllCastShown && <Arrow> ⇑ </Arrow>}
+              {isAllCastShown ? "Hide" : "Show all"}
+              {!isAllCastShown && <Arrow> ⇓</Arrow>}
+            </ShowAllButton>
+          </Container>
+        )}
       </Section>
     );
   } else return null;
