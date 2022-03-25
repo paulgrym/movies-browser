@@ -14,6 +14,8 @@ import {
   selectPeople,
 } from "./popularPeopleSlice";
 import { APIImageUrl } from "../../APIdata";
+import { MainContainer } from "../../../common/MainContainer";
+import { Pagination } from "../../../common/Pagination";
 
 
 export const PersonList = () => {
@@ -28,29 +30,36 @@ export const PersonList = () => {
   const error = useSelector(selectError);
 
   return (
-    <Section>
+    <MainContainer>
       {error
-        ? <ErrorPage />
-        : <>
-          <Title>Popular people</Title>
-          {loading
-            ? <Loader />
-            : <PeopleWrapper>
-              {
-                popularPeople.map(person => (
-                  <PersonTile
-                    key={nanoid()}
-                    profileImage={`${APIImageUrl}/w185${person.profile_path}`}
-                    profilePath={person.profile_path}
-                    fullName={person.name}
-                  />
-                ))
-              }
-            </PeopleWrapper>
-          }
-        </>
+        ? <Section>
+          <ErrorPage />
+        </Section>
+        : loading
+          ? <Section>
+            <Title>Popular people</Title>
+            <Loader />
+          </Section>
+          : <>
+            <Section>
+              <Title>Popular movies</Title>
+              <PeopleWrapper>
+                {
+                  popularPeople.map(person => (
+                    <PersonTile
+                      key={nanoid()}
+                      profileImage={`${APIImageUrl}/w185${person.profile_path}`}
+                      profilePath={person.profile_path}
+                      fullName={person.name}
+                    />
+                  ))
+                }
+              </PeopleWrapper>
+            </Section>
+            <Pagination />
+          </>
       }
-    </Section>
+    </MainContainer>
   );
 };
 
