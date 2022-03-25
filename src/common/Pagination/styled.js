@@ -6,7 +6,11 @@ export const StyledPagination = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 200px;
+  margin: 40px 0 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}){
+    margin-top: 32px;
+  }
 `;
 
 export const PageInfo = styled.span`
