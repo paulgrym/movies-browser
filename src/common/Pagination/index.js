@@ -3,14 +3,14 @@ import { Arrow, Button, ButtonText, StyledPagination, PageText, PageInfo } from 
 export const Pagination = () => {
   return (
     <StyledPagination>
-      <Button back disabled>
-        <Arrow back />
-        <Arrow back mobile />
+      <Button back="true" disabled>
+        <Arrow back="true" />
+        <Arrow back="true" mobile="true" />
         <ButtonText>First</ButtonText>
       </Button>
 
-      <Button back disabled>
-        <Arrow back />
+      <Button back="true" disabled>
+        <Arrow back="true" />
         <ButtonText>Previous</ButtonText>
       </Button>
 
@@ -29,7 +29,7 @@ export const Pagination = () => {
       <Button>
         <ButtonText>Last</ButtonText>
         <Arrow />
-        <Arrow mobile />
+        <Arrow mobile="true" />
       </Button>
     </StyledPagination>
   );
