@@ -15,10 +15,14 @@ export const PageInfo = styled.span`
   line-height: 1.5;
   color: ${({ theme }) => theme.colors.darkergrey};
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.small}){
+  @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
     margin: 0;
-    font-size: 10px;
+    font-size: 14px;
     line-height: 24px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}){
+    font-size: 10px;
   }
 `;
 
@@ -33,10 +37,14 @@ export const PageText = styled.span`
     margin-right: 0;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.small}){
-    margin: 0 2px;
-    font-size: 10px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
+    margin: 0 3px;
+    font-size: 14px;
     line-height: 24px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}){
+    font-size: 10px;
   }
 `;
 
@@ -59,7 +67,7 @@ export const Button = styled.button`
     margin-right: 12px;
   `}
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.small}){
+  @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
     padding: 8px 12px;
     margin-left: 8px;
   
@@ -79,12 +87,11 @@ export const Button = styled.button`
     cursor: default;
     filter: unset;
   }
-
-  
 `;
 
 export const ButtonText = styled.span`
-  @media (max-width: ${({ theme }) => theme.breakpoints.small}){
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
     display:none;
   }
 `;
@@ -93,14 +100,19 @@ export const Arrow = styled(ArrowIconNext)`
   color: ${({ theme }) => theme.colors.blue};
   margin-left: 8px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.small}){
-    width: 5px;
-    height: 8px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
     margin-left: 0px;
+    width: 6px;
+    height: 10px;
 
     ${({ back }) => back && css`
       transform: rotate(180deg) translateX(0%);
     `}
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}){
+    width: 5px;
+    height: 8px;
   }
 
   ${({ back }) => back && css`
@@ -110,7 +122,7 @@ export const Arrow = styled(ArrowIconNext)`
   ${({ mobile }) => mobile && css`
     display:none;
     
-    @media (max-width: ${({ theme }) => theme.breakpoints.small}){
+    @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
       display:block;
       margin-left: 4px;
 
