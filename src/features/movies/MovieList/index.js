@@ -9,6 +9,7 @@ import { ErrorPage } from "../../../common/ErrorPage";
 import { MovieTile } from "../../../common/MovieTile";
 import { APIImageUrl } from "../../APIdata";
 import { nanoid } from "@reduxjs/toolkit";
+import { Pagination } from "../../../common/Pagination";
 
 export const MovieList = () => {
   const dispatch = useDispatch();
@@ -30,23 +31,26 @@ export const MovieList = () => {
           <Title>Popular movies</Title>
           {loading
             ? <Loader />
-            : <MovieWrapper>
-              {
-                popularMovies.map((movie) => (
-                  <MovieTile
-                    key={nanoid()}
-                    poster={`${APIImageUrl}/w342${movie.poster_path}`}
-                    posterPath={movie.poster_path}
-                    title={movie.title}
-                    date={movie.release_date.slice(0, 4)}
-                    voteAverage={movie.vote_average}
-                    voteCount={`${movie.vote_count} votes`}
-                    genres={genresTable.filter((genre) => movie.genre_ids.includes(genre.id))}
-                    id={movie.id}
-                  />
-                ))
-              }
-            </MovieWrapper>
+            : <>
+              <MovieWrapper>
+                {
+                  popularMovies.map((movie) => (
+                    <MovieTile
+                      key={nanoid()}
+                      poster={`${APIImageUrl}/w342${movie.poster_path}`}
+                      posterPath={movie.poster_path}
+                      title={movie.title}
+                      date={movie.release_date.slice(0, 4)}
+                      voteAverage={movie.vote_average}
+                      voteCount={`${movie.vote_count} votes`}
+                      genres={genresTable.filter((genre) => movie.genre_ids.includes(genre.id))}
+                      id={movie.id}
+                    />
+                  ))
+                }
+              </MovieWrapper>
+              <Pagination />
+            </>
           }
         </>
       }
