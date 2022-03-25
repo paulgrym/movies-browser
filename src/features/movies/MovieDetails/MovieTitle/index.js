@@ -10,7 +10,7 @@ export const MovieTitle = () => {
     return (
       <Wrapper>
         <BackdropContainer>
-          <Backdrop src={`${APIImageUrl}/original/${movieDetails.backdrop_path}`} />
+          <Backdrop src={`${APIImageUrl}/w1280/${movieDetails.backdrop_path}`} />
           <Container>
             <Title>{movieDetails.title}</Title>
             <Rating>
