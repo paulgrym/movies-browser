@@ -81,6 +81,10 @@ export const Button = styled.button`
     filter: brightness(95%);
   }
 
+  &:active {
+    filter: brightness(85%);
+  }
+
   &:disabled{
     background: ${({ theme }) => theme.colors.grey};
     color: ${({ theme }) => theme.colors.black};
