@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { css } from "styled-components";
-import { ReactComponent as ArrowIconNext } from "../../images/right-arrow.svg";
+import { ReactComponent as ArrowIconNext } from "../../images/next-arrow.svg";
 
 export const StyledPagination = styled.div`
   display: flex;
@@ -20,7 +20,7 @@ export const PageInfo = styled.span`
     font-size: 10px;
     line-height: 24px;
   }
-`
+`;
 
 export const PageText = styled.span`
   margin: 0 8px;
@@ -38,7 +38,7 @@ export const PageText = styled.span`
     font-size: 10px;
     line-height: 24px;
   }
-`
+`;
 
 export const Button = styled.button`
   display:  flex;
@@ -66,14 +66,13 @@ export const Button = styled.button`
     margin-right: 8px;
   `}
   }
-
-`
+`;
 
 export const ButtonText = styled.span`
   @media (max-width: ${({ theme }) => theme.breakpoints.small}){
     display:none;
   }
-`
+`;
 
 export const Arrow = styled(ArrowIconNext)`
   color: ${({ theme }) => theme.colors.blue};
