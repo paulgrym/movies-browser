@@ -51,6 +51,8 @@ export const Button = styled.button`
   font-size: 14px;
   line-height: 1.4;
   color: ${({ theme }) => theme.colors.paginationButtonText};
+  cursor: pointer;
+  transition: filter 0.4s;
 
   ${({ back }) => back && css`
     margin-left: 0px;
@@ -66,6 +68,19 @@ export const Button = styled.button`
     margin-right: 8px;
   `}
   }
+
+  &:hover {
+    filter: brightness(95%);
+  }
+
+  &:disabled{
+    background: ${({ theme }) => theme.colors.grey};
+    color: ${({ theme }) => theme.colors.black};
+    cursor: default;
+    filter: unset;
+  }
+
+  
 `;
 
 export const ButtonText = styled.span`
@@ -106,4 +121,8 @@ export const Arrow = styled(ArrowIconNext)`
       `}
     }
   `};
+
+  ${Button}:disabled & {
+    color: ${({ theme }) => theme.colors.darkergrey};
+  }
 `;
