@@ -13,16 +13,15 @@ import {
 } from "./popularMoviesSlice";
 
 function* fetchPopularMoviesWorker({ payload: { query, page } }) {
-  const popularMoviesPage1 = `${APIPopularMoviesUrl}&page=${page}`;
+  const popularMovies = `${APIPopularMoviesUrl}&page=${page}`;
   const searchMovie = `${APISearchMovieUrl}&query=${query}&page=${page}`;
-  const urlPath = !query ? popularMoviesPage1 : searchMovie;
+  const urlPath = !query ? popularMovies : searchMovie;
 
   try {
-    yield delay(500);
+    yield delay(2000);
     const requestMovies = yield call(getAPI, urlPath);    
     const genres = yield call(getAPI, APIgenresUrl);
     yield put(fetchMoviesSuccess(requestMovies));
-    console.log(requestMovies);
     yield put(setGenres(genres));
   } catch (error) {
     yield put(fetchMoviesError());
