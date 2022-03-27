@@ -14,7 +14,7 @@ export const useReplaceQueryParameter = () => {
 
   return parameters => {
     parameters.forEach(({ key, value }) => {
-      if (value === "") {
+      if (value === undefined) {
         searchParams.delete(key);
       } else {
         searchParams.set(key, value);
