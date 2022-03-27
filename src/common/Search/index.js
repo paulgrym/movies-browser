@@ -1,4 +1,5 @@
 
+import { debounce } from "redux-saga/effects"
 import { useLocation } from "react-router-dom";
 import { StyledSearch } from "./styled";
 import { useReplaceQueryParameter, useQueryParameter } from "./queryParameterHooks";
@@ -13,7 +14,7 @@ export const Search = () => {
     replaceQueryParameter([
       {
         key: queryParameters.search,
-        value: target.value.trim(),
+        value: target.value.trim() !== "" ? target.value : undefined,
       },
       {
         key: queryParameters.page,
