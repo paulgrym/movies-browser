@@ -8,6 +8,7 @@ import { APIImageUrl } from "../../../APIdata";
 import { selectMovieCast } from "../movieDetailsSlice";
 import { Arrow, Container, ShowAllButton } from "../../../../common/ShowAllButton";
 import { PeopleWrapper } from "../../../../common/PeopleWrapper";
+import { PersonImage } from "../../../../common/PersonTile/styled";
 
 export const Cast = () => {
   const cast = useSelector(selectMovieCast);
@@ -30,6 +31,7 @@ export const Cast = () => {
               profilePath={person.profile_path}
               fullName={person.name}
               character={person.character}
+              id={person.id}
             />
           ))}
         </PeopleWrapper>

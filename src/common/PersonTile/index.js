@@ -1,9 +1,9 @@
-import { Wrapper, PersonFullName, PersonImage, PersonFunction, PersonDetails, NoPersonImage, NoPersonImageIcon } from "./styled";
+import { StyledPersonTile, PersonFullName, PersonImage, PersonFunction, PersonDetails, NoPersonImage, NoPersonImageIcon } from "./styled";
 
-export const PersonTile = ({ profileImage, fullName, character, profilePath, job }) => {
+export const PersonTile = ({ profileImage, fullName, character, profilePath, job, id }) => {
 
   return (
-    <Wrapper>
+    <StyledPersonTile to={`/people/${id}`}>
       {profilePath
         ? <PersonImage src={profileImage} alt="" />
         : <NoPersonImage><NoPersonImageIcon /></NoPersonImage>
@@ -17,7 +17,7 @@ export const PersonTile = ({ profileImage, fullName, character, profilePath, job
           <PersonFunction>{job}</PersonFunction>
         }
       </PersonDetails>
-    </Wrapper>
+    </StyledPersonTile>
   );
 
 }
