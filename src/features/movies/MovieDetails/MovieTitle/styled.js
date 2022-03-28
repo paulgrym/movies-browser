@@ -100,7 +100,7 @@ export const Rating = styled.div`
 export const RateContainer = styled.div``
 
 export const RateIcon = styled(StarIcon)`
-  color: ${({ theme }) => theme.colors.yellow};
+  color: ${({ theme }) => theme.colors.candlelight};
   height: auto;
   width: 40px;
   vertical-align: bottom;

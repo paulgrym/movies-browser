@@ -67,7 +67,7 @@ export const ButtonLink = styled(Link)`
   font-size: 14px;
   font-weight: 700;
   color: ${({ theme }) => theme.colors.white};
-  background-color: ${({ theme }) => theme.colors.blue};
+  background-color: ${({ theme }) => theme.colors.scienceBlue};
   border: none;
   border-radius: 5px;
   transition: 0.5s;
