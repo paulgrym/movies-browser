@@ -22,7 +22,7 @@ export const MovieCrew = () => {
   if (movieCrew.length > 0) {
     return (
       <Section as="article">
-        <Title>Movie Crew ({movieCrew.length})</Title>
+        <Title>Movies - crew ({movieCrew.length})</Title>
         <MovieWrapper>
           {movieCrew.slice(0, movieCrewShown).map(movie => (
             <MovieTile

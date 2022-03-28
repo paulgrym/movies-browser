@@ -21,7 +21,7 @@ export const MovieCast = () => {
   if (movieCast.length > 0) {
     return (
       <Section as="article">
-        <Title>Movie - Cast ({movieCast.length})</Title>
+        <Title>Movies - cast ({movieCast.length})</Title>
         <MovieWrapper>
           {movieCast.slice(0, movieCastShown).map(movie => (
             <MovieTile
