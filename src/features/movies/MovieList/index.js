@@ -43,7 +43,10 @@ export const MovieList = () => {
       {query && totalResults === 0
         ? <NoResultsPage query={query} />
         : error
-          ? <ErrorPage />
+          ?
+          <Section>
+            <ErrorPage />
+          </Section>
           : <Section>
             {loading
               ? <>

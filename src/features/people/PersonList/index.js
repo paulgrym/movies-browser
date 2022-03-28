@@ -38,12 +38,14 @@ export const PersonList = () => {
 
   return (
     <MainContainer>
-      <Section>
-        {query && totalResults === 0
-          ? <NoResultsPage query={query} />
-          : error
-            ? <ErrorPage />
-            : loading
+      {query && totalResults === 0
+        ? <NoResultsPage query={query} />
+        : error
+          ? <Section>
+            <ErrorPage />
+          </Section>
+          : <Section>
+            {loading
               ? <>
                 <Title>
                   {query
@@ -71,8 +73,9 @@ export const PersonList = () => {
                     ))}
                   </PeopleWrapper>
                 </>
-        }
-      </Section>
+            }
+          </Section>
+      }
     </MainContainer>
   );
 };
