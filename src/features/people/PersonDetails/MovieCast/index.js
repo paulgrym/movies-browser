@@ -37,16 +37,18 @@ export const MovieCast = () => {
             />
           ))}
         </MovieWrapper>
-        <Container>
-          <ShowAllButton
-            onClick={toggleIsAllMovieCastShown}
-            isAllMovieCastShown={isAllMovieCastShown}
-          >
-            {isAllMovieCastShown && <Arrow> ⇑ </Arrow>}
-            {isAllMovieCastShown ? "Hide" : "Show all"}
-            {!isAllMovieCastShown && <Arrow> ⇓</Arrow>}
-          </ShowAllButton>
-        </Container>
+        {movieCast.length > 8 && (
+          <Container>
+            <ShowAllButton
+              onClick={toggleIsAllMovieCastShown}
+              isAllMovieCastShown={isAllMovieCastShown}
+            >
+              {isAllMovieCastShown && <Arrow> ⇑ </Arrow>}
+              {isAllMovieCastShown ? "Hide" : "Show all"}
+              {!isAllMovieCastShown && <Arrow> ⇓</Arrow>}
+            </ShowAllButton>
+          </Container>
+        )}
       </Section>
     );
   } return null;

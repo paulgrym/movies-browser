@@ -38,16 +38,18 @@ export const MovieCrew = () => {
             />
           ))}
         </MovieWrapper>
-        <Container>
-          <ShowAllButton
-            onClick={toggleIsAllMovieCrewShown}
-            isAllMovieCrewShown={isAllMovieCrewShown}
-          >
-            {isAllMovieCrewShown && <Arrow> ⇑ </Arrow>}
-            {isAllMovieCrewShown ? "Hide" : "Show all"}
-            {!isAllMovieCrewShown && <Arrow> ⇓</Arrow>}
-          </ShowAllButton>
-        </Container>
+        {movieCrew.length > 8 && (
+          <Container>
+            <ShowAllButton
+              onClick={toggleIsAllMovieCrewShown}
+              isAllMovieCrewShown={isAllMovieCrewShown}
+            >
+              {isAllMovieCrewShown && <Arrow> ⇑ </Arrow>}
+              {isAllMovieCrewShown ? "Hide" : "Show all"}
+              {!isAllMovieCrewShown && <Arrow> ⇓</Arrow>}
+            </ShowAllButton>
+          </Container>
+        )}
       </Section>
     );
   } return null;
