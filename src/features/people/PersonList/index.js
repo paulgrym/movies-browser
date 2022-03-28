@@ -9,14 +9,15 @@ import { Loader } from "../../../common/Loader";
 import { PeopleWrapper } from "../../../common/PeopleWrapper"
 import {
   fetchPeople,
+  fetchPeopleSearch,
   selectError,
   selectLoading,
   selectPeople,
   selectTotalResults,
 } from "./popularPeopleSlice";
 import { APIImageUrl } from "../../APIdata";
-import { useQueryParameter } from "../../../common/Search/queryParameterHooks";
-import { queryParameters } from "../../../common/Search/queryParameters";
+import { useQueryParameter } from "../../../common/queryParameterHooks";
+import { queryParameters } from "../../../common/queryParameters";
 import { NoResultsPage } from "../../../common/NoResultsPage";
 import { capitalize } from "../../capitalize";
 
@@ -29,7 +30,9 @@ import { capitalize } from "../../capitalize";
   const totalResults = useSelector(selectTotalResults);
 
   useEffect(() => {
-    dispatch(fetchPeople({ query }));
+    query
+      ? dispatch(fetchPeopleSearch({ query }))
+      : dispatch(fetchPeople({ query }));
   }, [dispatch, query]);
 
   return (

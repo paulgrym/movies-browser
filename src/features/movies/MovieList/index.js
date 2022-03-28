@@ -16,9 +16,9 @@ import { Loader } from "../../../common/Loader";
 import { ErrorPage } from "../../../common/ErrorPage";
 import { MovieTile } from "../../../common/MovieTile";
 import { APIImageUrl } from "../../APIdata";
-import { queryParameters } from "../../../common/Search/queryParameters";
+import { queryParameters } from "../../../common/queryParameters";
 import { NoResultsPage } from "../../../common/NoResultsPage";
-import { useQueryParameter } from "../../../common/Search/queryParameterHooks";
+import { useQueryParameter } from "../../../common/queryParameterHooks";
 import { nanoid } from "@reduxjs/toolkit";
 import { capitalize } from "../../capitalize";
 
