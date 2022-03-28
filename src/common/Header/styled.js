@@ -7,11 +7,6 @@ import { Link } from "react-router-dom";
 export const Wrapper = styled.header`
   background-color: ${({ theme }) => theme.colors.woodsmoke};
   color: ${({ theme }) => theme.colors.white};
-  margin-bottom: 58px;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
-    margin-bottom: 24px;
-  }
 `;
 
 export const Content = styled.div`

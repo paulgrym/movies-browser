@@ -17,6 +17,7 @@ const moviesSlice = createSlice({
       state.loading = true;
       state.error = false;
     },
+
     fetchMoviesSearch: (state) => {
       state.loading = true;
       state.error = false;
@@ -36,6 +37,7 @@ const moviesSlice = createSlice({
     },
 
     fetchMoviesError: (state) => {
+      state.loading = false;
       state.error = true;
       state.loading = false;
     },

@@ -19,5 +19,6 @@ export const theme = {
         small: "480px",
         medium: "767px",
         large: "1024px",
+        extraLarge: "1199px",
     },
 };

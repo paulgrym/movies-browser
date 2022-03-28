@@ -7,6 +7,7 @@ import { PersonTile } from "../../../common/PersonTile";
 import { ErrorPage } from "../../../common/ErrorPage";
 import { Loader } from "../../../common/Loader";
 import { PeopleWrapper } from "../../../common/PeopleWrapper"
+import { MainContainer } from "../../../common/MainContainer";
 import {
   fetchPeople,
   fetchPeopleSearch,
@@ -21,7 +22,7 @@ import { queryParameters } from "../../../common/queryParameters";
 import { NoResultsPage } from "../../../common/NoResultsPage";
 import { capitalize } from "../../capitalize";
 
-  export const PersonList = () => {
+export const PersonList = () => {
   const dispatch = useDispatch();
   const query = useQueryParameter(queryParameters.search);
   const loading = useSelector(selectLoading);
@@ -36,13 +37,14 @@ import { capitalize } from "../../capitalize";
   }, [dispatch, query]);
 
   return (
-    <Section>
-      {query && totalResults === 0
-        ? <NoResultsPage query={query} />
-        : error 
-          ? <ErrorPage />
-          : loading 
-            ? <>
+    <MainContainer>
+      <Section>
+        {query && totalResults === 0
+          ? <NoResultsPage query={query} />
+          : error
+            ? <ErrorPage />
+            : loading
+              ? <>
                 <Title>
                   {query
                     ? `Search results for "${capitalize(query)}"`
@@ -50,26 +52,27 @@ import { capitalize } from "../../capitalize";
                 </Title>
                 <Loader />
               </>
-            : error 
+              : error
                 ? <ErrorPage />
                 : <>
-                    <Title>
-                      {query
-                        ? `Search results for "${capitalize(query)} (${totalResults})"`
-                        : "Popular people"}
-                    </Title>
-                    <PeopleWrapper>
-                      {people.map((person) => (
-                        <PersonTile
-                          key={nanoid()}
-                          profileImage={`${APIImageUrl}/w185${person.profile_path}`}
-                          profilePath={person.profile_path}
-                          fullName={person.name}
-                        />
-                      ))}
-                    </PeopleWrapper>
-                  </>
-      }
-    </Section>
+                  <Title>
+                    {query
+                      ? `Search results for "${capitalize(query)} (${totalResults})"`
+                      : "Popular people"}
+                  </Title>
+                  <PeopleWrapper>
+                    {people.map((person) => (
+                      <PersonTile
+                        key={nanoid()}
+                        profileImage={`${APIImageUrl}/w185${person.profile_path}`}
+                        profilePath={person.profile_path}
+                        fullName={person.name}
+                      />
+                    ))}
+                  </PeopleWrapper>
+                </>
+        }
+      </Section>
+    </MainContainer>
   );
 };

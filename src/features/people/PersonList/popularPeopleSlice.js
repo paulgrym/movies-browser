@@ -14,6 +14,7 @@ const peopleSlice = createSlice({
       state.loading = true;
       state.error = false;
     },
+
     fetchPeopleSearch: (state) => {
       state.loading = true;
       state.error = false;
@@ -26,6 +27,7 @@ const peopleSlice = createSlice({
     },
 
     fetchPeopleError: (state) => {
+      state.loading = false;
       state.error = true;
       state.loading = false;
     },
