@@ -1,10 +1,11 @@
 import { useLocation } from "react-router-dom";
 import { StyledSearch } from "./styled";
-import { useReplaceQueryParameter } from "./queryParameterHooks";
-import { queryParameters } from "./queryParameters";
+import { useReplaceQueryParameter, useQueryParameter} from "../../common/queryParameterHooks";
+import { queryParameters } from "../../common/queryParameters";
 
 export const Search = () => {
   const location = useLocation();
+  const query = useQueryParameter(queryParameters.search);
   const replaceQueryParameter = useReplaceQueryParameter();
 
   const onInputChange = ({ target }) => {
@@ -22,6 +23,7 @@ export const Search = () => {
 
   return (
     <StyledSearch
+      value={query ? query : ""}
       onChange={onInputChange}
       placeholder={`Search for ${
         location.pathname === "/movies" ||
