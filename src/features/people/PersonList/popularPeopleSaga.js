@@ -1,20 +1,29 @@
-import { delay, call, put, takeLatest } from "redux-saga/effects";
-import { APIPopularPeopleUrl } from "../../APIdata";
+import { delay, debounce, call, put, takeLatest } from "redux-saga/effects";
+import { APIPopularPeopleUrl, APISearchPersonUrl } from "../../APIdata";
 import { getAPI } from "../../getAPI";
-import { fetchPeople, fetchPeopleError, fetchPeopleSuccess } from "./popularPeopleSlice";
+import {
+  fetchPeople,
+  fetchPeopleError,
+  fetchPeopleSearch,
+  fetchPeopleSuccess
+} from "./popularPeopleSlice";
 
-function* fetchPopularPeopleWorker() {
-  const popularPeoplePage1 = `${APIPopularPeopleUrl}&page=1`;
+function* fetchPopularPeopleWorker( { payload: { query, page } }) {
+  const popularPeople = `${APIPopularPeopleUrl}&page=${page}`;
+  const searchPerson = `${APISearchPersonUrl}&query=${query}&page=${page}`;
+  const urlPath = !query ? popularPeople : searchPerson;
+  console.log(urlPath);
 
   try {
-    yield delay(2000);
-    const popularPeople = yield call(getAPI, popularPeoplePage1);
-    yield put(fetchPeopleSuccess(popularPeople));
+    yield delay(300);
+    const requestPeople = yield call(getAPI, urlPath);
+    yield put(fetchPeopleSuccess(requestPeople));
   } catch (error) {
     yield put(fetchPeopleError());
-  };
-};
+  }
+}
 
 export function* watchFetchPopularPeople() {
+  yield debounce(2000, fetchPeopleSearch.type, fetchPopularPeopleWorker);
   yield takeLatest(fetchPeople.type, fetchPopularPeopleWorker);
-};
+}

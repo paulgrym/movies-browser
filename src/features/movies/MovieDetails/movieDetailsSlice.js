@@ -13,6 +13,7 @@ const movieDetailsSlice = createSlice({
   reducers: {
     fetchMovieDetails: (state) => {
       state.loading = true;
+      state.error = false;
     },
 
     fetchMovieDetailsSuccess: (state, { payload }) => {
@@ -22,6 +23,7 @@ const movieDetailsSlice = createSlice({
     },
 
     fetchMovieDetailsError: (state) => {
+      state.loading = false;
       state.error = true;
     },
 
