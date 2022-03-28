@@ -17,7 +17,7 @@ export const PageInfo = styled.span`
   margin: 0 12px;
   font-size: 16px;
   line-height: 1.5;
-  color: ${({ theme }) => theme.colors.darkergrey};
+  color: ${({ theme }) => theme.colors.waterloo};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
     margin: 0;
@@ -32,7 +32,7 @@ export const PageInfo = styled.span`
 
 export const PageText = styled.span`
   margin: 0 8px;
-  color: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.woodsmoke};
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5px;
@@ -56,13 +56,13 @@ export const Button = styled.button`
   display:  flex;
   align-items: center;
   border: none;
-  background: ${({ theme }) => theme.colors.lightblue};
+  background: ${({ theme }) => theme.colors.pattensBlue};
   padding: 8px 16px;
   margin-left: 12px;
   border-radius: 5px;
   font-size: 14px;
   line-height: 1.4;
-  color: ${({ theme }) => theme.colors.paginationButtonText};
+  color: ${({ theme }) => theme.colors.mineShaft};
   cursor: pointer;
   transition: filter 0.4s;
 
@@ -90,8 +90,8 @@ export const Button = styled.button`
   }
 
   &:disabled{
-    background: ${({ theme }) => theme.colors.grey};
-    color: ${({ theme }) => theme.colors.black};
+    background: ${({ theme }) => theme.colors.mystic};
+    color: ${({ theme }) => theme.colors.woodsmoke};
     cursor: default;
     filter: unset;
   }
@@ -105,7 +105,7 @@ export const ButtonText = styled.span`
 `;
 
 export const Arrow = styled(ArrowIconNext)`
-  color: ${({ theme }) => theme.colors.blue};
+  color: ${({ theme }) => theme.colors.scienceBlue};
   margin-left: 8px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
@@ -143,6 +143,6 @@ export const Arrow = styled(ArrowIconNext)`
   `};
 
   ${Button}:disabled & {
-    color: ${({ theme }) => theme.colors.darkergrey};
+    color: ${({ theme }) => theme.colors.waterloo};
   }
 `;

@@ -17,9 +17,7 @@ import {
   selectTotalResults,
 } from "./popularPeopleSlice";
 import { APIImageUrl } from "../../APIdata";
-import { MainContainer } from "../../../common/MainContainer";
 import { Pagination } from "../../../common/Pagination";
-
 import { useQueryParameter } from "../../../common/queryParameterHooks";
 import { queryParameters } from "../../../common/queryParameters";
 import { NoResultsPage } from "../../../common/NoResultsPage";
