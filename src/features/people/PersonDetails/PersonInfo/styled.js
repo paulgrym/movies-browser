@@ -77,10 +77,6 @@ export const DetailedInfo = styled.div`
 export const Key = styled.span`
   color: ${({ theme }) => theme.colors.keyGrey};
   margin-right: 10px;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.small}){
-    display: none;
-  }
 `;
 
 export const Value = styled.div``;

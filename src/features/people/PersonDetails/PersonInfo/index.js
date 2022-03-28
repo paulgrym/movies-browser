@@ -9,11 +9,6 @@ export const PersonInfo = () => {
   const personDetails = useSelector(selectPerson);
   const profilePath = personDetails.profile_path;
 
-  const formatBirthday = (date) => {
-    const newDate = date?.split("-");
-    return newDate && `${newDate[2]}.${newDate[1]}.${newDate[0]}`
-  }
-
   return (
     <Section>
       <PersonTile>
@@ -27,18 +22,32 @@ export const PersonInfo = () => {
             <DetailedInfo>
               <Key>Date of birth:</Key>
               <Value>
-                {formatBirthday(personDetails.birthday)}
+                {
+                  personDetails.birthday
+                    ? (new Date(personDetails.birthday)).toLocaleDateString()
+                    : "Unknown"
+                }
               </Value>
             </DetailedInfo>
             <DetailedInfo>
               <Key>Place of birth:</Key>
               <Value>
-                {personDetails.place_of_birth}
+                {
+                  personDetails.place_of_birth
+                    ? personDetails.place_of_birth
+                    : "Unknown"
+                }
               </Value>
             </DetailedInfo>
           </Content>
         </Wrapper>
-        <Description>{personDetails.biography}</Description>
+        <Description>
+          {
+            personDetails.biography
+              ? personDetails.biography
+              : null
+          }
+        </Description>
       </PersonTile>
     </Section>
   );
