@@ -17,6 +17,10 @@ const moviesSlice = createSlice({
       state.loading = true;
       state.error = false;
     },
+    fetchMoviesSearch: (state) => {
+      state.loading = true;
+      state.error = false;
+    },
 
     setGenres: (state, { payload: genres }) => {
       state.genres = genres.genres;
@@ -40,6 +44,7 @@ const moviesSlice = createSlice({
 
 export const {
   fetchMovies,
+  fetchMoviesSearch,
   fetchMoviesSuccess,
   fetchMoviesError,
   setGenres,
