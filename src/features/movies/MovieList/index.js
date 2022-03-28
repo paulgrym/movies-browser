@@ -7,6 +7,7 @@ import {
   selectGenres,
   selectMovies,
   selectTotalResults,
+  fetchMoviesSearch,
 } from "./popularMoviesSlice";
 import { Section } from "../../../common/Section";
 import { MovieWrapper } from "../../../common/MovieWrapper";
@@ -31,7 +32,9 @@ export const MovieList = () => {
   const totalResults = useSelector(selectTotalResults);
   
   useEffect(() => {
-    dispatch(fetchMovies({ query }));
+    query 
+      ? dispatch(fetchMoviesSearch({ query }))
+      : dispatch(fetchMovies({ query }));
   }, [dispatch, query]);
   
   return (
