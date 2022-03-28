@@ -10,7 +10,7 @@ export const Spinner = styled.div`
   margin: 120px auto 24px;
   width: 91px;
   height: 91px;
-  border: 12px solid ${({ theme }) => theme.colors.loaderGrey};
+  border: 12px solid ${({ theme }) => theme.colors.snuff};
   border-right-color: ${({ theme }) => theme.colors.black};
   border-radius: 50%;
   animation: LoadingSpinner 1.2s linear infinite;

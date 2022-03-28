@@ -41,7 +41,7 @@ export const NoPersonImageIcon = styled(NoPersonIcon)`
 export const NoPersonImage = styled.div`
   flex-shrink:0;
   height: 252px;
-  background: ${({ theme }) => theme.colors.darkgrey};
+  background: ${({ theme }) => theme.colors.silver};
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -94,7 +94,7 @@ export const PersonFullName = styled.p`
 `;
 
 export const PersonFunction = styled.p`
-  color: ${({ theme }) => theme.colors.darkergrey};
+  color: ${({ theme }) => theme.colors.waterloo};
   margin: 8px 0 0;
   font-size: 18px;
   line-height: 1.5;

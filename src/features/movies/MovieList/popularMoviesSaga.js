@@ -1,22 +1,36 @@
-import { delay, call, put, takeLatest } from "redux-saga/effects";
-import { APIgenresUrl, APIPopularMoviesUrl } from "../../APIdata";
+import { debounce, delay, call, put, takeLatest } from "redux-saga/effects";
+import {
+  APIgenresUrl,
+  APIPopularMoviesUrl,
+  APISearchMovieUrl,
+} from "../../APIdata";
 import { getAPI } from "../../getAPI";
-import { fetchMoviesError, fetchMovies, fetchMoviesSuccess, setGenres } from "./popularMoviesSlice";
+import {
+  fetchMovies,
+  fetchMoviesSuccess,
+  fetchMoviesError,
+  setGenres,
+  fetchMoviesSearch,
+} from "./popularMoviesSlice";
 
-function* fetchPopularMoviesWorker() {
-  const popularMoviesPage1 = `${APIPopularMoviesUrl}&page=1`;
+function* fetchPopularMoviesWorker({ payload: { query, page } }) {
+  const popularMovies = `${APIPopularMoviesUrl}&page=${page}`;
+  const searchMovie = `${APISearchMovieUrl}&query=${query}&page=${page}`;
+  const urlPath = !query ? popularMovies : searchMovie;
+  console.log(urlPath);
 
   try {
-    yield delay(1000);
-    const popularMovies = yield call(getAPI, popularMoviesPage1);
+    yield delay(300)
+    const requestMovies = yield call(getAPI, urlPath);    
     const genres = yield call(getAPI, APIgenresUrl);
-    yield put(fetchMoviesSuccess(popularMovies));
+    yield put(fetchMoviesSuccess(requestMovies));
     yield put(setGenres(genres));
   } catch (error) {
     yield put(fetchMoviesError());
-  };
-};
+  }
+}
 
 export function* watchFetchPopularMovies() {
-  yield takeLatest(fetchMovies.type, fetchPopularMoviesWorker);
-};
+  yield debounce(2000, fetchMoviesSearch.type, fetchPopularMoviesWorker)
+  yield takeLatest( fetchMovies.type, fetchPopularMoviesWorker);
+}

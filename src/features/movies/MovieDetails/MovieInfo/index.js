@@ -32,7 +32,6 @@ export const MovieInfo = () => {
   if (movieDetails && movieDetails.length !== 0) {
     return (
       <MovieTile>
-
         <Wrapper>
           {posterPath
             ? <MovieImage src={`${APIImageUrl}/w342${movieDetails.poster_path}`} alt="" />
@@ -41,7 +40,6 @@ export const MovieInfo = () => {
           <Content>
             <Title>{movieDetails.title}</Title>
             <Year>{movieDetails.release_date?.slice(0, 4)}</Year>
-
             <DetailedInfo>
               <Key>Production: </Key>
               <Value>
@@ -52,7 +50,6 @@ export const MovieInfo = () => {
                 }
               </Value>
             </DetailedInfo>
-
             <DetailedInfo>
               <Key>Release date: </Key>
               <Value>
@@ -63,20 +60,17 @@ export const MovieInfo = () => {
                 }
               </Value>
             </DetailedInfo>
-
             <Tags>
               {movieDetails.genres.map(genre => <Tag key={nanoid()}>{genre.name}</Tag>)}
             </Tags>
-
             <Rating>
               <RateIcon />
-              <Rate>{movieDetails.vote_average} </Rate>
+              <Rate>{movieDetails.vote_average?.toFixed(1).replace(".", ",")} </Rate>
               <MaxRate>/10 </MaxRate>
               <Votes>{movieDetails.vote_count} votes</Votes>
             </Rating>
           </Content>
         </Wrapper>
-
         <Description>{movieDetails.overview}</Description>
       </MovieTile>
     );

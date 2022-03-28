@@ -38,7 +38,7 @@ export const MovieTile = ({ posterPath, poster, title, date, voteAverage, voteCo
 
         <MovieTileRating>
           <MovieTileIcon />
-          <MovieTileRate>{voteAverage} </MovieTileRate>
+          <MovieTileRate>{voteAverage?.toFixed(1).replace(".", ",")} </MovieTileRate>
           <MovieTileVotes>{voteCount}</MovieTileVotes>
         </MovieTileRating>
       </MovieTileContent>

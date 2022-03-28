@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { ReactComponent as ErrorIcon } from "../../images/error.svg";
 
@@ -59,18 +60,20 @@ export const Message = styled.p`
   }
 `;
 
-export const Button = styled.button`
+export const ButtonLink = styled(Link)`
+  text-decoration: none; 
+  display: inline-block;
   padding: 16px 24px;
   font-size: 14px;
   font-weight: 700;
   color: ${({ theme }) => theme.colors.white};
-  background-color: ${({ theme }) => theme.colors.blue};
+  background-color: ${({ theme }) => theme.colors.scienceBlue};
   border: none;
   border-radius: 5px;
   transition: 0.5s;
   
   &:hover {
-    transform: scale(1.1);
+    filter: brightness(130%);
     cursor: pointer;
   }
 
