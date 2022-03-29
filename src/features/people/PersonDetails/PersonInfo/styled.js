@@ -79,6 +79,7 @@ export const Title = styled.h3`
 
 export const DetailedInfo = styled.div`
   display: flex;
+  flex-wrap: wrap;
   font-size: 18px;
   line-height: 1.2;
   margin: 8px 0;
@@ -95,7 +96,7 @@ export const DetailedInfo = styled.div`
 `;
 
 export const Key = styled.span`
-  color: ${({ theme }) => theme.colors.keyGrey};
+  color: ${({ theme }) => theme.colors.stormGray};
   margin-right: 10px;
 `;
 
