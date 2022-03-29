@@ -20,7 +20,7 @@ export const Cast = () => {
 
   if (cast.length !== 0) {
     return (
-      <Section as="article">
+      <article>
         <Title>Cast</Title>
         <PeopleWrapper>
           {cast.slice(0, castShown).map(person => (
@@ -45,7 +45,7 @@ export const Cast = () => {
             </ShowAllButton>
           </Container>
         )}
-      </Section>
+      </article>
     );
   } else return null;
 };

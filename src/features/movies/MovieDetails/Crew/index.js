@@ -20,7 +20,7 @@ export const Crew = () => {
 
   if (crew.length !== 0) {
     return (
-      <Section as="article">
+      <article>
         <Title>Crew</Title>
         <PeopleWrapper>
           {crew.slice(0, crewShown).map(person => (
@@ -45,7 +45,7 @@ export const Crew = () => {
             </ShowAllButton>
           </Container>
         )}
-      </Section>
+      </article>
     );
   } else return null;
 };

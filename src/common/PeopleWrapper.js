@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const PeopleWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, 196px);
+  grid-template-columns: repeat(auto-fill, 248px);
   grid-gap: 24px;
   justify-content: center;
   margin: 12px auto 40px;
