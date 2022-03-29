@@ -2,13 +2,11 @@ import { nanoid } from "@reduxjs/toolkit";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { PersonTile } from "../../../../common/PersonTile";
-import { Section } from "../../../../common/Section";
 import { Title } from "../../../../common/Title";
 import { APIImageUrl } from "../../../APIdata";
 import { selectMovieCast } from "../movieDetailsSlice";
 import { Arrow, Container, ShowAllButton } from "../../../../common/ShowAllButton";
 import { PeopleWrapper } from "../../../../common/PeopleWrapper";
-import { PersonImage } from "../../../../common/PersonTile/styled";
 
 export const Cast = () => {
   const cast = useSelector(selectMovieCast);
