@@ -14,6 +14,7 @@ import {
   selectError,
   selectLoading,
   selectPeople,
+  selectTotalPages,
   selectTotalResults,
 } from "./popularPeopleSlice";
 import { APIImageUrl } from "../../APIdata";
@@ -26,16 +27,21 @@ import { capitalize } from "../../capitalize";
 export const PersonList = () => {
   const dispatch = useDispatch();
   const query = useQueryParameter(queryParameters.search);
+
+  const paramsPage = +useQueryParameter(queryParameters.page);
+  const page = paramsPage === 0 ? 1 : paramsPage;
+
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
   const people = useSelector(selectPeople);
   const totalResults = useSelector(selectTotalResults);
+  const totalPages = useSelector(selectTotalPages);
 
   useEffect(() => {
     query
-      ? dispatch(fetchPeopleSearch({ query }))
-      : dispatch(fetchPeople({ query }));
-  }, [dispatch, query]);
+      ? dispatch(fetchPeopleSearch({ query, page }))
+      : dispatch(fetchPeople({ query, page }));
+  }, [dispatch, query, page]);
 
   return (
     <MainContainer>
@@ -76,7 +82,7 @@ export const PersonList = () => {
                     ))}
                   </PeopleWrapper>
                 </Section>
-                <Pagination />
+                <Pagination totalPages={totalPages} page={page} />
               </>
       }
     </MainContainer >

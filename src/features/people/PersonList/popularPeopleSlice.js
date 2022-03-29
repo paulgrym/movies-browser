@@ -4,6 +4,7 @@ const peopleSlice = createSlice({
   name: "popularPeople",
   initialState: {
     people: [],
+    totalPages: null,
     totalResults: null,
     loading: false,
     error: false,
@@ -23,6 +24,7 @@ const peopleSlice = createSlice({
     fetchPeopleSuccess: (state, { payload: people }) => {
       state.loading = false;
       state.people = people.results;
+      state.totalPages = people.total_pages;
       state.totalResults = people.total_results;
     },
 
@@ -45,6 +47,7 @@ export const selectPopularPeople = (state) => state.popularPeople;
 
 export const selectPeople = state => selectPopularPeople(state).people;
 export const selectTotalResults = state => selectPopularPeople(state).totalResults;
+export const selectTotalPages = state => selectPopularPeople(state).totalPages;
 export const selectLoading = state => selectPopularPeople(state).loading;
 export const selectError = state => selectPopularPeople(state).error;
 
