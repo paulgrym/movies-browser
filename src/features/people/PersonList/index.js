@@ -78,6 +78,7 @@ export const PersonList = () => {
                         profileImage={`${APIImageUrl}/w185${person.profile_path}`}
                         profilePath={person.profile_path}
                         fullName={person.name}
+                        id={person.id}
                       />
                     ))}
                   </PeopleWrapper>

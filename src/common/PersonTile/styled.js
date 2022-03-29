@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { ReactComponent as NoPersonIcon } from "../../images/no-profile-image.svg";
 
 
-export const Wrapper = styled.article`
+export const StyledPersonTile = styled(Link)`
   background: ${({ theme }) => theme.colors.white};
   padding: 16px;
   display: flex;
@@ -11,6 +12,8 @@ export const Wrapper = styled.article`
   transition: transform 0.3s;
   text-align:center;
   word-break: break-word;
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.black};
 
   &:hover {
     transform: scale(1.02);
