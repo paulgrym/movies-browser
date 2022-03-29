@@ -38,7 +38,7 @@ export const Crew = () => {
           <Container>
             <ShowAllButton
               onClick={toggleIsAllCrewShown}
-              isAllPeopleShown={isAllCrewShown}
+              isAllShown={isAllCrewShown}
             >
               {isAllCrewShown && <Arrow> ⇑ </Arrow>}
               {isAllCrewShown ? "Hide" : "Show all"}

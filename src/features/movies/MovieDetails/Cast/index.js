@@ -39,7 +39,7 @@ export const Cast = () => {
           <Container>
             <ShowAllButton
               onClick={toggleIsAllCastShown}
-              isAllPeopleShown={isAllCastShown}
+              isAllShown={isAllCastShown}
             >
               {isAllCastShown && <Arrow> ⇑ </Arrow>}
               {isAllCastShown ? "Hide" : "Show all"}

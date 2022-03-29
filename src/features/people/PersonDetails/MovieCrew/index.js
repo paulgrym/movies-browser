@@ -42,7 +42,7 @@ export const MovieCrew = () => {
           <Container>
             <ShowAllButton
               onClick={toggleIsAllMovieCrewShown}
-              isAllMovieCrewShown={isAllMovieCrewShown}
+              isAllShown={isAllMovieCrewShown}
             >
               {isAllMovieCrewShown && <Arrow> ⇑ </Arrow>}
               {isAllMovieCrewShown ? "Hide" : "Show all"}
