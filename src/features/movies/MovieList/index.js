@@ -8,6 +8,7 @@ import {
   selectMovies,
   selectTotalResults,
   fetchMoviesSearch,
+  selectTotalPages,
 } from "./popularMoviesSlice";
 import { Section } from "../../../common/Section";
 import { MovieWrapper } from "../../../common/MovieWrapper";
@@ -27,17 +28,22 @@ import { MainContainer } from "../../../common/MainContainer";
 export const MovieList = () => {
   const dispatch = useDispatch();
   const query = useQueryParameter(queryParameters.search);
+
+  const paramsPage = +useQueryParameter(queryParameters.page);
+  const page = paramsPage === 0 ? 1 : paramsPage;
+
   const genresTable = useSelector(selectGenres);
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
   const movies = useSelector(selectMovies);
   const totalResults = useSelector(selectTotalResults);
+  const totalPages = useSelector(selectTotalPages); //fix wrong totalPages in popularMovies API
 
   useEffect(() => {
     query
-      ? dispatch(fetchMoviesSearch({ query }))
-      : dispatch(fetchMovies({ query }));
-  }, [dispatch, query]);
+      ? dispatch(fetchMoviesSearch({ query, page }))
+      : dispatch(fetchMovies({ query, page }));
+  }, [dispatch, query, page]);
 
   return (
     <MainContainer>
@@ -84,7 +90,7 @@ export const MovieList = () => {
                     ))}
                   </MovieWrapper>
                 </Section>
-                <Pagination />
+                <Pagination totalPages={totalPages} page={page} />
               </>
       }
     </MainContainer >
