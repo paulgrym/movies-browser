@@ -37,7 +37,8 @@ export const MovieList = () => {
   const error = useSelector(selectError);
   const movies = useSelector(selectMovies);
   const totalResults = useSelector(selectTotalResults);
-  const totalPages = useSelector(selectTotalPages); //fix wrong totalPages in popularMovies API
+  const totalPagesFromAPI = useSelector(selectTotalPages);
+  const totalPages = query ? totalPagesFromAPI : 500;
 
   useEffect(() => {
     query
