@@ -1,7 +1,17 @@
 import { APIImageUrl } from "../../../APIdata.js"
-import { Content, Description, DetailedInfo, Key, PersonImage, PersonTile, Title, Value, Wrapper } from "./styled.js";
+import {
+  Content,
+  Description,
+  DetailedInfo,
+  Key, PersonImage,
+  PersonTile,
+  Title,
+  Value,
+  Wrapper,
+  NoPersonInfoImage
+} from "./styled.js";
 import { useSelector } from "react-redux";
-import { NoPersonImage, NoPersonImageIcon } from "../../../../common/PersonTile/styled.js";
+import { NoPersonImageIcon } from "../../../../common/PersonTile/styled.js";
 import { selectPerson } from "../personDetailsSlice.js";
 import { Section } from "../../../../common/Section.js";
 
@@ -15,7 +25,7 @@ export const PersonInfo = () => {
         <Wrapper>
           {profilePath
             ? <PersonImage src={`${APIImageUrl}/w342${profilePath}`} alt="" />
-            : <NoPersonImage><NoPersonImageIcon /></NoPersonImage>
+            : <NoPersonInfoImage><NoPersonImageIcon /></NoPersonInfoImage>
           }
           <Content>
             <Title>{personDetails.name}</Title>

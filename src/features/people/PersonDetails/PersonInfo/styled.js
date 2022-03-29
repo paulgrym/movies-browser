@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NoPersonImage } from "../../../../common/PersonTile/styled";
 
 export const PersonTile = styled.article`
   background: ${({ theme }) => theme.colors.white};
@@ -17,6 +18,25 @@ export const PersonTile = styled.article`
     display: flex;
     flex-direction: column;
     margin-bottom: 21px;
+  }
+`;
+
+export const NoPersonInfoImage = styled(NoPersonImage)`
+  width: 312px;
+  height: 468px;
+  margin-right: 40px;
+  float: left;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
+    width: 180px;
+    height: 270px;
+    margin-right: 28px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}){
+    width: 114px;
+    height: 170px;
+    margin: 0 16px 16px 0;
   }
 `;
 
