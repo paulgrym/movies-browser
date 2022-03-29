@@ -14,7 +14,7 @@ function* fetchPopularPeopleWorker({ payload: { query, page } }) {
   const urlPath = !query ? popularPeople : searchPerson;
 
   try {
-    yield delay(300);
+    if (!query) { yield delay(300) };
     const requestPeople = yield call(getAPI, urlPath);
     yield put(fetchPeopleSuccess(requestPeople));
   } catch (error) {

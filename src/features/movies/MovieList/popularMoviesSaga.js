@@ -19,7 +19,7 @@ function* fetchPopularMoviesWorker({ payload: { query, page } }) {
   const urlPath = !query ? popularMovies : searchMovie;
 
   try {
-    yield delay(300)
+    if (!query) { yield delay(300) };
     const requestMovies = yield call(getAPI, urlPath);
     const genres = yield call(getAPI, APIgenresUrl);
     yield put(fetchMoviesSuccess(requestMovies));
