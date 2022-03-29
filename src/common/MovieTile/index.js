@@ -1,4 +1,5 @@
 import { nanoid } from "@reduxjs/toolkit";
+import { toMovie } from "../../routes";
 import {
   MovieTileContent,
   MovieTileIcon,
@@ -18,7 +19,7 @@ import {
 export const MovieTile = ({ posterPath, poster, title, date, voteAverage, voteCount, genres, id }) => {
 
   return (
-    <StyledMovieTile to={`/movies/${id}`}>
+    <StyledMovieTile to={toMovie({ id: id })}>
       {posterPath
         ? <MovieTileImage src={poster} alt="" />
         : <NoMovieImage><NoMovieImageIcon /></NoMovieImage>
