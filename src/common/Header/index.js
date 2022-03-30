@@ -1,3 +1,4 @@
+import { toMovies, toPeople } from "../../routes";
 import { Search } from "../Search";
 import {
   Content,
@@ -22,7 +23,7 @@ export const Header = () => {
         <Container>
           <Logo>
             <StyledLink 
-              to="/movies"
+              to={toMovies()}
             >
               <VideoIcon />
               Movies Browser
@@ -32,14 +33,14 @@ export const Header = () => {
               <List>
                 <Item>
                   <StyledNavLink 
-                    to="/movies" 
+                    to={toMovies()} 
                   >
                   Movies
                   </StyledNavLink>
                 </Item>
                 <Item>
                   <StyledNavLink
-                    to="/people"
+                    to={toPeople()}
                   >
                   People
                   </StyledNavLink>

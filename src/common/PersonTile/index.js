@@ -1,9 +1,10 @@
+import { toPerson } from "../../routes";
 import { StyledPersonTile, PersonFullName, PersonImage, PersonFunction, PersonDetails, NoPersonImage, NoPersonImageIcon } from "./styled";
 
 export const PersonTile = ({ profileImage, fullName, character, profilePath, job, id }) => {
 
   return (
-    <StyledPersonTile to={`/people/${id}`}>
+    <StyledPersonTile to={toPerson({ id: id })}>
       {profilePath
         ? <PersonImage src={profileImage} alt="" />
         : <NoPersonImage><NoPersonImageIcon /></NoPersonImage>
