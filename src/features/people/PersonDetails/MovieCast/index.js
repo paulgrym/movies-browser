@@ -41,7 +41,7 @@ export const MovieCast = () => {
           <Container>
             <ShowAllButton
               onClick={toggleIsAllMovieCastShown}
-              isAllMovieCastShown={isAllMovieCastShown}
+              isAllShown={isAllMovieCastShown}
             >
               {isAllMovieCastShown && <Arrow> ⇑ </Arrow>}
               {isAllMovieCastShown ? "Hide" : "Show all"}

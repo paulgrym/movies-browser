@@ -13,7 +13,7 @@ function* fetchPersonDetailsWorker({ payload: personId }) {
   const personCreditsUrl = APIpersonCreditsUrl(personId);
 
   try {
-    yield delay(2000);
+    yield delay(300);
     const personDetails = yield call(getAPI, personDetailsUrl);
     const personCredit = yield call(getAPI, personCreditsUrl);
     yield put(fetchPersonDetailsSuccess(personDetails));

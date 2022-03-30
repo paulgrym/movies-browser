@@ -20,7 +20,7 @@ export const Crew = () => {
 
   if (crew.length !== 0) {
     return (
-      <Section as="article">
+      <article>
         <Title>Crew</Title>
         <PeopleWrapper>
           {crew.slice(0, crewShown).map(person => (
@@ -38,7 +38,7 @@ export const Crew = () => {
           <Container>
             <ShowAllButton
               onClick={toggleIsAllCrewShown}
-              isAllPeopleShown={isAllCrewShown}
+              isAllShown={isAllCrewShown}
             >
               {isAllCrewShown && <Arrow> ⇑ </Arrow>}
               {isAllCrewShown ? "Hide" : "Show all"}
@@ -46,7 +46,7 @@ export const Crew = () => {
             </ShowAllButton>
           </Container>
         )}
-      </Section>
+      </article>
     );
   } else return null;
 };

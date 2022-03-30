@@ -120,6 +120,7 @@ export const Year = styled.p`
 
 export const DetailedInfo = styled.div`
   display: flex;
+  flex-wrap: wrap;
   font-size: 18px;
   line-height: 1.2;
   margin: 8px 0;

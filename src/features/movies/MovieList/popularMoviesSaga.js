@@ -17,11 +17,10 @@ function* fetchPopularMoviesWorker({ payload: { query, page } }) {
   const popularMovies = `${APIPopularMoviesUrl}&page=${page}`;
   const searchMovie = `${APISearchMovieUrl}&query=${query}&page=${page}`;
   const urlPath = !query ? popularMovies : searchMovie;
-  console.log(urlPath);
 
   try {
-    yield delay(300)
-    const requestMovies = yield call(getAPI, urlPath);    
+    if (!query) { yield delay(300) };
+    const requestMovies = yield call(getAPI, urlPath);
     const genres = yield call(getAPI, APIgenresUrl);
     yield put(fetchMoviesSuccess(requestMovies));
     yield put(setGenres(genres));
@@ -32,5 +31,5 @@ function* fetchPopularMoviesWorker({ payload: { query, page } }) {
 
 export function* watchFetchPopularMovies() {
   yield debounce(2000, fetchMoviesSearch.type, fetchPopularMoviesWorker)
-  yield takeLatest( fetchMovies.type, fetchPopularMoviesWorker);
+  yield takeLatest(fetchMovies.type, fetchPopularMoviesWorker);
 }

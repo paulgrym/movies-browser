@@ -40,7 +40,7 @@ export const NoPersonImageIcon = styled(NoPersonIcon)`
 
 export const NoPersonImage = styled.div`
   flex-shrink:0;
-  height: 252px;
+  height: 300px;
   background: ${({ theme }) => theme.colors.silver};
   border-radius: 5px;
   display: flex;
@@ -57,7 +57,7 @@ export const NoPersonImage = styled.div`
 `;
 
 export const PersonImage = styled.img`
-  height: 252px;
+  height: 300px;
   border-radius: 5px;
   object-fit: cover;
   object-position: top;

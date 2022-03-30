@@ -8,6 +8,7 @@ import {
   selectMovies,
   selectTotalResults,
   fetchMoviesSearch,
+  selectTotalPages,
 } from "./popularMoviesSlice";
 import { Section } from "../../../common/Section";
 import { MovieWrapper } from "../../../common/MovieWrapper";
@@ -20,23 +21,30 @@ import { queryParameters } from "../../../common/queryParameters";
 import { NoResultsPage } from "../../../common/NoResultsPage";
 import { useQueryParameter } from "../../../common/queryParameterHooks";
 import { nanoid } from "@reduxjs/toolkit";
+import { Pagination } from "../../../common/Pagination";
 import { capitalize } from "../../capitalize";
 import { MainContainer } from "../../../common/MainContainer";
 
 export const MovieList = () => {
   const dispatch = useDispatch();
   const query = useQueryParameter(queryParameters.search);
+
+  const paramsPage = +useQueryParameter(queryParameters.page);
+  const page = paramsPage === 0 ? 1 : paramsPage;
+
   const genresTable = useSelector(selectGenres);
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
   const movies = useSelector(selectMovies);
   const totalResults = useSelector(selectTotalResults);
+  const totalPagesFromAPI = useSelector(selectTotalPages);
+  const totalPages = query ? totalPagesFromAPI : 500;
 
   useEffect(() => {
     query
-      ? dispatch(fetchMoviesSearch({ query }))
-      : dispatch(fetchMovies({ query }));
-  }, [dispatch, query]);
+      ? dispatch(fetchMoviesSearch({ query, page }))
+      : dispatch(fetchMovies({ query, page }));
+  }, [dispatch, query, page]);
 
   return (
     <MainContainer>
@@ -47,19 +55,21 @@ export const MovieList = () => {
           <Section>
             <ErrorPage />
           </Section>
-          : <Section>
-            {loading
-              ? <>
-                <Title>
-                  {query
-                    ? `Search results for "${capitalize(query)}"`
-                    : "Popular movies"}
-                </Title>
-                <Loader />
-              </>
-              : error
-                ? <ErrorPage />
-                : <>
+          : loading
+            ? <Section>
+              <Title>
+                {query
+                  ? `Search results for "${capitalize(query)}"`
+                  : "Popular movies"}
+              </Title>
+              <Loader />
+            </Section>
+            : error
+              ? <Section>
+                <ErrorPage />
+              </Section>
+              : <>
+                <Section>
                   <Title>
                     {query
                       ? `Search results for "${capitalize(query)}" (${totalResults})`
@@ -80,10 +90,10 @@ export const MovieList = () => {
                       />
                     ))}
                   </MovieWrapper>
-                </>
-            }
-          </Section>
+                </Section>
+                <Pagination totalPages={totalPages} page={page} />
+              </>
       }
-    </MainContainer>
+    </MainContainer >
   );
 };

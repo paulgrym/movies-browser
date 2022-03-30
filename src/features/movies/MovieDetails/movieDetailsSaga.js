@@ -13,7 +13,7 @@ function* fetchMovieDetailsWorker({ payload: movieId }) {
   const movieCreditsUrl = APImovieCreditsUrl(movieId);
 
   try {
-    yield delay(1000);
+    yield delay(300);
     const movieDetails = yield call(getAPI, movieDetailsUrl);
     const moviePeople = yield call(getAPI, movieCreditsUrl);
     yield put(fetchMovieDetailsSuccess(movieDetails));

@@ -8,14 +8,13 @@ import {
   fetchPeopleSuccess
 } from "./popularPeopleSlice";
 
-function* fetchPopularPeopleWorker( { payload: { query, page } }) {
+function* fetchPopularPeopleWorker({ payload: { query, page } }) {
   const popularPeople = `${APIPopularPeopleUrl}&page=${page}`;
   const searchPerson = `${APISearchPersonUrl}&query=${query}&page=${page}`;
   const urlPath = !query ? popularPeople : searchPerson;
-  console.log(urlPath);
 
   try {
-    yield delay(300);
+    if (!query) { yield delay(300) };
     const requestPeople = yield call(getAPI, urlPath);
     yield put(fetchPeopleSuccess(requestPeople));
   } catch (error) {

@@ -17,7 +17,7 @@ export const ShowAllButton = styled.button`
   &:hover{
     transform: translateY(10%);
 
-    ${({ isAllPeopleShown }) => isAllPeopleShown && css`
+    ${({ isAllShown }) => isAllShown && css`
       transform: translateY(-10%);
     `}
   }
