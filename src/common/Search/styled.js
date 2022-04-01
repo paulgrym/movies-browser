@@ -1,14 +1,52 @@
 import styled from "styled-components";
+import { ReactComponent as SearchSVG } from "../../images/search.svg";
+import { ReactComponent as ClearSVG } from "../../images/clear.svg";
 
-export const StyledSearch = styled.input`
+export const SearchBox = styled.div`
+  display: flex;
   width: 432px;
   height: 48px;
-  padding: 12px 0 12px 60px;
-  border-radius: 33px;
-  color: ${({theme}) => theme.colors.waterloo};
+  color: ${({ theme }) => theme.colors.waterloo};
   background-color: ${({ theme }) => theme.colors.white};
+  border-radius: 33px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
+    width: 100%;
+  }
+`;
+
+export const SearchIconContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 0 19px 0 24px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
+    margin: 0 10px 0 18px;
+  }
+`;
+export const SearchIcon = styled(SearchSVG)`
+  width: 24px;
+  height: 24px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
+    width: 16px;
+    height: 16px;
+  }
+`;
+
+export const StyledSearchContainer = styled.div`
+  display: flex;
+  width: 100%;
+`;
+export const StyledSearch = styled.input`
+  width: 100%;
+  padding: 12px 0;
   font-size: 16px;
   border-style: none;
+
+  &:focus {
+    outline: none;
+  }
 
   &:disabled {
     background-color: ${({ theme }) => theme.colors.gallery};
@@ -20,12 +58,34 @@ export const StyledSearch = styled.input`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
-    height: 44px;
     font-size: 13px;
-    padding: 14px 0 14px 40px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     width: 100%;
+  }
+`;
+
+export const ClearContentIcon = styled(ClearSVG)`
+  width: 24px;
+  height: 24px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
+    width: 16px;
+    height: 16px;
+  }
+`;
+
+export const ClearContentButton = styled.button`
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin-right: 24px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.2;
   }
 `;
