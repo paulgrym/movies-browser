@@ -84,8 +84,4 @@ export const ClearContentButton = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
-
-  &:disabled {
-    opacity: 0.2;
-  }
 `;
