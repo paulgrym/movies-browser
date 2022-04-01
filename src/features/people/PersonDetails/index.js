@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { ErrorPage } from "../../../common/ErrorPage";
 import { Loader } from "../../../common/Loader";
+import { MainContainer } from "../../../common/MainContainer";
 import { MovieCast } from "./MovieCast";
 import { MovieCrew } from "./MovieCrew";
 import { fetchPersonDetails, selectError, selectLoading } from "./personDetailsSlice";
@@ -27,11 +28,11 @@ export const PersonDetails = () => {
           {loading
             ? <Loader />
             :
-            <>
+            <MainContainer>
               <PersonInfo />
               <MovieCast />
               <MovieCrew />
-            </>
+            </MainContainer>
           }
         </>
       }

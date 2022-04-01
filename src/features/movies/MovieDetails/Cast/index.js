@@ -2,13 +2,11 @@ import { nanoid } from "@reduxjs/toolkit";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { PersonTile } from "../../../../common/PersonTile";
-import { Section } from "../../../../common/Section";
 import { Title } from "../../../../common/Title";
 import { APIImageUrl } from "../../../APIdata";
 import { selectMovieCast } from "../movieDetailsSlice";
 import { Arrow, Container, ShowAllButton } from "../../../../common/ShowAllButton";
 import { PeopleWrapper } from "../../../../common/PeopleWrapper";
-import { PersonImage } from "../../../../common/PersonTile/styled";
 
 export const Cast = () => {
   const cast = useSelector(selectMovieCast);
@@ -21,7 +19,7 @@ export const Cast = () => {
 
   if (cast.length !== 0) {
     return (
-      <Section as="article">
+      <article>
         <Title>Cast</Title>
         <PeopleWrapper>
           {cast.slice(0, castShown).map(person => (
@@ -39,7 +37,7 @@ export const Cast = () => {
           <Container>
             <ShowAllButton
               onClick={toggleIsAllCastShown}
-              isAllPeopleShown={isAllCastShown}
+              isAllShown={isAllCastShown}
             >
               {isAllCastShown && <Arrow> ⇑ </Arrow>}
               {isAllCastShown ? "Hide" : "Show all"}
@@ -47,7 +45,7 @@ export const Cast = () => {
             </ShowAllButton>
           </Container>
         )}
-      </Section>
+      </article>
     );
   } else return null;
 };

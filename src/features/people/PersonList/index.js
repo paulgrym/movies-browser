@@ -14,9 +14,11 @@ import {
   selectError,
   selectLoading,
   selectPeople,
+  selectTotalPages,
   selectTotalResults,
 } from "./popularPeopleSlice";
 import { APIImageUrl } from "../../APIdata";
+import { Pagination } from "../../../common/Pagination";
 import { useQueryParameter } from "../../../common/queryParameterHooks";
 import { queryParameters } from "../../../common/queryParameters";
 import { NoResultsPage } from "../../../common/NoResultsPage";
@@ -25,16 +27,21 @@ import { capitalize } from "../../capitalize";
 export const PersonList = () => {
   const dispatch = useDispatch();
   const query = useQueryParameter(queryParameters.search);
+
+  const paramsPage = +useQueryParameter(queryParameters.page);
+  const page = paramsPage === 0 ? 1 : paramsPage;
+
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
   const people = useSelector(selectPeople);
   const totalResults = useSelector(selectTotalResults);
+  const totalPages = useSelector(selectTotalPages);
 
   useEffect(() => {
     query
-      ? dispatch(fetchPeopleSearch({ query }))
-      : dispatch(fetchPeople({ query }));
-  }, [dispatch, query]);
+      ? dispatch(fetchPeopleSearch({ query, page }))
+      : dispatch(fetchPeople({ query, page }));
+  }, [dispatch, query, page]);
 
   return (
     <MainContainer>
@@ -44,19 +51,21 @@ export const PersonList = () => {
           ? <Section>
             <ErrorPage />
           </Section>
-          : <Section>
-            {loading
-              ? <>
-                <Title>
-                  {query
-                    ? `Search results for "${capitalize(query)}"`
-                    : "Popular people"}
-                </Title>
-                <Loader />
-              </>
-              : error
-                ? <ErrorPage />
-                : <>
+          : loading
+            ? <Section>
+              <Title>
+                {query
+                  ? `Search results for "${capitalize(query)}"`
+                  : "Popular people"}
+              </Title>
+              <Loader />
+            </Section>
+            : error
+              ? <Section>
+                <ErrorPage />
+              </Section>
+              : <>
+                <Section>
                   <Title>
                     {query
                       ? `Search results for "${capitalize(query)} (${totalResults})"`
@@ -73,10 +82,10 @@ export const PersonList = () => {
                       />
                     ))}
                   </PeopleWrapper>
-                </>
-            }
-          </Section>
+                </Section>
+                <Pagination totalPages={totalPages} page={page} />
+              </>
       }
-    </MainContainer>
+    </MainContainer >
   );
 };
