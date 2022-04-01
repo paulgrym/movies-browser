@@ -14,14 +14,13 @@ export const useReplaceQueryParameter = () => {
 
   return parameters => {
     parameters.forEach(({ key, value }) => {
-      if (value === undefined) {
-        searchParams.delete(key);
+      if (value === "") {
+        searchParams.delete(key); 
       } else {
         searchParams.set(key, value);
       }
     });
 
-    history.push(`${location.pathname}?${searchParams.toString()}`);
+    history.replace(`${location.pathname}?${searchParams.toString()}`);
   };
-
 };
