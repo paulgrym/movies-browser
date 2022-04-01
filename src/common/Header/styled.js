@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import { ReactComponent as VideoSVG } from "../Header/Icons/video.svg";
-import { ReactComponent as SearchSVG } from "../Header/Icons/search.svg";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { ReactComponent as VideoSVG } from "../../images/video.svg";
 
 export const Wrapper = styled.header`
   background-color: ${({ theme }) => theme.colors.woodsmoke};
@@ -16,8 +15,8 @@ export const Content = styled.div`
   display: flex;
   justify-content: space-between;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
-    padding: 16px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
+    padding: 32px 16px 16px 16px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
@@ -36,7 +35,7 @@ export const Container = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 32px;
   }
 `;
 
@@ -53,6 +52,8 @@ export const StyledLink = styled(Link)`
   letter-spacing: -1.5px;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.white};
+  white-space: nowrap;
+  margin-right: 31px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     font-size: 13px;
@@ -126,24 +127,5 @@ export const StyledNavLink = styled(NavLink)`
     font-size: 12px;
     padding: 8px 12px;
     border-radius: 29px;
-  }
-`;
-
-export const SearchBox = styled.div`
-  position: relative;
-`;
-
-export const SearchIcon = styled(SearchSVG)`
-  position: absolute;
-  top: 25%;
-  width: 24px;
-  height: 24px;
-  margin-left: 19px;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
-    width: 16px;
-    height: 16px;
-    margin-left: 16px;
-    top: 30%;
   }
 `;
