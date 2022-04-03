@@ -1,5 +1,5 @@
 import { delay, debounce, call, put, takeLatest } from "redux-saga/effects";
-import { APIPopularPeopleUrl, APISearchPersonUrl } from "../../APIdata";
+import { APIpopularPeopleUrl, APIsearchPersonUrl } from "../../APIdata";
 import { getAPI } from "../../getAPI";
 import {
   fetchPeople,
@@ -9,8 +9,8 @@ import {
 } from "./popularPeopleSlice";
 
 function* fetchPopularPeopleWorker({ payload: { query, page } }) {
-  const popularPeople = `${APIPopularPeopleUrl}&page=${page}`;
-  const searchPerson = `${APISearchPersonUrl}&query=${query}&page=${page}`;
+  const popularPeople = APIpopularPeopleUrl(page);
+  const searchPerson = APIsearchPersonUrl(query, page);
   const urlPath = !query ? popularPeople : searchPerson;
 
   try {
