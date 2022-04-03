@@ -6,6 +6,10 @@ import { ReactComponent as VideoSVG } from "../../images/video.svg";
 export const Wrapper = styled.header`
   background-color: ${({ theme }) => theme.colors.woodsmoke};
   color: ${({ theme }) => theme.colors.white};
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 10;
 `;
 
 export const Content = styled.div`
