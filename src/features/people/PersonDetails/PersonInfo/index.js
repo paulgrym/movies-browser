@@ -1,4 +1,4 @@
-import { APIImageUrl } from "../../../APIdata.js"
+import { APIImageUrl } from "../../../APIdata.js";
 import {
   Content,
   Description,

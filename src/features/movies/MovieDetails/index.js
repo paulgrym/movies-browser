@@ -17,7 +17,7 @@ export const MovieDetails = () => {
 
   useEffect(() => {
     dispatch(fetchMovieDetails(id));
-  }, [id, dispatch])
+  }, [id, dispatch]);
 
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);

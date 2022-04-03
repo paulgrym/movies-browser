@@ -1,5 +1,13 @@
 import { toPerson } from "../../routes";
-import { StyledPersonTile, PersonFullName, PersonImage, PersonFunction, PersonDetails, NoPersonImage, NoPersonImageIcon } from "./styled";
+import {
+  StyledPersonTile,
+  PersonFullName,
+  PersonImage,
+  PersonFunction,
+  PersonDetails,
+  NoPersonImage,
+  NoPersonImageIcon
+} from "./styled";
 
 export const PersonTile = ({ profileImage, fullName, character, profilePath, job, id }) => {
 
@@ -20,5 +28,4 @@ export const PersonTile = ({ profileImage, fullName, character, profilePath, job
       </PersonDetails>
     </StyledPersonTile>
   );
-
-}
+};

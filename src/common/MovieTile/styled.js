@@ -47,7 +47,7 @@ export const NoMovieImageIcon = styled(NoImageIcon)`
 `;
 
 export const NoMovieImage = styled.div`
-  flex-shrink:0;
+  flex-shrink: 0;
   height: 418px;
   background: ${({ theme }) => theme.colors.silver};
   border-radius: 5px;
@@ -104,13 +104,14 @@ export const MovieTileSubtitle = styled.p`
   font-size: 16px;
   font-weight: 400;
   margin: 0;
-  line-height: 1.5 8px;
+  line-height: 1.5;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}){
     font-size: 13px;
     line-height: 1.3;
   }
 `;
+
 export const MovieTileTags = styled.ul`
   list-style: none;
   padding-left: 0;

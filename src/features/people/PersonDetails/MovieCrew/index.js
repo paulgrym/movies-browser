@@ -53,4 +53,4 @@ export const MovieCrew = () => {
       </Section>
     );
   } return null;
-}
+};

@@ -20,9 +20,9 @@ function* fetchPopularPeopleWorker({ payload: { query, page } }) {
   } catch (error) {
     yield put(fetchPeopleError());
   }
-}
+};
 
 export function* watchFetchPopularPeople() {
   yield debounce(2000, fetchPeopleSearch.type, fetchPopularPeopleWorker);
   yield takeLatest(fetchPeople.type, fetchPopularPeopleWorker);
-}
+};

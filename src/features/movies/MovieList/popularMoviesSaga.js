@@ -27,9 +27,9 @@ function* fetchPopularMoviesWorker({ payload: { query, page } }) {
   } catch (error) {
     yield put(fetchMoviesError());
   }
-}
+};
 
 export function* watchFetchPopularMovies() {
-  yield debounce(2000, fetchMoviesSearch.type, fetchPopularMoviesWorker)
+  yield debounce(2000, fetchMoviesSearch.type, fetchPopularMoviesWorker);
   yield takeLatest(fetchMovies.type, fetchPopularMoviesWorker);
-}
+};

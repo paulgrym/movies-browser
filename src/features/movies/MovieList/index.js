@@ -60,7 +60,8 @@ export const MovieList = () => {
               <Title>
                 {query
                   ? `Search results for "${capitalize(query)}"`
-                  : "Popular movies"}
+                  : "Popular movies"
+                }
               </Title>
               <Loader />
             </Section>
@@ -73,7 +74,8 @@ export const MovieList = () => {
                   <Title>
                     {query
                       ? `Search results for "${capitalize(query)}" (${totalResults})`
-                      : "Popular movies"}
+                      : "Popular movies"
+                    }
                   </Title>
                   <MovieWrapper>
                     {movies.map((movie) => (

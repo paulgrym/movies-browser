@@ -52,4 +52,4 @@ export const MovieCast = () => {
       </Section>
     );
   } return null;
-}
+};

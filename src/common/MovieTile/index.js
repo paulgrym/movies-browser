@@ -24,11 +24,9 @@ export const MovieTile = ({ posterPath, poster, title, date, voteAverage, voteCo
         ? <MovieTileImage src={poster} alt="" />
         : <NoMovieImage><NoMovieImageIcon /></NoMovieImage>
       }
-
       <MovieTileContent>
         <MovieTileTitle> {title} </MovieTileTitle>
         <MovieTileSubtitle>{date}</MovieTileSubtitle>
-
         <MovieTileTags>
           {
             genres.map((genre) => (
@@ -36,14 +34,12 @@ export const MovieTile = ({ posterPath, poster, title, date, voteAverage, voteCo
             ))
           }
         </MovieTileTags>
-
         <MovieTileRating>
           <MovieTileIcon />
           <MovieTileRate>{voteAverage?.toFixed(1).replace(".", ",")} </MovieTileRate>
           <MovieTileVotes>{voteCount}</MovieTileVotes>
         </MovieTileRating>
       </MovieTileContent>
-
     </StyledMovieTile>
   );
 };

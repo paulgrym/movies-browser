@@ -2,7 +2,6 @@ import { nanoid } from "@reduxjs/toolkit";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { PersonTile } from "../../../../common/PersonTile";
-import { Section } from "../../../../common/Section";
 import { Title } from "../../../../common/Title";
 import { APIImageUrl } from "../../../APIdata";
 import { selectMovieCrew } from "../movieDetailsSlice";

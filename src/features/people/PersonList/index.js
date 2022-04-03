@@ -6,7 +6,7 @@ import { Title } from "../../../common/Title";
 import { PersonTile } from "../../../common/PersonTile";
 import { ErrorPage } from "../../../common/ErrorPage";
 import { Loader } from "../../../common/Loader";
-import { PeopleWrapper } from "../../../common/PeopleWrapper"
+import { PeopleWrapper } from "../../../common/PeopleWrapper";
 import { MainContainer } from "../../../common/MainContainer";
 import {
   fetchPeople,
@@ -56,7 +56,8 @@ export const PersonList = () => {
               <Title>
                 {query
                   ? `Search results for "${capitalize(query)}"`
-                  : "Popular people"}
+                  : "Popular people"
+                }
               </Title>
               <Loader />
             </Section>
@@ -69,7 +70,8 @@ export const PersonList = () => {
                   <Title>
                     {query
                       ? `Search results for "${capitalize(query)} (${totalResults})"`
-                      : "Popular people"}
+                      : "Popular people"
+                    }
                   </Title>
                   <PeopleWrapper>
                     {people.map((person) => (

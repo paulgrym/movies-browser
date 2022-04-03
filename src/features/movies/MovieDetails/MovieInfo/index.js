@@ -20,8 +20,8 @@ import {
   DetailedInfo,
   Key,
   Value
-} from "./styled"
-import { APIImageUrl } from "../../../APIdata.js"
+} from "./styled";
+import { APIImageUrl } from "../../../APIdata.js";
 import { nanoid } from "@reduxjs/toolkit";
 
 export const MovieInfo = () => {
