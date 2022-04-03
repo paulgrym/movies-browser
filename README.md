@@ -1,10 +1,39 @@
-# Movies Browser
+# Movies Browser 🎬 
+
+* [Demo](#demo)
+* [Description](#description)
+* [Technologies](#technologies)
+* [Authors](#authors)
+* [Available scripts](#available-scripts)
 
 ## Demo
 
-[Demo](https://paulgrym.github.io/movies-browser/)
+You can find a demo [here](https://paulgrym.github.io/movies-browser/).
+
+## Description
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Technologies
+
+- CSS (Flex, Grid, media queries)
+- JavaScript (ES6+)
+- Create-react-app
+- React
+- React Router
+- Styled Components
+- ThemeProvider
+- React Redux 
+- Redux Toolkit
+- Redux Saga
+- Promises, async/await
+
+## Authors
+- Paulina Grymulska: [GitHub](https://github.com/paulgrym)
+- Mieczysław Przytuła: [GitHub](https://github.com/MieczyslawFrontDev)
+- Robert Osiał: [GitHub](https://github.com/RobertOsial)
 
 ## Available Scripts
 
@@ -17,11 +46,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
