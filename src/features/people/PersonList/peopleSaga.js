@@ -6,9 +6,9 @@ import {
   fetchPeopleError,
   fetchPeopleSearch,
   fetchPeopleSuccess
-} from "./popularPeopleSlice";
+} from "./peopleSlice";
 
-function* fetchPopularPeopleWorker({ payload: { query, page } }) {
+function* fetchPeopleWorker({ payload: { query, page } }) {
   const popularPeople = APIpopularPeopleUrl(page);
   const searchPerson = APIsearchPersonUrl(query, page);
   const urlPath = !query ? popularPeople : searchPerson;
@@ -22,7 +22,7 @@ function* fetchPopularPeopleWorker({ payload: { query, page } }) {
   }
 };
 
-export function* watchFetchPopularPeople() {
-  yield debounce(2000, fetchPeopleSearch.type, fetchPopularPeopleWorker);
-  yield takeLatest(fetchPeople.type, fetchPopularPeopleWorker);
+export function* watchFetchPeople() {
+  yield debounce(2000, fetchPeopleSearch.type, fetchPeopleWorker);
+  yield takeLatest(fetchPeople.type, fetchPeopleWorker);
 };

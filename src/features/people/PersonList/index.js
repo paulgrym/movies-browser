@@ -13,10 +13,10 @@ import {
   fetchPeopleSearch,
   selectError,
   selectLoading,
-  selectPeople,
+  selectPeopleList,
   selectTotalPages,
   selectTotalResults,
-} from "./popularPeopleSlice";
+} from "./peopleSlice";
 import { APIimageUrl } from "../../APIdata";
 import { Pagination } from "../../../common/Pagination";
 import { useQueryParameter } from "../../../common/queryParameterHooks";
@@ -33,7 +33,7 @@ export const PersonList = () => {
 
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
-  const people = useSelector(selectPeople);
+  const people = useSelector(selectPeopleList);
   const totalResults = useSelector(selectTotalResults);
   const totalPages = useSelector(selectTotalPages);
 
