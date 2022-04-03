@@ -46,31 +46,33 @@ export const Search = () => {
   };
 
   return (
- <SearchBox>
-   <SearchIconContainer>
-     <SearchIcon />
-   </SearchIconContainer>
-   <StyledSearchContainer>
+    <SearchBox>
+      <SearchIconContainer>
+        <SearchIcon />
+      </SearchIconContainer>
+      <StyledSearchContainer>
         <StyledSearch
           value={query ? query : ""}
           onChange={onInputChange}
-          placeholder={`Search for ${
-            location.pathname === "/movies" ||
-            location.pathname.indexOf("/movies/") === 0
+          placeholder={
+            `Search for ${location.pathname === "/movies" ||
+              location.pathname.indexOf("/movies/") === 0
               ? "movies..."
               : "people..."
+            }`
           }
-      `}
           disabled={
             location.pathname.indexOf("/movies/") === 0 ||
             location.pathname.indexOf("/people/") === 0
           }
         />
       </StyledSearchContainer>
-      {query && <ClearContentButton onClick={clearInputContent}>
-        <ClearContentIcon/>
-      </ClearContentButton>}
- </SearchBox>
+      {query &&
+        <ClearContentButton onClick={clearInputContent}>
+          <ClearContentIcon />
+        </ClearContentButton>
+      }
+    </SearchBox>
   );
 };
 

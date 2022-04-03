@@ -24,6 +24,7 @@ export const SearchIconContainer = styled.div`
     margin: 0 10px 0 18px;
   }
 `;
+
 export const SearchIcon = styled(SearchSVG)`
   width: 24px;
   height: 24px;
@@ -38,8 +39,9 @@ export const StyledSearchContainer = styled.div`
   display: flex;
   width: 100%;
 `;
+
 export const StyledSearch = styled.input`
-width: 100%;
+  width: 100%;
   padding: 12px 0;
   font-size: 16px;
   border-style: none;
