@@ -14,8 +14,8 @@ export const useReplaceQueryParameter = () => {
 
   return parameters => {
     parameters.forEach(({ key, value }) => {
-      if (value === undefined) {
-        searchParams.delete(key);
+      if (value === "") {
+        searchParams.delete(key); 
       } else {
         searchParams.set(key, value);
       }
@@ -23,5 +23,4 @@ export const useReplaceQueryParameter = () => {
 
     history.push(`${location.pathname}?${searchParams.toString()}`);
   };
-
 };
