@@ -1,4 +1,4 @@
-import { delay, call, put, takeLatest } from "redux-saga/effects";
+import { delay, call, put, takeLatest, all } from "redux-saga/effects";
 import { APImovieCreditsUrl, APImovieDetailsUrl } from "../../APIdata";
 import { getAPI } from "../../getAPI";
 import {
@@ -14,8 +14,10 @@ function* fetchMovieDetailsWorker({ payload: movieId }) {
 
   try {
     yield delay(300);
-    const movieDetails = yield call(getAPI, movieDetailsUrl);
-    const moviePeople = yield call(getAPI, movieCreditsUrl);
+    const [movieDetails, moviePeople] = yield all([
+      call(getAPI, movieDetailsUrl),
+      call(getAPI, movieCreditsUrl)
+    ]);
     yield put(fetchMovieDetailsSuccess(movieDetails));
     yield put(setMoviePeople(moviePeople));
   } catch (error) {
