@@ -4,7 +4,6 @@ import {
   fetchMovies,
   selectError,
   selectLoading,
-  selectGenres,
   selectMoviesList,
   selectTotalResults,
   fetchMoviesSearch,
@@ -24,6 +23,7 @@ import { nanoid } from "@reduxjs/toolkit";
 import { Pagination } from "../../../common/Pagination";
 import { capitalize } from "../../capitalize";
 import { MainContainer } from "../../../common/MainContainer";
+import { selectGenres } from "../../genresSlice";
 
 export const MovieList = () => {
   const dispatch = useDispatch();
@@ -33,6 +33,7 @@ export const MovieList = () => {
   const page = paramsPage === 0 ? 1 : paramsPage;
 
   const genresTable = useSelector(selectGenres);
+
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
   const movies = useSelector(selectMoviesList);

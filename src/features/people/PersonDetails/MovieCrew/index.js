@@ -7,7 +7,7 @@ import { Section } from "../../../../common/Section";
 import { Arrow, Container, ShowAllButton } from "../../../../common/ShowAllButton";
 import { Title } from "../../../../common/Title";
 import { APIimageUrl } from "../../../APIdata";
-import { selectGenres } from "../../../movies/MovieList/moviesSlice";
+import { selectGenres } from "../../../genresSlice";
 import { selectMovieCrew } from "../personDetailsSlice";
 
 export const MovieCrew = () => {
