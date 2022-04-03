@@ -4,6 +4,7 @@ import { moviesReducer } from "./features/movies/MovieList/moviesSlice";
 import { peopleReducer } from "./features/people/PersonList/peopleSlice";
 import { movieDetailsReducer } from "./features/movies/MovieDetails/movieDetailsSlice";
 import { personDetailsReducer } from "./features/people/PersonDetails/personDetailsSlice";
+import { genresReducer } from "./features/genresSlice";
 import rootSaga from "./rootSaga";
 
 
@@ -15,6 +16,7 @@ const store = configureStore({
     people: peopleReducer,
     movieDetails: movieDetailsReducer,
     personDetails: personDetailsReducer,
+    genres: genresReducer
   },
   middleware: [sagaMiddleware],
 });
