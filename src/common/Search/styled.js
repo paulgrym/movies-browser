@@ -39,10 +39,11 @@ export const StyledSearchContainer = styled.div`
   width: 100%;
 `;
 export const StyledSearch = styled.input`
-  width: 100%;
+width: 100%;
   padding: 12px 0;
   font-size: 16px;
   border-style: none;
+  border-radius: 33px;
 
   &:focus {
     outline: none;
@@ -66,22 +67,23 @@ export const StyledSearch = styled.input`
   }
 `;
 
+export const ClearContentButton = styled.button`
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0 24px 0 19px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+`;
+
 export const ClearContentIcon = styled(ClearSVG)`
   width: 24px;
   height: 24px;
+  color: ${({theme}) => theme.colors.waterloo};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     width: 16px;
     height: 16px;
   }
-`;
-
-export const ClearContentButton = styled.button`
-  display: flex;
-  align-items: center;
-  padding: 0;
-  margin-right: 24px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
 `;
