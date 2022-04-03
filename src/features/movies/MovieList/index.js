@@ -16,7 +16,7 @@ import { Title } from "../../../common/Title";
 import { Loader } from "../../../common/Loader";
 import { ErrorPage } from "../../../common/ErrorPage";
 import { MovieTile } from "../../../common/MovieTile";
-import { APIImageUrl } from "../../APIdata";
+import { APIimageUrl } from "../../APIdata";
 import { queryParameters } from "../../../common/queryParameters";
 import { NoResultsPage } from "../../../common/NoResultsPage";
 import { useQueryParameter } from "../../../common/queryParameterHooks";
@@ -81,7 +81,7 @@ export const MovieList = () => {
                     {movies.map((movie) => (
                       <MovieTile
                         key={nanoid()}
-                        poster={`${APIImageUrl}/w342${movie.poster_path}`}
+                        poster={`${APIimageUrl}/w342${movie.poster_path}`}
                         posterPath={movie.poster_path}
                         title={movie.title}
                         date={movie.release_date ? movie.release_date.slice(0, 4) : "Date: Unknown"}

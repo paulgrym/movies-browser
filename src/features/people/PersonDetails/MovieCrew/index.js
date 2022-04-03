@@ -6,7 +6,7 @@ import { MovieWrapper } from "../../../../common/MovieWrapper";
 import { Section } from "../../../../common/Section";
 import { Arrow, Container, ShowAllButton } from "../../../../common/ShowAllButton";
 import { Title } from "../../../../common/Title";
-import { APIImageUrl } from "../../../APIdata";
+import { APIimageUrl } from "../../../APIdata";
 import { selectGenres } from "../../../movies/MovieList/popularMoviesSlice";
 import { selectMovieCrew } from "../personDetailsSlice";
 
@@ -27,7 +27,7 @@ export const MovieCrew = () => {
           {movieCrew.slice(0, movieCrewShown).map(movie => (
             <MovieTile
               key={nanoid()}
-              poster={`${APIImageUrl}/w342${movie.poster_path}`}
+              poster={`${APIimageUrl}/w342${movie.poster_path}`}
               posterPath={movie.poster_path}
               title={movie.title}
               date={movie.release_date?.slice(0, 4)}

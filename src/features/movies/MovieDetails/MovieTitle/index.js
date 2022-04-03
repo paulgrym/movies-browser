@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { APIImageUrl } from "../../../APIdata";
+import { APIimageUrl } from "../../../APIdata";
 import { selectMovie } from "../movieDetailsSlice";
 import {
   Backdrop,
@@ -22,7 +22,7 @@ export const MovieTitle = () => {
     return (
       <Wrapper>
         <BackdropContainer>
-          <Backdrop src={`${APIImageUrl}/original/${movieDetails.backdrop_path}`} />
+          <Backdrop src={`${APIimageUrl}/original/${movieDetails.backdrop_path}`} />
           <Container>
             <Title>{movieDetails.title}</Title>
             <Rating>
