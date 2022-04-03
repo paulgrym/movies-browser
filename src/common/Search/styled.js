@@ -30,8 +30,8 @@ export const SearchIcon = styled(SearchSVG)`
   height: 24px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
   }
 `;
 
@@ -61,7 +61,7 @@ export const StyledSearch = styled.input`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
-    font-size: 13px;
+    font-size: 16px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
