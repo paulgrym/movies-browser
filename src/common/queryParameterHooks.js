@@ -21,6 +21,6 @@ export const useReplaceQueryParameter = () => {
       }
     });
 
-    history.replace(`${location.pathname}?${searchParams.toString()}`);
+    history.push(`${location.pathname}?${searchParams.toString()}`);
   };
 };
