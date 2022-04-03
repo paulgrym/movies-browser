@@ -67,9 +67,9 @@ export const Search = () => {
           }
         />
       </StyledSearchContainer>
-      <ClearContentButton onClick={clearInputContent}>
-        <ClearContentIcon />
-      </ClearContentButton>
+      {query && <ClearContentButton onClick={clearInputContent}>
+        <ClearContentIcon/>
+      </ClearContentButton>}
  </SearchBox>
   );
 };
