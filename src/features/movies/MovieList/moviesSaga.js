@@ -11,9 +11,9 @@ import {
   fetchMoviesError,
   setGenres,
   fetchMoviesSearch,
-} from "./popularMoviesSlice";
+} from "./moviesSlice";
 
-function* fetchPopularMoviesWorker({ payload: { query, page } }) {
+function* fetchMoviesWorker({ payload: { query, page } }) {
   const popularMovies = APIpopularMoviesUrl(page);
   const searchMovie = APIsearchMovieUrl(query, page);
   const urlPath = !query ? popularMovies : searchMovie;
@@ -31,7 +31,7 @@ function* fetchPopularMoviesWorker({ payload: { query, page } }) {
   }
 };
 
-export function* watchFetchPopularMovies() {
-  yield debounce(2000, fetchMoviesSearch.type, fetchPopularMoviesWorker);
-  yield takeLatest(fetchMovies.type, fetchPopularMoviesWorker);
+export function* watchFetchMovies() {
+  yield debounce(2000, fetchMoviesSearch.type, fetchMoviesWorker);
+  yield takeLatest(fetchMovies.type, fetchMoviesWorker);
 };

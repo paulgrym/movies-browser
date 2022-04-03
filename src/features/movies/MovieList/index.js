@@ -5,11 +5,11 @@ import {
   selectError,
   selectLoading,
   selectGenres,
-  selectMovies,
+  selectMoviesList,
   selectTotalResults,
   fetchMoviesSearch,
   selectTotalPages,
-} from "./popularMoviesSlice";
+} from "./moviesSlice";
 import { Section } from "../../../common/Section";
 import { MovieWrapper } from "../../../common/MovieWrapper";
 import { Title } from "../../../common/Title";
@@ -35,7 +35,7 @@ export const MovieList = () => {
   const genresTable = useSelector(selectGenres);
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
-  const movies = useSelector(selectMovies);
+  const movies = useSelector(selectMoviesList);
   const totalResults = useSelector(selectTotalResults);
   const totalPagesFromAPI = useSelector(selectTotalPages);
   const totalPages = query ? totalPagesFromAPI : 500;
