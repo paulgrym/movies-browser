@@ -34,6 +34,7 @@ export const MovieCast = () => {
               voteCount={`${movie.vote_count} votes`}
               genres={genresTable.filter((genre) => movie.genre_ids.includes(genre.id))}
               id={movie.id}
+              character={movie.character}
             />
           ))}
         </MovieWrapper>

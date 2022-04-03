@@ -16,7 +16,7 @@ import {
   NoMovieImageIcon,
 } from "./styled";
 
-export const MovieTile = ({ posterPath, poster, title, date, voteAverage, voteCount, genres, id }) => {
+export const MovieTile = ({ posterPath, poster, title, date, voteAverage, voteCount, genres, id, character, job }) => {
 
   return (
     <StyledMovieTile to={toMovie({ id: id })}>
@@ -25,8 +25,17 @@ export const MovieTile = ({ posterPath, poster, title, date, voteAverage, voteCo
         : <NoMovieImage><NoMovieImageIcon /></NoMovieImage>
       }
       <MovieTileContent>
-        <MovieTileTitle> {title} </MovieTileTitle>
-        <MovieTileSubtitle>{date}</MovieTileSubtitle>
+        <MovieTileTitle>{title} </MovieTileTitle>
+        <MovieTileSubtitle>
+          {(character || job)
+            ? <>
+              {character ? character : job} {date && `(${date})`}
+            </>
+            : <>
+              {date}
+            </>
+          }
+        </MovieTileSubtitle>
         <MovieTileTags>
           {
             genres.map((genre) => (
