@@ -45,7 +45,7 @@ export const StyledSearch = styled.input`
   padding: 12px 0;
   font-size: 16px;
   border-style: none;
-  border-radius: 33px;
+  border-radius: 0 33px 33px 0;
 
   &:focus {
     outline: none;
