@@ -80,7 +80,7 @@ export const ClearContentButton = styled.button`
 export const ClearContentIcon = styled(ClearSVG)`
   width: 24px;
   height: 24px;
-  color: ${({theme}) => theme.colors.waterloo};
+  fill: ${({ theme }) => theme.colors.waterloo};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
     width: 16px;
