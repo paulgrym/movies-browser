@@ -71,6 +71,7 @@ export const ButtonLink = styled(Link)`
   border: none;
   border-radius: 5px;
   transition: 0.5s;
+  font-family: 'Open Sans', sans-serif;
   
   &:hover {
     filter: brightness(130%);
