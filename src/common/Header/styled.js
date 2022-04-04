@@ -10,6 +10,10 @@ export const Wrapper = styled.header`
   top: 0;
   width: 100%;
   z-index: 10;
+
+  @media (orientation:landscape) and (max-width: ${({ theme }) => theme.breakpoints.large}){
+    position: relative;
+  }
 `;
 
 export const Content = styled.div`
