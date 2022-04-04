@@ -1,6 +1,7 @@
 # Movies Browser 🎬 
 Movies Browser was created as the finall project of the Frontend Developer course at YouCode.
-With the use of this app you can browse as well as search for movies and people from film industry.
+The project was made in technologies such as React, React-Redux, React-Router, Styled Components and was based on the graphic design in Figma.
+With the use of this app you can browse or search for movies and people from film industry. Data about movies and people is taken from an [external API](https://www.themoviedb.org/).
 
 * [Demo](#demo)
 * [How to use](#how-to-use)
