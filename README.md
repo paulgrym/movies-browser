@@ -23,7 +23,12 @@ You can find a demo [**here**](https://paulgrym.github.io/movies-browser/).
 
 - On the **Person subpage** you can learn person's date and place of birth, read a description of the person and view lists of films in which that person participated as a cast or crew member.
 
+<img src="https://github.com/paulgrym/movies-browser/blob/main/images/main-gif.gif" alt="Features of the Movies and People pages" width="700px">
+
 - On the **Movies page** you can also search for a movie of your choice using the search bar and on the **People page** you can search for a person.
+
+<img src="https://github.com/paulgrym/movies-browser/blob/main/images/search-gif.gif" alt="Search functionality" width="700px">
+
 
 ## Technologies
 
