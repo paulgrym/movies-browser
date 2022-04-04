@@ -4,12 +4,13 @@
 * [Description](#description)
 * [Technologies](#technologies)
 * [How to use](#how-to-use)
+* [External sources](#external-sources)
 * [Authors](#authors)
 * [Available scripts](#available-scripts)
 
 ## Demo
 
-You can find a demo [here](https://paulgrym.github.io/movies-browser/).
+You can find a demo [**here**](https://paulgrym.github.io/movies-browser/).
 
 ## Description
 Movies Browser was created as the finall project of the Frontend Developer course at YouCode.
@@ -34,13 +35,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## How to use
 - On the Movies page you can look through currently popular movies. Each movie position includes informations such as title, release year, film genres and viewers' rate. To find out more about the chosen movie, click on its tile, and then you will be redirected to a movie subpage.
 
-- On the movie subpage, in addition to the informations from the movie list, you will find movie production country, the exact release date, film description, cast and crew lists. By default, cast and crew lists consist of 10 items, but you can display all items with a "Show all" button and later hide additional list items with a "Hide" button. You can also go to a specific cast or crew member subpage by clicking its tile.
+- On the Movie subpage, in addition to the informations from the movie list, you will find movie production country, the exact release date, film description, cast and crew lists. By default, cast and crew lists consist of 10 items, but you can display all items with a "Show all" button and later hide additional list items with a "Hide" button. You can also go to a specific cast or crew member subpage by clicking its tile.
 
 - On the People page you can look through currently popular people from film industry. You can go to person subpage by clicking its tile.
 
-- At the person's subpage you can learn person's date and place of birth, read a description of the person and view lists of films in which that person participated as a cast or crew member.
+- On the Person subpage you can learn person's date and place of birth, read a description of the person and view lists of films in which that person participated as a cast or crew member.
 
-- On the Movies page you can also search for a movie of your choice using the search bar and on the People Page you can search for a person.
+- On the Movies page you can also search for a movie of your choice using the search bar and on the People page you can search for a person.
+
+## External sources
+This project uses API provided by [The Movie Database](https://www.themoviedb.org/).
 
 ## Authors
 - Paulina Grymulska: [GitHub](https://github.com/paulgrym)
