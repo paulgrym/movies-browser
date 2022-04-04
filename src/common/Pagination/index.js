@@ -12,6 +12,8 @@ export const Pagination = ({ totalPages, page }) => {
         value: pagerActionValue,
       },
     ]);
+
+    window.scrollTo(0, 0);
   };
 
   return (
