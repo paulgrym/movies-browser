@@ -2,9 +2,8 @@ import { useLocation } from "react-router-dom";
 import {
   ClearContentButton,
   ClearContentIcon,
-  SearchBox,
+  SearchButton,
   SearchIcon,
-  SearchIconContainer,
   StyledSearch,
   StyledSearchContainer,
 } from "./styled";
@@ -46,33 +45,36 @@ export const Search = () => {
   };
 
   return (
-    <SearchBox>
-      <SearchIconContainer>
-        <SearchIcon />
-      </SearchIconContainer>
+    <>
       <StyledSearchContainer>
+        <SearchButton 
+         disabled={
+          location.pathname.indexOf("/movies/") === 0 ||
+          location.pathname.indexOf("/people/") === 0
+        }
+        >
+          <SearchIcon />
+        </SearchButton>
         <StyledSearch
           value={query ? query : ""}
           onChange={onInputChange}
-          placeholder={
-            `Search for ${location.pathname === "/movies" ||
-              location.pathname.indexOf("/movies/") === 0
+          placeholder={`Search for ${
+            location.pathname === "/movies" ||
+            location.pathname.indexOf("/movies/") === 0
               ? "movies..."
               : "people..."
-            }`
-          }
+          }`}
           disabled={
             location.pathname.indexOf("/movies/") === 0 ||
             location.pathname.indexOf("/people/") === 0
           }
         />
+        {query && (
+          <ClearContentButton onClick={clearInputContent}>
+            <ClearContentIcon />
+          </ClearContentButton>
+        )}
       </StyledSearchContainer>
-      {query &&
-        <ClearContentButton onClick={clearInputContent}>
-          <ClearContentIcon />
-        </ClearContentButton>
-      }
-    </SearchBox>
+    </>
   );
 };
-

@@ -2,26 +2,27 @@ import styled from "styled-components";
 import { ReactComponent as SearchSVG } from "../../images/search.svg";
 import { ReactComponent as ClearSVG } from "../../images/clear.svg";
 
-export const SearchBox = styled.div`
-  display: flex;
+export const StyledSearchContainer = styled.div`
   width: 432px;
-  height: 48px;
-  color: ${({ theme }) => theme.colors.waterloo};
-  background-color: ${({ theme }) => theme.colors.white};
-  border-radius: 33px;
+  position: relative;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
     width: 100%;
   }
 `;
 
-export const SearchIconContainer = styled.div`
+export const SearchButton = styled.button`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 24px;
+  background-color: transparent;
+  border: none;
   display: flex;
-  align-items: center;
-  margin: 0 19px 0 24px;
+  padding: 0;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
-    margin: 0 10px 0 18px;
+  &:disabled {
+    opacity: 0.3;
   }
 `;
 
@@ -35,14 +36,9 @@ export const SearchIcon = styled(SearchSVG)`
   }
 `;
 
-export const StyledSearchContainer = styled.div`
-  display: flex;
-  width: 100%;
-`;
-
 export const StyledSearch = styled.input`
   width: 100%;
-  padding: 12px 0;
+  padding: 12px 60px 12px 60px;
   font-size: 16px;
   border-style: none;
   border-radius: 33px;
@@ -53,11 +49,11 @@ export const StyledSearch = styled.input`
 
   &:disabled {
     background-color: ${({ theme }) => theme.colors.gallery};
-    opacity: 0.6;
+    opacity: 0.3;
   }
 
-  &:disabled::placeholder {
-    color: ${({ theme }) => theme.colors.silver};
+  &::placeholder {
+    color: ${({ theme }) => theme.colors.waterloo};
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.small}) {
@@ -73,10 +69,13 @@ export const ClearContentButton = styled.button`
   display: flex;
   align-items: center;
   padding: 0;
-  margin: 0 24px 0 19px;
   background-color: transparent;
   border: none;
   cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 24px;
 `;
 
 export const ClearContentIcon = styled(ClearSVG)`
