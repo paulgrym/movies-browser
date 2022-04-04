@@ -22,7 +22,7 @@ export const SearchButton = styled.button`
   padding: 0;
 
   &:disabled {
-    opacity: 0.3;
+    opacity: 0.4;
   }
 `;
 
@@ -48,8 +48,8 @@ export const StyledSearch = styled.input`
   }
 
   &:disabled {
-    background-color: ${({ theme }) => theme.colors.gallery};
-    opacity: 0.3;
+    background-color: ${({ theme }) => theme.colors.mineShaft};
+    opacity: 0.4;
   }
 
   &::placeholder {
