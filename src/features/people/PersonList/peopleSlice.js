@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const peopleSlice = createSlice({
-  name: "popularPeople",
+  name: "people",
   initialState: {
-    people: [],
+    peopleList: [],
     totalPages: null,
     totalResults: null,
     loading: false,
@@ -23,7 +23,7 @@ const peopleSlice = createSlice({
 
     fetchPeopleSuccess: (state, { payload: people }) => {
       state.loading = false;
-      state.people = people.results;
+      state.peopleList = people.results;
       state.totalPages = people.total_pages;
       state.totalResults = people.total_results;
     },
@@ -43,12 +43,12 @@ export const {
   fetchPeopleError,
 } = peopleSlice.actions;
 
-export const selectPopularPeople = (state) => state.popularPeople;
+export const selectPeople = (state) => state.people;
 
-export const selectPeople = state => selectPopularPeople(state).people;
-export const selectTotalResults = state => selectPopularPeople(state).totalResults;
-export const selectTotalPages = state => selectPopularPeople(state).totalPages;
-export const selectLoading = state => selectPopularPeople(state).loading;
-export const selectError = state => selectPopularPeople(state).error;
+export const selectPeopleList = state => selectPeople(state).peopleList;
+export const selectTotalResults = state => selectPeople(state).totalResults;
+export const selectTotalPages = state => selectPeople(state).totalPages;
+export const selectLoading = state => selectPeople(state).loading;
+export const selectError = state => selectPeople(state).error;
 
-export const popularPeopleReducer = peopleSlice.reducer;
+export const peopleReducer = peopleSlice.reducer;

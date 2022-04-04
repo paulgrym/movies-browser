@@ -6,18 +6,18 @@ import { Title } from "../../../common/Title";
 import { PersonTile } from "../../../common/PersonTile";
 import { ErrorPage } from "../../../common/ErrorPage";
 import { Loader } from "../../../common/Loader";
-import { PeopleWrapper } from "../../../common/PeopleWrapper"
+import { PeopleWrapper } from "../../../common/PeopleWrapper";
 import { MainContainer } from "../../../common/MainContainer";
 import {
   fetchPeople,
   fetchPeopleSearch,
   selectError,
   selectLoading,
-  selectPeople,
+  selectPeopleList,
   selectTotalPages,
   selectTotalResults,
-} from "./popularPeopleSlice";
-import { APIImageUrl } from "../../APIdata";
+} from "./peopleSlice";
+import { APIimageUrl } from "../../APIdata";
 import { Pagination } from "../../../common/Pagination";
 import { useQueryParameter } from "../../../common/queryParameterHooks";
 import { queryParameters } from "../../../common/queryParameters";
@@ -33,7 +33,7 @@ export const PersonList = () => {
 
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
-  const people = useSelector(selectPeople);
+  const people = useSelector(selectPeopleList);
   const totalResults = useSelector(selectTotalResults);
   const totalPages = useSelector(selectTotalPages);
 
@@ -56,7 +56,8 @@ export const PersonList = () => {
               <Title>
                 {query
                   ? `Search results for "${capitalize(query)}"`
-                  : "Popular people"}
+                  : "Popular people"
+                }
               </Title>
               <Loader />
             </Section>
@@ -69,13 +70,14 @@ export const PersonList = () => {
                   <Title>
                     {query
                       ? `Search results for "${capitalize(query)} (${totalResults})"`
-                      : "Popular people"}
+                      : "Popular people"
+                    }
                   </Title>
                   <PeopleWrapper>
                     {people.map((person) => (
                       <PersonTile
                         key={nanoid()}
-                        profileImage={`${APIImageUrl}/w185${person.profile_path}`}
+                        profileImage={`${APIimageUrl}/w185${person.profile_path}`}
                         profilePath={person.profile_path}
                         fullName={person.name}
                         id={person.id}

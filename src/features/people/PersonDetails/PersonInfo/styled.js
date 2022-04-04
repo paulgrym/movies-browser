@@ -110,7 +110,7 @@ export const Content = styled.div`
 export const Description = styled.p`
   font-size: 20px;
   line-height: 1.6;
-  margin:0;
+  margin: 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
     font-size: 14px;

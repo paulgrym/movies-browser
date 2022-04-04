@@ -15,7 +15,7 @@ export const PersonDetails = () => {
 
   useEffect(() => {
     dispatch(fetchPersonDetails(id));
-  }, [id, dispatch])
+  }, [id, dispatch]);
 
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);

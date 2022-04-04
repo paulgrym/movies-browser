@@ -1,7 +1,19 @@
 import { useSelector } from "react-redux";
-import { APIImageUrl } from "../../../APIdata";
+import { APIimageUrl } from "../../../APIdata";
 import { selectMovie } from "../movieDetailsSlice";
-import { Backdrop, BackdropContainer, Container, MaxRate, Rate, RateContainer, RateIcon, Rating, Title, Votes, Wrapper } from "./styled";
+import {
+  Backdrop,
+  BackdropContainer,
+  Container,
+  MaxRate,
+  Rate,
+  RateContainer,
+  RateIcon,
+  Rating,
+  Title,
+  Votes,
+  Wrapper
+} from "./styled";
 
 export const MovieTitle = () => {
   const movieDetails = useSelector(selectMovie);
@@ -10,7 +22,7 @@ export const MovieTitle = () => {
     return (
       <Wrapper>
         <BackdropContainer>
-          <Backdrop src={`${APIImageUrl}/original/${movieDetails.backdrop_path}`} />
+          <Backdrop src={`${APIimageUrl}/original/${movieDetails.backdrop_path}`} />
           <Container>
             <Title>{movieDetails.title}</Title>
             <Rating>

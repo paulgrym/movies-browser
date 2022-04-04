@@ -1,10 +1,10 @@
-export const getAPI = async (APIUrl) => {
+export const getAPI = async (APIurl) => {
 
-    const response = await fetch(APIUrl);
+  const response = await fetch(APIurl);
 
-    if (!response.ok) {
-      throw new Error(response.statusText);
-    }
+  if (!response.ok) {
+    throw new Error(response.statusText);
+  }
 
-    return await response.json();
-}
+  return await response.json();
+};

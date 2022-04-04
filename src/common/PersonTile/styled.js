@@ -76,7 +76,7 @@ export const PersonDetails = styled.div`
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
-`
+`;
 
 export const PersonFullName = styled.p`
   margin: 12px 0 0;
@@ -108,4 +108,4 @@ export const PersonFunction = styled.p`
     font-size: 13px;
     line-height: 1.3;
   }
-`
+`;

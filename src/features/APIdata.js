@@ -1,23 +1,27 @@
-export const APIUrl = "https://api.themoviedb.org/3"
+export const APIurl = "https://api.themoviedb.org/3";
 
-export const APIKey = "951446c9e47a99cb6ccfb776c60023c7"
+export const APIkey = "951446c9e47a99cb6ccfb776c60023c7";
 
-export const APIPopularMoviesUrl = `${APIUrl}/movie/popular?api_key=${APIKey}`
+export const APIpopularMoviesUrl = page =>
+  `${APIurl}/movie/popular?api_key=${APIkey}&page=${page}`;
 
-export const APISearchMovieUrl = `${APIUrl}/search/movie?api_key=${APIKey}`
+export const APIsearchMovieUrl = (query, page) =>
+  `${APIurl}/search/movie?api_key=${APIkey}&query=${query}&page=${page}`;
 
-export const APIPopularPeopleUrl = `${APIUrl}/person/popular?api_key=${APIKey}`
+export const APIpopularPeopleUrl = page =>
+  `${APIurl}/person/popular?api_key=${APIkey}&page=${page}`;
 
-export const APISearchPersonUrl = `${APIUrl}/search/person?api_key=${APIKey}`
+export const APIsearchPersonUrl = (query, page) =>
+  `${APIurl}/search/person?api_key=${APIkey}&query=${query}&page=${page}`;
 
-export const APIImageUrl = `https://image.tmdb.org/t/p`
+export const APIimageUrl = `https://image.tmdb.org/t/p`;
 
-export const APIgenresUrl = `${APIUrl}/genre/movie/list?api_key=${APIKey}`
+export const APIgenresUrl = `${APIurl}/genre/movie/list?api_key=${APIkey}`;
 
-export const APImovieDetailsUrl = (movieId) => `${APIUrl}/movie/${movieId}?api_key=${APIKey}`;
+export const APImovieDetailsUrl = movieId => `${APIurl}/movie/${movieId}?api_key=${APIkey}`;
 
-export const APImovieCreditsUrl = (movieId) => `${APIUrl}/movie/${movieId}/credits?api_key=${APIKey}`;
+export const APImovieCreditsUrl = movieId => `${APIurl}/movie/${movieId}/credits?api_key=${APIkey}`;
 
-export const APIpersonDetailsUrl = (personId) => `${APIUrl}/person/${personId}?api_key=${APIKey}`;
+export const APIpersonDetailsUrl = personId => `${APIurl}/person/${personId}?api_key=${APIkey}`;
 
-export const APIpersonCreditsUrl = (personId) => `${APIUrl}/person/${personId}/credits?api_key=${APIKey}`;
+export const APIpersonCreditsUrl = personId => `${APIurl}/person/${personId}/credits?api_key=${APIkey}`;

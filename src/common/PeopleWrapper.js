@@ -16,4 +16,4 @@ export const PeopleWrapper = styled.div`
     grid-template-columns: repeat(auto-fill, 136px);
     grid-gap: 16px;
   }
-  `;
+`;

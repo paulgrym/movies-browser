@@ -5,8 +5,17 @@ import { PersonList } from "./features/people/PersonList";
 import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import { PersonDetails } from "./features/people/PersonDetails";
 import { toMovie, toMovies, toPeople, toPerson } from "./routes";
+import { fetchGenres } from "./features/genresSlice";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchGenres());
+  }, [dispatch]);
+
   return (
     <HashRouter>
       <Header />
@@ -24,7 +33,7 @@ function App() {
           <PersonList />
         </Route>
         <Route path="/">
-          <Redirect to={toMovies()}/>
+          <Redirect to={toMovies()} />
         </Route>
       </Switch>
     </HashRouter>

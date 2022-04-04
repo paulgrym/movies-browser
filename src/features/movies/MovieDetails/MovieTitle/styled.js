@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import { ReactComponent as StarIcon } from "../../../../images/star.svg";
 
-
 export const Wrapper = styled.div`
   margin-bottom: 64px;
-  background:#000000;
+  background: #000000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,7 +15,7 @@ export const Wrapper = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.small}){
     margin-bottom: 16px;  
   }
-`
+`;
 
 export const BackdropContainer = styled.div`
   position: relative;
@@ -38,15 +37,15 @@ export const BackdropContainer = styled.div`
     linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.689555) 4.66%, rgba(0, 0, 0, 0.439033) 9.34%, rgba(0, 0, 0, 0.20628) 15.16%, rgba(0, 0, 0, 0) 24.22%), 
     linear-gradient(189.44deg, rgba(0, 0, 0, 0) 58.48%, rgba(0, 0, 0, 0.106473) 63.17%, rgba(0, 0, 0, 0.235359) 68.85%, rgba(0, 0, 0, 0.492821) 78.08%, rgba(0, 0, 0, 0.740286) 85.86%, #000000 92.87%);
   }
-`
+`;
 
 export const Backdrop = styled.img`
   display: block;
   width: 100%;
-  height:100%;
+  height: 100%;
   object-fit: cover;
   object-position: left top;
-`
+`;
 
 export const Container = styled.div`
   color: ${({ theme }) => theme.colors.white};
@@ -54,7 +53,7 @@ export const Container = styled.div`
   bottom: 8%;
   left: 5%;
   z-index: 3;
-`
+`;
 
 export const Title = styled.h2`
   font-weight: 600;
@@ -75,7 +74,7 @@ export const Title = styled.h2`
     font-size: 24px;
     margin: 8px 0 8px;
   }
-`
+`;
 
 export const Rating = styled.div`
   display: flex;
@@ -97,7 +96,7 @@ export const Rating = styled.div`
   }
 `;
 
-export const RateContainer = styled.div``
+export const RateContainer = styled.div``;
 
 export const RateIcon = styled(StarIcon)`
   color: ${({ theme }) => theme.colors.candlelight};
@@ -148,7 +147,7 @@ export const MaxRate = styled.span`
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
     font-size: 10px;
   }
-`
+`;
 
 export const Votes = styled.span`
   font-size: 16px;

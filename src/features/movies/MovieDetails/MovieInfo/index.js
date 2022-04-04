@@ -20,8 +20,8 @@ import {
   DetailedInfo,
   Key,
   Value
-} from "./styled"
-import { APIImageUrl } from "../../../APIdata.js"
+} from "./styled";
+import { APIimageUrl } from "../../../APIdata.js";
 import { nanoid } from "@reduxjs/toolkit";
 
 export const MovieInfo = () => {
@@ -34,7 +34,7 @@ export const MovieInfo = () => {
       <MovieTile>
         <Wrapper>
           {posterPath
-            ? <MovieImage src={`${APIImageUrl}/w342${movieDetails.poster_path}`} alt="" />
+            ? <MovieImage src={`${APIimageUrl}/w342${movieDetails.poster_path}`} alt="" />
             : <NoMovieImage><NoMovieImageIcon /></NoMovieImage>
           }
           <Content>

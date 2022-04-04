@@ -116,7 +116,7 @@ export const Year = styled.p`
     margin: 8px 0;
     color: ${({ theme }) => theme.colors.waterloo};
   }
-`
+`;
 
 export const DetailedInfo = styled.div`
   display: flex;
@@ -134,7 +134,7 @@ export const DetailedInfo = styled.div`
     font-size: 12px;
     line-height: 1.3;
   }
-`
+`;
 
 export const Key = styled.span`
   color: ${({ theme }) => theme.colors.stormGray};
@@ -143,9 +143,9 @@ export const Key = styled.span`
   @media (max-width: ${({ theme }) => theme.breakpoints.small}){
     display: none;
   }
-`
+`;
 
-export const Value = styled.span``
+export const Value = styled.span``;
 
 export const Tags = styled.ul`
   list-style: none;
@@ -190,7 +190,6 @@ export const Rating = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
     margin: 8px 0 16px;
   }
-
 `;
 
 export const RateIcon = styled(StarIcon)`
@@ -235,7 +234,7 @@ export const MaxRate = styled.span`
   @media (max-width: ${({ theme }) => theme.breakpoints.small}){
     display: none;
   }
-`
+`;
 
 export const Votes = styled.span`
   color: ${({ theme }) => theme.colors.woodsmoke};
@@ -254,7 +253,7 @@ export const Votes = styled.span`
 export const Description = styled.p`
   font-size: 20px;
   line-height: 1.6;
-  margin:0;
+  margin: 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
     font-size: 14px;

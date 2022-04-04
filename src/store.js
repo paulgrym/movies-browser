@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
-import { popularMoviesReducer } from "./features/movies/MovieList/popularMoviesSlice";
-import { popularPeopleReducer } from "./features/people/PersonList/popularPeopleSlice";
+import { moviesReducer } from "./features/movies/MovieList/moviesSlice";
+import { peopleReducer } from "./features/people/PersonList/peopleSlice";
 import { movieDetailsReducer } from "./features/movies/MovieDetails/movieDetailsSlice";
 import { personDetailsReducer } from "./features/people/PersonDetails/personDetailsSlice";
+import { genresReducer } from "./features/genresSlice";
 import rootSaga from "./rootSaga";
 
 
@@ -11,10 +12,11 @@ const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
   reducer: {
-    popularMovies: popularMoviesReducer,
-    popularPeople: popularPeopleReducer,
+    movies: moviesReducer,
+    people: peopleReducer,
     movieDetails: movieDetailsReducer,
     personDetails: personDetailsReducer,
+    genres: genresReducer
   },
   middleware: [sagaMiddleware],
 });

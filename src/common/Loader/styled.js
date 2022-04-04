@@ -16,7 +16,7 @@ export const Spinner = styled.div`
   animation: LoadingSpinner 1.2s linear infinite;
 
     @keyframes LoadingSpinner {
-    to {transform: rotate(360deg);}
+    to {transform: rotate(360deg)}
     }
 
     @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
@@ -32,4 +32,4 @@ export const Spinner = styled.div`
       height: 35px;
       border-width: 5px;
     }
-`
+`;

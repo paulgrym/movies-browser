@@ -1,11 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const moviesSlice = createSlice({
-  name: "popularMovies",
+  name: "movies",
   initialState: {
     page: null,
-    movies: [],
-    genres: [],
+    moviesList: [],
     totalPages: null,
     totalResults: null,
     loading: false,
@@ -23,15 +22,11 @@ const moviesSlice = createSlice({
       state.error = false;
     },
 
-    setGenres: (state, { payload: genres }) => {
-      state.genres = genres.genres;
-    },
-
     fetchMoviesSuccess: (state, { payload: movies }) => {
       state.loading = false;
       state.error = false;
       state.page = movies.page;
-      state.movies = movies.results;
+      state.moviesList = movies.results;
       state.totalPages = movies.total_pages;
       state.totalResults = movies.total_results;
     },
@@ -49,19 +44,17 @@ export const {
   fetchMoviesSearch,
   fetchMoviesSuccess,
   fetchMoviesError,
-  setGenres,
 } = moviesSlice.actions;
 
-const selectPopularMovies = (state) => state.popularMovies;
+const selectMovies = (state) => state.movies;
 
-export const selectMovies = (state) => selectPopularMovies(state).movies;
-export const selectPage = (state) => selectPopularMovies(state).page;
-export const selectGenres = (state) => selectPopularMovies(state).genres;
+export const selectMoviesList = (state) => selectMovies(state).moviesList;
+export const selectPage = (state) => selectMovies(state).page;
 export const selectTotalPages = (state) =>
-  selectPopularMovies(state).totalPages;
+  selectMovies(state).totalPages;
 export const selectTotalResults = (state) =>
-  selectPopularMovies(state).totalResults;
-export const selectLoading = (state) => selectPopularMovies(state).loading;
-export const selectError = (state) => selectPopularMovies(state).error;
+  selectMovies(state).totalResults;
+export const selectLoading = (state) => selectMovies(state).loading;
+export const selectError = (state) => selectMovies(state).error;
 
-export const popularMoviesReducer = moviesSlice.reducer;
+export const moviesReducer = moviesSlice.reducer;

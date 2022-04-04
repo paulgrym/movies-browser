@@ -3,11 +3,11 @@ import { css } from "styled-components";
 
 export const Container = styled.div`
   text-align: center;
-`
+`;
 
 export const ShowAllButton = styled.button`
-  border:none;
-  background:none;
+  border: none;
+  background: none;
   cursor: pointer;
   padding: 0 0 2px;
   color: ${({ theme }) => theme.colors.waterloo};
@@ -21,9 +21,17 @@ export const ShowAllButton = styled.button`
       transform: translateY(-10%);
     `}
   }
-`
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
+    font-size: 16px;
+  }
+`;
 
 export const Arrow = styled.div`
   color: ${({ theme }) => theme.colors.waterloo};
   font-size: 24px;
-`
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
+    font-size: 20px;
+  }
+`;

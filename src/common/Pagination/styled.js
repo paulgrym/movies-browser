@@ -53,7 +53,7 @@ export const PageText = styled.span`
 `;
 
 export const Button = styled.button`
-  display:  flex;
+  display: flex;
   align-items: center;
   border: none;
   background: ${({ theme }) => theme.colors.pattensBlue};
@@ -76,9 +76,9 @@ export const Button = styled.button`
     margin-left: 8px;
   
     ${({ back }) => back && css`
-    margin-left: 0px;
-    margin-right: 8px;
-  `}
+      margin-left: 0px;
+      margin-right: 8px;
+    `}
   }
 
   &:hover {
@@ -128,10 +128,10 @@ export const Arrow = styled(ArrowIconNext)`
   `}
 
   ${({ mobile }) => mobile && css`
-    display:none;
+    display: none;
     
     @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
-      display:block;
+      display: block;
       margin-left: 4px;
 
       ${({ back }) => back && css`

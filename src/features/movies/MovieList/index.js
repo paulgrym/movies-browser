@@ -4,19 +4,18 @@ import {
   fetchMovies,
   selectError,
   selectLoading,
-  selectGenres,
-  selectMovies,
+  selectMoviesList,
   selectTotalResults,
   fetchMoviesSearch,
   selectTotalPages,
-} from "./popularMoviesSlice";
+} from "./moviesSlice";
 import { Section } from "../../../common/Section";
 import { MovieWrapper } from "../../../common/MovieWrapper";
 import { Title } from "../../../common/Title";
 import { Loader } from "../../../common/Loader";
 import { ErrorPage } from "../../../common/ErrorPage";
 import { MovieTile } from "../../../common/MovieTile";
-import { APIImageUrl } from "../../APIdata";
+import { APIimageUrl } from "../../APIdata";
 import { queryParameters } from "../../../common/queryParameters";
 import { NoResultsPage } from "../../../common/NoResultsPage";
 import { useQueryParameter } from "../../../common/queryParameterHooks";
@@ -24,6 +23,7 @@ import { nanoid } from "@reduxjs/toolkit";
 import { Pagination } from "../../../common/Pagination";
 import { capitalize } from "../../capitalize";
 import { MainContainer } from "../../../common/MainContainer";
+import { selectGenres } from "../../genresSlice";
 
 export const MovieList = () => {
   const dispatch = useDispatch();
@@ -33,9 +33,10 @@ export const MovieList = () => {
   const page = paramsPage === 0 ? 1 : paramsPage;
 
   const genresTable = useSelector(selectGenres);
+
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
-  const movies = useSelector(selectMovies);
+  const movies = useSelector(selectMoviesList);
   const totalResults = useSelector(selectTotalResults);
   const totalPagesFromAPI = useSelector(selectTotalPages);
   const totalPages = query ? totalPagesFromAPI : 500;
@@ -60,7 +61,8 @@ export const MovieList = () => {
               <Title>
                 {query
                   ? `Search results for "${capitalize(query)}"`
-                  : "Popular movies"}
+                  : "Popular movies"
+                }
               </Title>
               <Loader />
             </Section>
@@ -73,13 +75,14 @@ export const MovieList = () => {
                   <Title>
                     {query
                       ? `Search results for "${capitalize(query)}" (${totalResults})`
-                      : "Popular movies"}
+                      : "Popular movies"
+                    }
                   </Title>
                   <MovieWrapper>
                     {movies.map((movie) => (
                       <MovieTile
                         key={nanoid()}
-                        poster={`${APIImageUrl}/w342${movie.poster_path}`}
+                        poster={`${APIimageUrl}/w342${movie.poster_path}`}
                         posterPath={movie.poster_path}
                         title={movie.title}
                         date={movie.release_date ? movie.release_date.slice(0, 4) : "Date: Unknown"}

@@ -6,8 +6,8 @@ import { MovieWrapper } from "../../../../common/MovieWrapper";
 import { Section } from "../../../../common/Section";
 import { Arrow, Container, ShowAllButton } from "../../../../common/ShowAllButton";
 import { Title } from "../../../../common/Title";
-import { APIImageUrl } from "../../../APIdata";
-import { selectGenres } from "../../../movies/MovieList/popularMoviesSlice";
+import { APIimageUrl } from "../../../APIdata";
+import { selectGenres } from "../../../genresSlice";
 import { selectMovieCast } from "../personDetailsSlice";
 
 export const MovieCast = () => {
@@ -26,7 +26,7 @@ export const MovieCast = () => {
           {movieCast.slice(0, movieCastShown).map(movie => (
             <MovieTile
               key={nanoid()}
-              poster={`${APIImageUrl}/w342${movie.poster_path}`}
+              poster={`${APIimageUrl}/w342${movie.poster_path}`}
               posterPath={movie.poster_path}
               title={movie.title}
               date={movie.release_date?.slice(0, 4)}
@@ -34,6 +34,7 @@ export const MovieCast = () => {
               voteCount={`${movie.vote_count} votes`}
               genres={genresTable.filter((genre) => movie.genre_ids.includes(genre.id))}
               id={movie.id}
+              character={movie.character}
             />
           ))}
         </MovieWrapper>
@@ -52,4 +53,4 @@ export const MovieCast = () => {
       </Section>
     );
   } return null;
-}
+};
