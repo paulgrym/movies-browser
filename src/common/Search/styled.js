@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { ReactComponent as SearchSVG } from "../../images/search.svg";
-import { ReactComponent as ClearSVG } from "../../images/clear.svg";
+import { ReactComponent as SearchSVG } from "./images/search.svg";
+import { ReactComponent as ClearSVG } from "./images/clear.svg";
 
 export const StyledSearchContainer = styled.div`
   width: 432px;

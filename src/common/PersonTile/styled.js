@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { ReactComponent as NoPersonIcon } from "../../images/no-profile-image.svg";
+import { ReactComponent as NoPersonIcon } from "./no-profile-image.svg";
 
 
 export const StyledPersonTile = styled(Link)`

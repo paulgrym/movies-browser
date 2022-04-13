@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { css } from "styled-components";
-import { ReactComponent as ArrowIconNext } from "../../images/next-arrow.svg";
+import { ReactComponent as ArrowIconNext } from "./next-arrow.svg";
 
 export const StyledPagination = styled.div`
   display: flex;

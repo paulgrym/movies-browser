@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { ReactComponent as ErrorIcon } from "../../images/error.svg";
+import { ReactComponent as ErrorIcon } from "./error.svg";
 
 export const Wrapper = styled.div`
   text-align: center;

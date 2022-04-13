@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { ReactComponent as VideoSVG } from "../../images/video.svg";
+import { ReactComponent as VideoSVG } from "./video.svg";
 
 export const Wrapper = styled.header`
   background-color: ${({ theme }) => theme.colors.woodsmoke};
