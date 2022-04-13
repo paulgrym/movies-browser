@@ -4,7 +4,7 @@ import { nanoid } from "@reduxjs/toolkit";
 import { Section } from "../../../common/Section";
 import { Title } from "../../../common/Title";
 import { PersonTile } from "../../../common/PersonTile";
-import { ErrorPage } from "../../../common/ErrorPage";
+import { Error } from "../../../common/Error";
 import { Loader } from "../../../common/Loader";
 import { PeopleWrapper } from "../../../common/PeopleWrapper";
 import { MainContainer } from "../../../common/MainContainer";
@@ -49,7 +49,7 @@ export const PersonList = () => {
         ? <NoResultsPage query={query} />
         : error
           ? <Section>
-            <ErrorPage />
+            <Error />
           </Section>
           : loading
             ? <Section>
@@ -63,7 +63,7 @@ export const PersonList = () => {
             </Section>
             : error
               ? <Section>
-                <ErrorPage />
+                <Error />
               </Section>
               : <>
                 <Section>

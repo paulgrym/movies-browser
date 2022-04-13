@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { ErrorPage } from "../../../common/ErrorPage";
+import { Error } from "../../../common/Error";
 import { Loader } from "../../../common/Loader";
 import { MainContainer } from "../../../common/MainContainer";
 import { MovieCast } from "./MovieCast";
@@ -23,7 +23,7 @@ export const PersonDetails = () => {
   return (
     <>
       {error
-        ? <ErrorPage />
+        ? <Error />
         : <>
           {loading
             ? <Loader />

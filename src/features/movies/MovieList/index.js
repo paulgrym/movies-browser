@@ -13,7 +13,7 @@ import { Section } from "../../../common/Section";
 import { MovieWrapper } from "../../../common/MovieWrapper";
 import { Title } from "../../../common/Title";
 import { Loader } from "../../../common/Loader";
-import { ErrorPage } from "../../../common/ErrorPage";
+import { Error } from "../../../common/Error";
 import { MovieTile } from "../../../common/MovieTile";
 import { APIimageUrl } from "../../APIdata";
 import { queryParameters } from "../../../common/queryParameters";
@@ -54,7 +54,7 @@ export const MovieList = () => {
         : error
           ?
           <Section>
-            <ErrorPage />
+            <Error />
           </Section>
           : loading
             ? <Section>
@@ -68,7 +68,7 @@ export const MovieList = () => {
             </Section>
             : error
               ? <Section>
-                <ErrorPage />
+                <Error />
               </Section>
               : <>
                 <Section>

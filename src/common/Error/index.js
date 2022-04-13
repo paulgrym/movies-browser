@@ -1,6 +1,6 @@
 import { ButtonLink, Wrapper, Icon, Info, Message } from "./styled";
 
-export const ErrorPage = () => (
+export const Error = () => (
   <Wrapper>
     <Icon />
     <Info>Oooops! Something went wrong…</Info>

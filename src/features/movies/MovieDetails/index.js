@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Section } from "../../../common/Section";
 import { Loader } from "../../../common/Loader";
-import { ErrorPage } from "../../../common/ErrorPage";
+import { Error } from "../../../common/Error";
 import { fetchMovieDetails, selectError, selectLoading } from "./movieDetailsSlice";
 import { MovieInfo } from "./MovieInfo";
 import { useParams } from "react-router-dom";
@@ -24,7 +24,7 @@ export const MovieDetails = () => {
 
   return (
     error
-      ? <Section>< ErrorPage /></Section >
+      ? <Section>< Error /></Section >
       : <>
         {loading
           ? <Section><Loader /></Section>
