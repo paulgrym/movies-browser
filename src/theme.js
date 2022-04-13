@@ -16,7 +16,6 @@ export const theme = {
         candlelight: "#FCD420",
         black: "#000000",
     },
-
     breakpoints: {
         small: "480px",
         medium: "767px",

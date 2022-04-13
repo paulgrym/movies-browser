@@ -18,7 +18,7 @@ export const Search = () => {
   const query = useQueryParameter(queryParameters.search);
   const replaceQueryParameter = useReplaceQueryParameter();
 
-  const clearInputContent = ({ target }) => {
+  const clearSearch = ({ target }) => {
     replaceQueryParameter([
       {
         key: queryParameters.search,
@@ -47,30 +47,30 @@ export const Search = () => {
   return (
     <>
       <StyledSearchContainer>
-        <SearchButton 
-         disabled={
-          location.pathname.indexOf("/movies/") === 0 ||
-          location.pathname.indexOf("/people/") === 0
-        }
-        >
-          <SearchIcon />
-        </SearchButton>
-        <StyledSearch
-          value={query ? query : ""}
-          onChange={onInputChange}
-          placeholder={`Search for ${
-            location.pathname === "/movies" ||
-            location.pathname.indexOf("/movies/") === 0
-              ? "movies..."
-              : "people..."
-          }`}
+        <SearchButton
+          htmlFor="search"
           disabled={
             location.pathname.indexOf("/movies/") === 0 ||
             location.pathname.indexOf("/people/") === 0
           }
+        >
+          <SearchIcon />
+        </SearchButton>
+        <StyledSearch
+          id="search"
+          value={query || ""}
+          onChange={onInputChange}
+          placeholder={`Search for ${location.pathname.includes("/movies")
+            ? "movies..."
+            : "people..."
+            }`}
+          disabled={
+            location.pathname.startsWith("/movies/") ||
+            location.pathname.startsWith("/people/")
+          }
         />
         {query && (
-          <ClearContentButton onClick={clearInputContent}>
+          <ClearContentButton onClick={clearSearch}>
             <ClearContentIcon />
           </ClearContentButton>
         )}

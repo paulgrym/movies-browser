@@ -1,8 +1,7 @@
-import styled from "styled-components";
-import { css } from "styled-components";
+import styled, { css } from "styled-components";
 import { ReactComponent as ArrowIconNext } from "./next-arrow.svg";
 
-export const StyledPagination = styled.div`
+export const StyledPagination = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;

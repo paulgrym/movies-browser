@@ -11,7 +11,7 @@ export const StyledSearchContainer = styled.div`
   }
 `;
 
-export const SearchButton = styled.button`
+export const SearchButton = styled.label`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);

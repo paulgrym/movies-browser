@@ -16,7 +16,18 @@ import {
   NoMovieImageIcon,
 } from "./styled";
 
-export const MovieTile = ({ posterPath, poster, title, date, voteAverage, voteCount, genres, id, character, job }) => {
+export const MovieTile = ({
+  posterPath,
+  poster,
+  title,
+  date,
+  voteAverage,
+  voteCount,
+  genres,
+  id,
+  character,
+  job
+}) => {
 
   return (
     <StyledMovieTile to={toMovie({ id: id })}>
