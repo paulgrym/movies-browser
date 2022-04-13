@@ -14,11 +14,15 @@ import {
 } from "./styled";
 
 export const Header = () => {
+  const onLogoClick = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <Wrapper>
       <Content>
         <Container>
-          <Logo>
+          <Logo onClick={onLogoClick}>
             <StyledLink to={toMovies()}>
               <VideoIcon />
               Movies Browser
