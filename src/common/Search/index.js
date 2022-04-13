@@ -61,8 +61,8 @@ export const Search = () => {
           value={query || ""}
           onChange={onInputChange}
           placeholder={`Search for ${location.pathname.includes("/movies")
-            ? "movies..."
-            : "people..."
+            ? "movies…"
+            : "people…"
             }`}
           disabled={
             location.pathname.startsWith("/movies/") ||
