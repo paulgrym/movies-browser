@@ -13,7 +13,7 @@ import {
 import { useSelector } from "react-redux";
 import { NoPersonImageIcon } from "../../../../common/PersonTile/styled.js";
 import { selectPerson } from "../personDetailsSlice.js";
-import { Section } from "../../../../common/Section.js";
+import { Section } from "../../../../common/Section";
 
 export const PersonInfo = () => {
   const personDetails = useSelector(selectPerson);
