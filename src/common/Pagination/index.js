@@ -1,6 +1,13 @@
 import { useReplaceQueryParameter } from "../queryParameterHooks";
 import { queryParameters } from "../queryParameters";
-import { Arrow, Button, ButtonText, StyledPagination, PageText, PageInfo } from "./styled";
+import {
+  Arrow,
+  Button,
+  ButtonText,
+  StyledPagination,
+  PageText,
+  PageInfo,
+} from "./styled";
 
 export const Pagination = ({ totalPages, page }) => {
   const replaceQueryParameter = useReplaceQueryParameter();
@@ -18,14 +25,18 @@ export const Pagination = ({ totalPages, page }) => {
 
   return (
     <StyledPagination>
-      <Button back="true" disabled={page === 1} onClick={() => onPagerClick(1)}>
-        <Arrow back="true" />
-        <Arrow back="true" mobile="true" />
+      <Button $back disabled={page === 1} onClick={() => onPagerClick(1)}>
+        <Arrow $back />
+        <Arrow $back $mobile />
         <ButtonText>First</ButtonText>
       </Button>
 
-      <Button back="true" disabled={page === 1} onClick={() => onPagerClick(page - 1)}>
-        <Arrow back="true" />
+      <Button
+        $back
+        disabled={page === 1}
+        onClick={() => onPagerClick(page - 1)}
+      >
+        <Arrow $back />
         <ButtonText>Previous</ButtonText>
       </Button>
 
@@ -36,15 +47,21 @@ export const Pagination = ({ totalPages, page }) => {
         <PageText>{totalPages}</PageText>
       </PageInfo>
 
-      <Button disabled={page === totalPages} onClick={() => onPagerClick(page + 1)}>
+      <Button
+        disabled={page === totalPages}
+        onClick={() => onPagerClick(page + 1)}
+      >
         <ButtonText>Next</ButtonText>
         <Arrow />
       </Button>
 
-      <Button disabled={page === totalPages} onClick={() => onPagerClick(totalPages)}>
+      <Button
+        disabled={page === totalPages}
+        onClick={() => onPagerClick(totalPages)}
+      >
         <ButtonText>Last</ButtonText>
         <Arrow />
-        <Arrow mobile="true" />
+        <Arrow $mobile />
       </Button>
     </StyledPagination>
   );
