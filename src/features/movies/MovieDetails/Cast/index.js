@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { PersonTile } from "../../../../common/PersonTile";
 import { Title } from "../../../../common/Title";
-import { APIimageUrl } from "../../../APIdata";
+import { imageUrl } from "../../../APIdata";
 import { selectMovieCast } from "../movieDetailsSlice";
 import { Arrow, Container, ShowAllButton } from "../../../../common/ShowAllContainer";
 import { PeopleWrapper } from "../../../../common/PeopleWrapper";
@@ -25,7 +25,7 @@ export const Cast = () => {
           {cast.slice(0, castShown).map(person => (
             <PersonTile
               key={nanoid()}
-              profileImage={`${APIimageUrl}/w185${person.profile_path}`}
+              profileImage={`${imageUrl}/w185${person.profile_path}`}
               profilePath={person.profile_path}
               fullName={person.name}
               character={person.character}

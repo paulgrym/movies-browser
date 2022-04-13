@@ -1,4 +1,4 @@
-import { APIimageUrl } from "../../../APIdata.js";
+import { imageUrl } from "../../../APIdata.js";
 import {
   Content,
   Description,
@@ -24,7 +24,7 @@ export const PersonInfo = () => {
       <PersonTile>
         <Wrapper>
           {profilePath
-            ? <PersonImage src={`${APIimageUrl}/w342${profilePath}`} alt="" />
+            ? <PersonImage src={`${imageUrl}/w342${profilePath}`} alt="" />
             : <NoPersonInfoImage><NoPersonImageIcon /></NoPersonInfoImage>
           }
           <Content>

@@ -1,7 +1,7 @@
-import { debounce, delay, call, put, takeLatest, all } from "redux-saga/effects";
+import { debounce, delay, call, put, takeLatest } from "redux-saga/effects";
 import {
-  APIpopularMoviesUrl,
-  APIsearchMovieUrl,
+  popularMoviesUrl,
+  searchMovieUrl,
 } from "../../APIdata";
 import { getAPI } from "../../getAPI";
 import {
@@ -12,8 +12,8 @@ import {
 } from "./moviesSlice";
 
 function* fetchMoviesWorker({ payload: { query, page } }) {
-  const popularMovies = APIpopularMoviesUrl(page);
-  const searchMovie = APIsearchMovieUrl(query, page);
+  const popularMovies = popularMoviesUrl(page);
+  const searchMovie = searchMovieUrl(query, page);
   const urlPath = !query ? popularMovies : searchMovie;
 
   try {
@@ -26,6 +26,6 @@ function* fetchMoviesWorker({ payload: { query, page } }) {
 };
 
 export function* watchFetchMovies() {
-  yield debounce(2000, fetchMoviesSearch.type, fetchMoviesWorker);
+  yield debounce(500, fetchMoviesSearch.type, fetchMoviesWorker);
   yield takeLatest(fetchMovies.type, fetchMoviesWorker);
 };

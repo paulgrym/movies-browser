@@ -1,27 +1,27 @@
-export const APIurl = "https://api.themoviedb.org/3";
+export const API_URL = "https://api.themoviedb.org/3";
 
-export const APIkey = "951446c9e47a99cb6ccfb776c60023c7";
+export const API_KEY = "951446c9e47a99cb6ccfb776c60023c7";
 
-export const APIpopularMoviesUrl = page =>
-  `${APIurl}/movie/popular?api_key=${APIkey}&page=${page}`;
+export const popularMoviesUrl = page =>
+  `${API_URL}/movie/popular?api_key=${API_KEY}&page=${encodeURIComponent(page)}`;
 
-export const APIsearchMovieUrl = (query, page) =>
-  `${APIurl}/search/movie?api_key=${APIkey}&query=${query}&page=${page}`;
+export const searchMovieUrl = (query, page) =>
+  `${API_URL}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(query)}&page=${encodeURIComponent(page)}`;
 
-export const APIpopularPeopleUrl = page =>
-  `${APIurl}/person/popular?api_key=${APIkey}&page=${page}`;
+export const popularPeopleUrl = page =>
+  `${API_URL}/person/popular?api_key=${API_KEY}&page=${encodeURIComponent(page)}`;
 
-export const APIsearchPersonUrl = (query, page) =>
-  `${APIurl}/search/person?api_key=${APIkey}&query=${query}&page=${page}`;
+export const searchPersonUrl = (query, page) =>
+  `${API_URL}/search/person?api_key=${API_KEY}&query=${encodeURIComponent(query)}&page=${encodeURIComponent(page)}`;
 
-export const APIimageUrl = `https://image.tmdb.org/t/p`;
+export const imageUrl = `https://image.tmdb.org/t/p`;
 
-export const APIgenresUrl = `${APIurl}/genre/movie/list?api_key=${APIkey}`;
+export const genresUrl = `${API_URL}/genre/movie/list?api_key=${API_KEY}`;
 
-export const APImovieDetailsUrl = movieId => `${APIurl}/movie/${movieId}?api_key=${APIkey}`;
+export const movieDetailsUrl = movieId => `${API_URL}/movie/${encodeURIComponent(movieId)}?api_key=${API_KEY}`;
 
-export const APImovieCreditsUrl = movieId => `${APIurl}/movie/${movieId}/credits?api_key=${APIkey}`;
+export const movieCreditsUrl = movieId => `${API_URL}/movie/${encodeURIComponent(movieId)}/credits?api_key=${API_KEY}`;
 
-export const APIpersonDetailsUrl = personId => `${APIurl}/person/${personId}?api_key=${APIkey}`;
+export const personDetailsUrl = personId => `${API_URL}/person/${encodeURIComponent(personId)}?api_key=${API_KEY}`;
 
-export const APIpersonCreditsUrl = personId => `${APIurl}/person/${personId}/credits?api_key=${APIkey}`;
+export const personCreditsUrl = personId => `${API_URL}/person/${encodeURIComponent(personId)}/credits?api_key=${API_KEY}`;

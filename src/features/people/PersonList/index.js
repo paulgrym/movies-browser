@@ -17,7 +17,7 @@ import {
   selectTotalPages,
   selectTotalResults,
 } from "./peopleSlice";
-import { APIimageUrl } from "../../APIdata";
+import { imageUrl } from "../../APIdata";
 import { Pagination } from "../../../common/Pagination";
 import { useQueryParameter } from "../../../common/queryParameterHooks";
 import { queryParameters } from "../../../common/queryParameters";
@@ -77,7 +77,7 @@ export const PersonList = () => {
                     {people.map((person) => (
                       <PersonTile
                         key={nanoid()}
-                        profileImage={`${APIimageUrl}/w185${person.profile_path}`}
+                        profileImage={`${imageUrl}/w185${person.profile_path}`}
                         profilePath={person.profile_path}
                         fullName={person.name}
                         id={person.id}
