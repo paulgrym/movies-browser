@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { MovieTile } from "../../../../common/MovieTile";
 import { MovieWrapper } from "../../../../common/MovieWrapper";
 import { Section } from "../../../../common/Section";
-import { Arrow, Container, ShowAllButton } from "../../../../common/ShowAllButton";
+import { Arrow, Container, ShowAllButton } from "../../../../common/ShowAllContainer";
 import { Title } from "../../../../common/Title";
 import { APIimageUrl } from "../../../APIdata";
 import { selectGenres } from "../../../genresSlice";

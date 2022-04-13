@@ -5,7 +5,7 @@ import { PersonTile } from "../../../../common/PersonTile";
 import { Title } from "../../../../common/Title";
 import { APIimageUrl } from "../../../APIdata";
 import { selectMovieCrew } from "../movieDetailsSlice";
-import { Arrow, Container, ShowAllButton } from "../../../../common/ShowAllButton";
+import { Arrow, Container, ShowAllButton } from "../../../../common/ShowAllContainer";
 import { PeopleWrapper } from "../../../../common/PeopleWrapper";
 
 export const Crew = () => {

@@ -11,7 +11,7 @@ export const ShowAllButton = styled.button`
   cursor: pointer;
   padding: 0 0 2px;
   color: ${({ theme }) => theme.colors.waterloo};
-  font-size: 20px;
+  font-size: 16px;
   transition: transform 0.3s;
 
   &:hover{
@@ -23,15 +23,15 @@ export const ShowAllButton = styled.button`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
-    font-size: 16px;
+    font-size: 14px;
   }
 `;
 
 export const Arrow = styled.div`
   color: ${({ theme }) => theme.colors.waterloo};
-  font-size: 24px;
+  font-size: 18px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.medium}){
-    font-size: 20px;
+    font-size: 16px;
   }
 `;
